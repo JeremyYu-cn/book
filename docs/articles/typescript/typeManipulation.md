@@ -194,3 +194,5 @@ type T1 = ToArray<string | number>; // type T1 = string[] | number[]
 type ToArrayNonDist<Type> = [Type] extends [any] ? Type[] : never; // type StrArrOrNumArr = ToArrayNonDist<string | number>;
 
 ```
+
+<!-- ### -->
