@@ -4,11 +4,9 @@
  * @site: book.yzmblog.top / book.yzmblog.top
 -->
 
-# Front End Book
+# Computer Science Book
 
-this is my Front-end universe.
-
-用来作记录的笔记，基于 docsify 驱动，部署在 GithubPages。
+用来做的笔记网站，基于 docsify 驱动，部署在 GithubPages。
 
 本地启动:
 

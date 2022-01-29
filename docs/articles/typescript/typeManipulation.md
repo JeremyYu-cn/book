@@ -195,4 +195,99 @@ type ToArrayNonDist<Type> = [Type] extends [any] ? Type[] : never; // type StrAr
 
 ```
 
-<!-- ### -->
+### 映射类型
+
+当你不想做重复的工作，有时候类型需要基于一些其他类型
+
+映射类型用于声明未提前声明的属性类型， For Example:
+
+```typescript
+type T = {
+  [key: string]: string | number;
+};
+
+const test: T = {
+  test1: 'hello',
+  test2: 1234,
+};
+```
+
+映射类型是一种通用类型，也可以配合`keyof`使用去创建一些类型
+
+```typescript
+type Type = {
+  test1: string;
+  test2: number;
+};
+
+type Type2<T> = {s
+  [key in keyof T]: boolean;
+};
+
+type Rest = Type2<Type> // type Rest = { test1: boolean, test2: boolean }
+
+```
+
+### 映射修改
+
+当我我们添加映射时，有两个额外的操作符可以修改：`readonly` 和 `?`
+
+```typescript
+type CreateType<Type> = {
+  -readonly [Key in keyof Type]: Type[Key];
+};
+
+type LockType = {
+  readonly test1: string;
+  readonly test2: string;
+};
+
+type UnLockType = CreateType<LockType>; // type UnLockType = { test1: string, test2: string }
+
+type CreateMustType<Type> = {
+  [Key in keyof Type]-?: Type[Key];
+};
+
+type maybeType = {
+  test1?: string;
+  test2?: string;
+};
+
+type MustType = CreateMustType<maybeType>; // type MustType = { test1: string, test2: string }
+```
+
+### Key 的重映射
+
+在 Typescript `4.1`中，你可以用`as`来重新定义映射名。
+
+语法:
+
+```typescript
+type RemapType<Type> = {
+  [Key in keyof Type as newKey]: Type[Key];
+};
+```
+
+例如：
+
+```typescript
+// Capitalize 首字母大写
+type AddGetName<Type> = {
+  [Key in keyof Type as `get${Capitalize<string & Key>}`]: Type[Key];
+};
+
+type TestType = {
+  test1: string;
+  test2: string;
+};
+
+type AddTestType = AddGetName<TestType>;
+// type AddTestType = { getTest1: string, getTest2: string }
+```
+
+### 模板文字类型 与 es6 模板字符串类似
+
+```typescript
+type Type1 = 'World';
+type Hello = `Hello ${Type1}`; // type Hello = "Hello World"
+```
