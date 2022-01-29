@@ -195,7 +195,7 @@ type ToArrayNonDist<Type> = [Type] extends [any] ? Type[] : never; // type StrAr
 
 ```
 
-### 映射类型
+## 映射类型
 
 当你不想做重复的工作，有时候类型需要基于一些其他类型
 
@@ -285,7 +285,9 @@ type AddTestType = AddGetName<TestType>;
 // type AddTestType = { getTest1: string, getTest2: string }
 ```
 
-### 模板文字类型 与 es6 模板字符串类似
+## 模板文字类型
+
+与 es6 模板字符串类似
 
 ```typescript
 type Type1 = 'World';
