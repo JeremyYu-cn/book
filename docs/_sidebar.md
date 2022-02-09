@@ -18,4 +18,4 @@
 
 - 算法
 
-  - [动态规划](articles/dynamicProgramming.md)
+  - [动态规划](articles/algorithm/dynamicProgramming.md)
