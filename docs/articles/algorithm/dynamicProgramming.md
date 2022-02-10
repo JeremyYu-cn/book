@@ -69,3 +69,46 @@ for (let i = 0; i < m; i++) {
 }
 return dp[m - 1][n - 1];
 ```
+
+### 案例 3: [最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)
+
+给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+说明：每次只能向下或者向右移动一步。
+
+#### dp 定义
+
+dp[i][j] 表示路径数字总和的最小值
+
+#### 找出数组之间的关系式
+
+dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+
+#### 找出默认值
+
+dp[0][0] = grid[0][0]
+
+#### 题解
+
+```javascript
+// dp[i][j] 表示路径数字总和的最小值
+// dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+// 网格内有默认值
+let m = grid.length;
+let n = grid[0].length;
+let dp = [[grid[0][0]]];
+for (let i = 0; i < m; i++) {
+  if (!dp[i]) dp[i] = [];
+  for (let j = 0; j < n; j++) {
+    if (i === 0 && j === 0) continue;
+    if (j === 0) {
+      dp[i][j] = dp[i - 1][j] + grid[i][j];
+    } else if (i === 0) {
+      dp[i][j] = dp[i][j - 1] + grid[i][j];
+    } else {
+      dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
+    }
+  }
+}
+
+return dp[m - 1][n - 1];
+```
