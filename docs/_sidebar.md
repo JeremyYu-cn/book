@@ -21,6 +21,7 @@
 - Webpack
 
   - [entry](articles/webpack/entry.md)
+  - [outpur](articles/webpack/output.md)
 
 - 算法
 
