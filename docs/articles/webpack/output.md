@@ -10,7 +10,7 @@
 ```javascript
 // webpack.config.js
 module.exports = {
-  mode: "development",
+  mode: 'development',
 };
 ```
 
@@ -20,7 +20,7 @@ module.exports = {
 ```javascript
 // webpack.config.js
 module.exports = {
-  mode: "production",
+  mode: 'production',
 };
 ```
 
@@ -30,7 +30,7 @@ module.exports = {
 ```javascript
 // webpack.config.js
 module.exports = {
-  mode: "none",
+  mode: 'none',
 };
 ```
 
@@ -42,8 +42,8 @@ output 定义的是打包后的文件应该怎么输出文件。output 需要传
 
 ```javascript
 export default {
-  entry: ["./src/index1.js", "./src/index2.js"],
-  output: { filename: "bundle.js" },
+  entry: ['./src/index1.js', './src/index2.js'],
+  output: { filename: 'bundle.js' },
 };
 ```
 
@@ -52,7 +52,7 @@ export default {
 - `filename`: 输出的文件名，输出的文件名可以是静态的，也可以使用 webpack 内置的模板，内置的模板有：**\[id\]**，**\[name\]**，**\[contenthash\]** 等等。例如输出的文件名我们可以使用通过文件的 hash 值生成文件名可以这样写:
 
   ```javascript
-  filename: "[contenthash].bundle.js";
+  filename: '[contenthash].bundle.js';
   ```
 
   当我们有多个入口文件时，利用模板字符串可以将他们打包成独立的文件。
@@ -138,7 +138,3 @@ output 除了上面三个比较常用的属性还有其他一些更复杂的配�
 - mode 为指定打包的模式，分配`development`，`production`和`none`三种
 - output 则是指定打包后输出的目录，介绍了 output 常用的属性
 - webpack 四类模板字符串的每个模板的作用
-
-文章是`从零开始学习webpack系列`的第二篇，其他章节可以看下面 👇：
-
-[从零开始学习 webpack5.x(一)](articles/webpack/entry.md)
