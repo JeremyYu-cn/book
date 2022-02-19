@@ -23,6 +23,7 @@
   - [entry](articles/webpack/entry.md)
   - [output](articles/webpack/output.md)
   - [loader](articles/webpack/loader.md)
+  - [plugin](articles/webpack/plugin.md)
 
 - 算法
 
