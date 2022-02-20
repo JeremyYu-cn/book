@@ -24,6 +24,7 @@
   - [output](articles/webpack/output.md)
   - [loader](articles/webpack/loader.md)
   - [plugin](articles/webpack/plugin.md)
+  - [HMR&TreeShaking&懒加载](articles/webpack/hmr.md)
 
 - 算法
 
