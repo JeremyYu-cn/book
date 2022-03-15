@@ -94,3 +94,47 @@ Etag / If-None-Match 优先级比较高
 浏览器在前进后退按钮上为了提升历史页面的渲染速度的一种策略。  
 当用户前往新页面时，将当前页面的浏览器 DOM 状态保存到 bfcache 中；  
 当用户点击后退按钮的时候，将页面直接从 bfcache 中加载，节省了网络请求的时间
+
+# 离线缓存 Manifest
+
+利用离线缓存，在用户没有连接网络时，也能正常访问网页。
+
+## 原理
+
+HTML5 的离线存储是基于一个新建的 .appcache 文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像 cookie 一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示
+
+## 使用
+
+创建一个和 html 同名的 manifest 文件，然后在页面头部加入 manifest 属性
+
+```html
+<html manifest="test.manifest"></html>
+```
+
+manifest 语法
+
+- CACHE: 表示需要离线存储的资源列表，由于包含 manifest 文件的页面将被自动离线存储，所以不需要把页面自身也列出来。
+
+- NETWORK: 表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储，所以在离线情况下无法使用这些资源。不过，如果在 CACHE 和 NETWORK 中有一个相同的资源，那么这个资源还是会被离线存储，也就是说 CACHE 的优先级更高。
+
+- FALLBACK: 表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如上面这个文件表示的就是如果访问根目录下任何一个资源失败了，那么就去访问 offline.html 。
+
+```manifest
+CACHE MANIFEST
+    #v0.11
+    CACHE:
+    js/app.js
+    css/style.css
+    NETWORK:
+    resourse/logo.png
+    FALLBACK:
+    / /offline.html
+```
+
+## 更新离线缓存
+
+- 更新 manifest 文件
+- 清除浏览器缓存
+- 通过 javascript 操作
+
+##
