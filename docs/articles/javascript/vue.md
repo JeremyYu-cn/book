@@ -64,3 +64,77 @@ Vue 实例的创建过程，在创建实例的过程中 Vue 会提供一些`钩�
 - 父 destoryed
 
 ## 组件通信
+
+### props/emit
+
+- props
+
+```typescript
+// 子组件 ChildComp
+{
+  props: {
+    test: {
+      type: Object,
+      value: {}
+    }
+  }
+}
+
+// 父组件
+<ChildComp :test="obj">
+```
+
+### 子组件向父组件传值
+
+- emit
+
+```typescript
+// 父组件
+<ChildComp @data="(data) => { console.log(data) }">
+
+// 子组件
+{
+  data: {
+    test: "test"
+  },
+  mounted() {
+    this.$emit("test", { test: this.test })
+  },
+}
+```
+
+### 事件总线 EventBus
+
+通过一个 vue 实例的 $emit/$on 在父/子，非父子之间传递数据
+
+```typescript
+// eventbus.js
+
+import Vue from "vue";
+
+export const EventBus = new Vue();
+```
+
+两个兄弟节点 childA 和 childB 模拟 A 向 B 发送数据
+
+```typescript
+// childA
+import { EventBus } from 'eventbus.js'
+{
+  mounted() {
+    EventBus.$emit("postData", { data: "test" })
+  }
+}
+```
+
+```typescript
+// childB
+import { EventBus } from 'eventbus.js'
+{
+  mounted() {
+    EventBus.$on("postData", (data) => {
+      console.log(data.data) // test
+    })
+  }
+}
+```
