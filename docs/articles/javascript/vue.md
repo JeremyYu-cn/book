@@ -215,6 +215,7 @@ export default {
 
 <script>
 export default {
+  props: ["dataA"],
   inheritAttrs: false,
   mounted() {
     this.$emit("clickA")
@@ -228,6 +229,7 @@ export default {
 
 <script>
 export default {
+  props: ["dataB"]
   inheritAttrs: false,
   mounted() {
     this.$emit("clickB")
