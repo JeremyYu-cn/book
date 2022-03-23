@@ -138,3 +138,105 @@ import { EventBus } from 'eventbus.js'
   }
 }
 ```
+
+当维护一个庞大的项目时，这种方法就会维护起来非常复杂
+
+### Provide/inject
+
+通过依赖注入的方法向子组件传递数据
+
+```typescript
+// 父组件
+provice() {
+  return {
+    data: "test"
+  }
+}
+
+// 子组件
+inject: ["data"]
+```
+
+### ref/$refs
+
+- ref: 在子组件中使用，用于表示此子组件实例
+
+- $refs: 获取所有标记了的子组件实例
+
+```typescript
+// 父组件
+
+<template>
+  <ChildComp ref="child">
+</template>
+
+<script>
+  export default {
+    mounted() {
+      // 获取子组件实例
+      this.$refs.child
+    }
+  }
+</script>
+```
+
+### $parent/$children
+
+- $parent： 用于获取子组件的父组件实例
+
+- $children： 获取父组件中的所有子组件实例
+
+### $attrs/$listen
+
+用于深层次组件嵌套获取父组件属性和事件
+
+```typescript
+// 父组件
+<template>
+  <ChildA dataA="testA" dataB="testB" @clickA="clickA" @clickB="clickB" />
+</template>
+
+<script>
+export default {
+  methods: {
+    clickA() {
+      console.log("trigger A")
+    },
+    clickB() {
+      console.log("trigger B")
+    },
+  }
+}
+
+// 子组件A
+<template>
+  <ChildB v-bind="$attrs" v-on="$listeners" />
+<template>
+
+<script>
+export default {
+  inheritAttrs: false,
+  mounted() {
+    this.$emit("clickA")
+  }
+}
+
+// 子组件B
+<template>
+  <p>{dataB}</p>
+</template>
+
+<script>
+export default {
+  inheritAttrs: false,
+  mounted() {
+    this.$emit("clickB")
+  }
+}
+</script>
+
+</script>
+
+</script>
+
+```
