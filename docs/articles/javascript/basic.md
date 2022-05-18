@@ -44,6 +44,15 @@ var obj1 = new Obj();
 console.log(Obj.prototype.isPrototypeOf(obj1));
 ```
 
+```javascript
+function Obj() {}
+
+var obj1 = new Obj();
+// obj1.constructor 指源对象
+// obj1.__proto__ 指源对象的原型
+console.log(obj1.constructor === obj);
+```
+
 ### this 关键字，new 关键字
 
 this: 执行上下文的一个属性，它指向最后一次调用该方法的对象。判断 this 指向：
