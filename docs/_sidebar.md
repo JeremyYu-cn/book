@@ -30,3 +30,14 @@
 - 算法
 
   - [动态规划](articles/algorithm/dynamicProgramming.md)
+
+- 高等数学
+
+- 线性代数
+
+- 数据结构
+
+  - [线性表](articles/dataStructure/linearList.md)
+
+- 操作系统
+  - [大纲](articles/controlSystem/catalog.md)
