@@ -40,4 +40,12 @@
   - [线性表](articles/dataStructure/linearList.md)
 
 - 操作系统
+
   - [大纲](articles/controlSystem/catalog.md)
+
+- 计算机网络原理
+
+  - [大纲](articles/network/catalog.md)
+
+- 计算机组成原理
+  - [大纲](articles/computerCompose/catalog.md)
