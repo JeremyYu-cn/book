@@ -35,6 +35,8 @@
 
 - 线性代数
 
+  - [大纲](articles/linearMath/catalog.md)
+
 - 数据结构
 
   - [线性表](articles/dataStructure/linearList.md)
