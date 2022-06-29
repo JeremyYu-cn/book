@@ -104,10 +104,6 @@ async function getModules(url, imports = {}) {
 * WebAssembly的概念与基本概念，为什么使用它以及WebAssembly的工作原理。
 * 通过一个例子来了解WebAssembly是如何使用的
 
-往期回顾
-1. 初探WebAssembly
-2. [WebAssembly由浅入深](https://juejin.cn/post/7113818203146420254/)
-
 ### 参考
 
 1. [十分钟搞懂WebAssembly](https://www.jianshu.com/p/e4d002780cf8)

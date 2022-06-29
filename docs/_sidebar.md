@@ -30,12 +30,15 @@
 - WebAssembly
 
   - [初探](articles/webassembly/primary.md)
+  - [由浅入深](articles/webassembly/deeplearn.md)
 
 - 算法
 
   - [动态规划](articles/algorithm/dynamicProgramming.md)
 
 - 高等数学
+
+  - [大纲](articles/higherMath/catalog.md)
 
 - 线性代数
 
