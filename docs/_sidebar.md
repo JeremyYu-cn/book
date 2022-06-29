@@ -27,6 +27,10 @@
   - [HMR&TreeShaking&懒加载](articles/webpack/hmr.md)
   - [优化打包](articles/webpack/proformance.md)
 
+- WebAssembly
+
+  - [初探](articles/webassembly/primary.md)
+
 - 算法
 
   - [动态规划](articles/algorithm/dynamicProgramming.md)
