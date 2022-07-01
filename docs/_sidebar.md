@@ -27,6 +27,9 @@
   - [HMR&TreeShaking&懒加载](articles/webpack/hmr.md)
   - [优化打包](articles/webpack/proformance.md)
 
+- Vite
+  - [从零搭建一个Vue3项目](article/vite/create.md)
+
 - WebAssembly
 
   - [初探](articles/webassembly/primary.md)
