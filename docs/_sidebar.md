@@ -28,7 +28,8 @@
   - [优化打包](articles/webpack/proformance.md)
 
 - Vite
-  - [从零搭建一个Vue3项目](article/vite/create.md)
+
+  - [从零搭建一个 Vue3 项目](article/vite/create.md)
 
 - WebAssembly
 
@@ -50,6 +51,7 @@
 - 数据结构
 
   - [线性表](articles/dataStructure/linearList.md)
+  - [堆](articles/dataStructure/heap.md)
 
 - 操作系统
 
