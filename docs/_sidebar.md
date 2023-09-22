@@ -55,6 +55,7 @@
 - 数据结构
 
   - [线性表](articles/dataStructure/linearList.md)
+  - [堆](articles/dataStructure/heap.md)
 
 - 操作系统
 
