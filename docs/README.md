@@ -6,7 +6,7 @@
 
 # Computer Science Book
 
-用来做的笔记网站，基于 docsify 驱动，部署在 GithubPages。
+This is a note-taking website for Jeremy. And the website is based on Docsify, which is deployed on Github Pages.
 
 本地启动:
 
