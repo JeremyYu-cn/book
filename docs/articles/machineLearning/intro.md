@@ -1,8 +1,8 @@
-### Definition of machine learning
+## Definition of machine learning
 
 > Field of study that gives computers the ability to learn without explicit programmed. Arthur Samuel(1959)
 
-### Machine Learning Algorithms
+## Machine Learning Algorithms
 
 - Supervised learning
 
