@@ -44,6 +44,11 @@
 
   - [Intro](articles/compilation/intro.md)
 
+- Machine Learning
+
+  - [Intro](articles/machineLearning/intro.md)
+  - [Linear Regression](articles/machineLearning/linearRegression.md)
+
 - Higher mathmatics
 
   - [Syllabus](articles/higherMath/catalog.md)
