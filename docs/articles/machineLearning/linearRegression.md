@@ -90,3 +90,5 @@ def compute_cost(x, y, w, b):
     total_cost = (1 / 2 * num) * cost_num
     return total_cost
 ```
+
+![Linear regression plot](https://img.yzmblog.top/MachineLearning/cost_function_plot.jpg)

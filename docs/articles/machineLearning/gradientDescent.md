@@ -29,3 +29,5 @@ $$ b = b - \alpha \frac{\partial{}}{\partial{b}}J(w, b) $$
 
 - If the learning rate is too small then gradient descent will work, but it will be slow.
 - By contrast, if the learning rate is too large then gradient descent may overshoot and never reach minimum.
+
+## Running gradient descent
