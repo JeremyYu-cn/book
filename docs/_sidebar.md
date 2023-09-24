@@ -48,6 +48,7 @@
 
   - [Intro](articles/machineLearning/intro.md)
   - [Linear Regression](articles/machineLearning/linearRegression.md)
+  - [Gradient Descent](articles/machineLearning/gradientDescent.md)
 
 - Higher mathmatics
 
