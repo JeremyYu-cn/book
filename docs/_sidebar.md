@@ -58,6 +58,10 @@
 
   - [Intro](articles/privacy_security/intro.md)
 
+- COMP528 Multi-Core And Multi-Processor Programming
+
+  - [Intro](articles/MC_MP_Programming/intro.md)
+
 - Liner algebra
 
   - [Syllabus](articles/linearMath/catalog.md)
