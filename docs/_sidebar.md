@@ -54,6 +54,10 @@
 
   - [Syllabus](articles/higherMath/catalog.md)
 
+- COMP522 Privacy & Security
+
+  - [Intro] (articles/privacy_security/intro.md)
+
 - Liner algebra
 
   - [Syllabus](articles/linearMath/catalog.md)
