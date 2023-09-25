@@ -56,7 +56,7 @@
 
 - COMP522 Privacy & Security
 
-  - [Intro] (articles/privacy_security/intro.md)
+  - [Intro](articles/privacy_security/intro.md)
 
 - Liner algebra
 
