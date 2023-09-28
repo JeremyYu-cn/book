@@ -37,3 +37,19 @@ Node: What is normally thought of as 'one computer', one motherboard OpenMP to p
 - There are multiple compute node.
 - There may be speciality nodes for specific tasks.
 - There are one or more shared disks.
+
+## Why is my code slow?
+
+### Workload balance
+
+Work should be distributed as evenly as possible
+
+- Load imbalance - If one process is working for longer than the others, then the others will have to wait
+
+- Too much communication - Network is the bottleneck while computation waits
+
+- Resource contention - Two or more processes are asking for the same resource
+
+## The parallel design process -- What is the ideal?
+
+![ideal design](https://img.yzmblog.top/MultiCodeAndMultiProcessor/designProcess.jpg)
