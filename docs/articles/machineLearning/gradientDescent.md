@@ -14,9 +14,9 @@ $$ w = w - \alpha \frac{\partial{}}{\partial{w}}J(w, b) $$
 
 $$ b = b - \alpha \frac{\partial{}}{\partial{b}}J(w, b) $$
 
-!(Gradient Descent formula)[https://img.yzmblog.top/MachineLearning/gradientDescent.jpg]
+![Gradient Descent formula](https://img.yzmblog.top/MachineLearning/gradientDescent.jpg)
 
-!(Gradient Descent formula B)[https://img.yzmblog.top/MachineLearning/gradientDescentB.jpg]
+![Gradient Descent formula B](https://img.yzmblog.top/MachineLearning/gradientDescentB.jpg)
 
 - \alpha means the learning rate, which is between 0 to 1.
 - Derivative term
@@ -24,7 +24,7 @@ $$ b = b - \alpha \frac{\partial{}}{\partial{b}}J(w, b) $$
 
 ### The principle of Gradient Descent algorithm
 
-!(Gradient Descent formula P)[https://img.yzmblog.top/MachineLearning/gradientDescentP.jpg]
+![Gradient Descent formula P](https://img.yzmblog.top/MachineLearning/gradientDescentP.jpg)
 
 ## How to choose Alpha (Learning rate)
 
