@@ -7,9 +7,9 @@
  * @site: book.yzmblog.top / book.yzmblog.top
 -->
 
-- C++
+- Programming language
 
-  - [Introduction](articles/C++/intro.md)
+  - [C++](articles/programming_language/c++.md)
 
 - TypeScript
 
