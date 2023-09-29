@@ -7,6 +7,10 @@
  * @site: book.yzmblog.top / book.yzmblog.top
 -->
 
+- C++
+
+  - [Introduction](articles/C++/intro.md)
+
 - TypeScript
 
   - [Type Manipulation](articles/typescript/typeManipulation.md)
@@ -50,10 +54,6 @@
   - [Linear Regression](articles/machineLearning/linearRegression.md)
   - [Gradient Descent](articles/machineLearning/gradientDescent.md)
 
-- Higher mathmatics
-
-  - [Syllabus](articles/higherMath/catalog.md)
-
 - COMP522 Privacy & Security
 
   - [Intro](articles/privacy_security/intro.md)
@@ -61,6 +61,10 @@
 - COMP528 Multi-Core And Multi-Processor Programming
 
   - [Intro](articles/MC_MP_Programming/intro.md)
+
+- Higher mathmatics
+
+  - [Syllabus](articles/higherMath/catalog.md)
 
 - Liner algebra
 
