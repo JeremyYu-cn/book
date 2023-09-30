@@ -32,3 +32,9 @@ $$ b = b - \alpha \frac{\partial{}}{\partial{b}}J(w, b) $$
 - By contrast, if the learning rate is too large then gradient descent may overshoot and never reach minimum.
 
 ## Running gradient descent
+
+### "Batch" Gradient descent
+
+- Batch: Each step of gredient descent uses all of the training examples
+
+### Feature scaling
