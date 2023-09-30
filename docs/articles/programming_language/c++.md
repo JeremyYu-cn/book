@@ -183,3 +183,41 @@ int main()
   return 0;
 }
 ```
+
+## Array
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int arr[] = {1, 2, 3, 4, 5};
+
+  for (int i : arr)
+  {
+    cout << i << " ";
+  }
+
+  return 0;
+}
+```
+
+### sizeof
+
+- `sizeof` will return the array length of `byte`, not the array length;
+
+```c++
+#include <iostream>
+
+int main() {
+  int arr[] = {1,2,3,4,5};
+  for (int i = 0; i < sizeof(arr) / sizeof(int); i++) {
+    cout << arr[i] << " ";
+  }
+
+  return 0;
+}
+
+```

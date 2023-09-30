@@ -10,6 +10,7 @@
 - Programming language
 
   - [C++](articles/programming_language/c++.md)
+  - [Python](articles/programming_language/python.md)
 
 - TypeScript
 
