@@ -74,3 +74,26 @@ Encryption is important for all levels.
 - Try every possible key until correct translation of the encrypted text into plaintext is obtained;
 - Possible issue: how does cryptanalyst recognize correct plaintext? Imagine it has been compressed before encryption;
 - Main issue: time
+
+### Block vs stream ciphers
+
+- The way in which plaintext is processed
+  - Block cipher: input block of elements is transformed to the output block at once.
+  - Stream cipher: processes the input elements continuously, one element at a time.
+
+### Feistel cipher structure
+
+- Most symmetric block encruption algorithms have a structure proposed by H.Feistel in 1973.
+- The input is divided into the blocks of even numbers of elements.
+- Then multiple stages of substitutions and transpositions is applied.
+- Multiple keys are used at different rounds of the algorithm.
+
+![Feistel cipher structure](image.png)
+
+### Symmetric Encryption Algorithms
+
+Most important symmetric block ciphers
+
+- DES (Data Encryption Standard)
+- 3DES (triple DES)
+- AES (Advenced Encryption Standard)
