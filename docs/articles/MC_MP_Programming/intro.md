@@ -133,3 +133,44 @@ void main() {
 2. Report the minimum of all your runs (seems unfair)
 3. Report the maximum time of all of your runs (also kind of unfair)
    ![runtime](image.png)
+
+## Terminology
+
+- Single-precision floating-point - This represents floating-point numbers in computers using a total of 32 bits. Can also be called FP32. In C this is float.
+
+- Double-precision floating-point - This represents floating-point numbers using 64 bits. Can be called FP62. In C this is double.
+
+- Flop - Abbreviation for floating-point operation. A common unit of measurement of processor speed is flops/s. You usually have to specify single or double precision.
+
+## R_peak
+
+- R_peak is a metric for the upper bound performance of a system
+
+- R_peak = 2 \* w_rec \* r_clock \* n_core \* n_sock
+
+- Addition/Multiplier - For most boards, they typically do both in 1 cycle. Hence 2.
+- W_rec - Vector width (how many FP32)
+- r_clock - Clock speed (the @2.00 GHz bit)
+- N_core - Cores per socket
+- N_sock - Number of sockets per node
+
+- FP32 width = Bit width / 32
+- FP64 width = Bit width / 64
+
+- R_peak unit: Gfloat/s | float/s
+
+// benchmark
+
+## The parallelisation breakdown
+
+- Decomposition(分解\<程序\>) How do you break a problem down into parts that can be executed in parallel?
+  | keywork | explain |
+  | ------- | ------- |
+  | Data parallelism | Splitting the data into discrete chunks and parallelising processing |
+  | Task parallelism | Giving various tasks to be carried out to different threads etc if they are independent |
+  | Domain decomposition | Split the problem into equal pieces |
+  | Pipelining | A factory like approach where each process is different |
+  | Mixed solution | A combination of different approaches |
+
+  - Von Neuman Machine
+    ![Von Neuman machine](image/von_neuman_machine.png)

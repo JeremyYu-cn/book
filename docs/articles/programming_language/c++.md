@@ -221,3 +221,51 @@ int main() {
 }
 
 ```
+
+## Structures
+
+> Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure.
+
+> Unlike an array, a structure can contain many different data types (int, string, bool, etc.).
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+struct Test
+{
+  int myNum;
+  string myString;
+};
+
+int main()
+{
+  Test t1;
+  t1.myNum = 1;
+  t1.myString = "t1";
+
+  cout << t1.myNum << "\n"
+       << t1.myString;
+  return 0;
+}
+```
+
+## Creating References
+
+> A reference variable is a "reference" to an existing variable, and it is created with the & operator
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  string str = "string";
+  string &oldStr = str;
+  str = "newString";
+
+  cout << str + "\n" + oldStr;
+}
+
+```
