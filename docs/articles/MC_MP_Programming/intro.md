@@ -174,3 +174,40 @@ void main() {
 
   - Von Neuman Machine
     ![Von Neuman machine](image/von_neuman_machine.png)
+
+## Scalability
+
+- Speedup - The ratio between the sequential running time of a program, and the time it runs in parallel.
+
+| factors | explain         |
+| ------- | --------------- |
+| t_1     | Time on 1 core  |
+| t_p     | Time on p cores |
+| s_p     |                 |
+
+### Why is important
+
+- This measures how efficiently you are using your resources.
+
+### Scaling
+
+- Strong scaling - Keep the problem size fixed, vary the number of cores and nodes. Ideally there should be a linear reduction in time.
+
+- Weak scaling - Vary the problem size, vary the number of cores and nodes proportionally with the problem size. Ideally there should be a flat line.
+
+## Ahmdal's law
+
+- t_p - The estimated runtime with p processors
+- s_p - The estimated speedup given the serial fraction
+- If processor approach infinity, s_p will become 1/a
+
+## Gustafson's law
+
+- Speedup = a + p(1 - a) = p - a(p -1)
+- a: Fraction of the program
+
+## Correctness
+
+- Deadlock
+- Livelock
+- Race conditions
