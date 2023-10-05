@@ -55,6 +55,14 @@
   - [Linear Regression](articles/machineLearning/linearRegression.md)
   - [Gradient Descent](articles/machineLearning/gradientDescent.md)
 
+- COMP516 Research methods in computer science
+
+  - [Articles](articles/researchMethod/articles.md)
+
+- COMP526 Efficient Algorithm
+
+  - [Lec1](articles/efficientAlgorithm/Lec1.md)
+
 - COMP522 Privacy & Security
 
   - [Intro](articles/privacy_security/intro.md)

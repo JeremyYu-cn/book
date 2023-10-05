@@ -1,0 +1,1 @@
+- Thomas, J.R., Bharti, S.K. and Babu, K.S. (2016) ‘Automatic keyword extraction for text summarization in e-newspapers’, in Proceedings of the International Conference on Informatics and Analytics. Pondicherry India: ACM, pp. 1–8. Available at: https://doi.org/10.1145/2980258.2980442.
