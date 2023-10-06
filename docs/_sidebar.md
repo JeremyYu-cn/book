@@ -63,6 +63,7 @@
 - COMP526 Efficient Algorithm
 
   - [Lec1](articles/efficientAlgorithm/Lec1.md)
+  - [Lec2](articles/efficientAlgorithm/Lec2.md)
 
 - COMP522 Privacy & Security
 

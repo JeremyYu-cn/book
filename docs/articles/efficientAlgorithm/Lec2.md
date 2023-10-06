@@ -133,14 +133,12 @@ elements in the bag have different priorities.
 
 ### Binary heap summary
 
-| Operation | Running Time |
-| --------- | ------------ |
-
-construct(𝐴[1..𝑛])
-max()
-insert(𝑥,𝑝)
-delMax() changeKey(𝑥,𝑝′) isEmpty()
-size()
-𝑂(𝑛)
-𝑂 (1) 𝑂(log 𝑛) 𝑂(log 𝑛) 𝑂(log 𝑛) 𝑂 (1)
-𝑂 (1)
+| Operation          | Running Time |
+| ------------------ | ------------ |
+| construct(𝐴[1..𝑛]) | 𝑂(𝑛)         |
+| max()              | 𝑂 (1)        |
+| insert(𝑥,𝑝)        | 𝑂(log 𝑛)     |
+| delMax()           | 𝑂(log 𝑛)     |
+| changeKey(𝑥,𝑝′)    | 𝑂(log 𝑛)     |
+| isEmpty()          | 𝑂 (1)        |
+| size()             | 𝑂 (1)        |
