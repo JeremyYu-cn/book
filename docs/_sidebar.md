@@ -68,10 +68,13 @@
 - COMP522 Privacy & Security
 
   - [Intro](articles/privacy_security/intro.md)
+  - [Cryptography](articles/privacy_security/elementsOfCryptography.md)
+  - [Public-Key Encryption](articles/privacy_security/PublicKeyEncryption.md)
 
 - COMP528 Multi-Core And Multi-Processor Programming
 
   - [Intro](articles/MC_MP_Programming/intro.md)
+  - [OpenMP](articles/MC_MP_Programming/openMP.md)
 
 - Higher mathmatics
 

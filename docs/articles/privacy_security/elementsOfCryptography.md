@@ -97,3 +97,82 @@ Most important symmetric block ciphers
 - DES (Data Encryption Standard)
 - 3DES (triple DES)
 - AES (Advenced Encryption Standard)
+
+## Advanced Encryption Standard
+
+- Design uses theory of finite fields, a branch of algebra;
+- Every block of 128 bits is presented as 4 by 4 array of bytes
+- Key Expansion: Key -> Round keys
+
+### Steps in AES processing
+
+- Substituiton: each byte is replaced with another based on lookup table
+- ShiftRows: each row is shifted cyclically certain amount of step
+- MixColumns: mixing operation on the columns (defined in terms of computations in a finite field).
+- AddRoundKey- each byte is combined with the round key
+
+### Security of AES
+
+- Considered secure for use for classified information, secret and top secret level;
+- However, there are some concerns related to the algebraic foundations of algorithm – underlying algebraic structure might be used in the attacks in some clever way;
+- The above is for Black Box setting; rather efficient Side Channels attacks have been discovered recently
+
+## Block ciphers modes
+
+Block ciphers may be used in different modes. Most common modes are:
+
+- Electronic Codebook Mode (ECB)
+- Cipher Block Chaining (CBC)
+- Cipher Feedback Mode (CFB)
+
+### Electronic Codebook Mode (ECB)
+
+- Simple mode: each block, say of size 64 bits is encrypted with the same key;
+- For a given block of the plaintext and a given key the result of encryption is unique;
+- If a block of plaintext is repeated several times, the result of encryption contains several copies of the same ciphertext;
+- So, the encryption of the lengthy (regular) messages might be insecure.
+
+### Cipher Block Chaining Mode (CBC)
+
+- CBC mode fixes abovementioned disadvantage of ECB mode: here the same blocks of plaintext may produce different blocks of ciphertext;
+- Simple idea: before encryption a block of the plaintext is XOR’ed with the result of encryption of the previous block;
+- For the first block encryption some initialisation vector (IV) is used;
+- It is better to keep both a key and IV secret.
+
+![CBC Encry and Decry](image-1.png)
+
+### Cipher Feedback Mode (CFB)
+
+- CFB mode may be used to transform a block cipher to the stream cipher;
+- It has a parameter s (the size of transmission unit); if 8-bit characters are used as transmission unit, then s = 8;
+- Shift register of the size equal to the size of the block of the block cipher is used (typically it is 64 bits);
+- Again, an initialisation vector is needed.
+
+![s-bits CFB encryption](image-2.png)
+
+![s-bits CFB decryoruib](image-3.png)
+
+## Key distribution
+
+- From requirements for symmetric encryption:
+
+- “Sender and receiver must have obtained copies of the
+  secret key in a secure way and must keep the key secure”
+
+- Important issue: how to distribute secret keys?
+
+### Manual delivery
+
+For two parties A and B:
+
+- A key could be created by A and delivered physically to B (or vice versa);
+- A key could be created by the third trusted party C and delivered physically to A and B;
+- Difficult to use in wide area distributed systems, when dynamic connections are needed.
+
+### Further techniques
+
+- If A and B have used recently a secret key, one of them could create a new secret key and send it to the partner using old key;
+- Potential problem: once an attacker learned one key, he can disclose all keys afterwards
+- There is a third trusted party C connected by encrypted channels with both A and B. Then C creates a key and distributes it among A and B using encrypted channels;
+
+![Automated key distribution](image-4.png)
