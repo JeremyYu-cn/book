@@ -197,17 +197,63 @@ void main() {
 
 ## Ahmdal's law
 
+- α - Fraction of the program that is inherently serial (in terms of runtime)
 - t_p - The estimated runtime with p processors
 - s_p - The estimated speedup given the serial fraction
 - If processor approach infinity, s_p will become 1/a
 
+t*p = α * t*1 + ((1 - α) * t_1 / p)
+s_p = 1 / α + ((1 - α) / p)
+
+As the number of processors approach ∞, the speedup becomes 1 / α
+
+![Ahmdal's law](image-1.png)
+
+### Example
+
+A program takes 180 seconds to run on a single core, and 100 seconds on 2 cores. What is the (theoretical) maximum speedup?
+
+s_p = t_1 / t_p
+s_p = 1 / (α + (1 - α) / p)
+
+s_p = 180 / 100 = 1 / (α + (1 - α) / p)
+α = 1 / 9
+maximum speedup = 1 / α = 9x
+
+![Example of Ahmdal's law](image-2.png)
+
 ## Gustafson's law
 
-- Speedup = a + p(1 - a) = p - a(p -1)
-- a: Fraction of the program
+- Speedup = α + p(1 - α) = p - α(p -1)
+- a: Fraction of the program that is inherently serial (in terms of runtime)
+
+### Example
+
+- A code has a serial fraction of 0.25. What is the expected speedup on 50 cores according to Gustafson’s Law?
+
+Speedup = α + p(1 - α) = 0.25 + 50 _ (1 - 0.25)
+= 0.25 + (50 _ 0.75)
+= 37.75
+
+- A code has a serial fraction of 0.25. What is the expected speedup on 50 cores according to Ahmdal's law?
+
+s_p = 1 / (α + ((1 - α) / p)) = 1 / (0.25 + (0.75 / 50))
+= 3.77
+
+- A code can calculate the sum of an array of 100,000 floats in 1 second on a single core. If 10% of this code is serial, what size array can this be expected to sum in 1 second on 10 cores?
+
+s_p = α + p(1 - α) = 0.1 + 10(1 - 0.1) = 9.1
 
 ## Correctness
 
 - Deadlock
+
+When two or more tasks wait for each other eg people meet in corridor and cannot pass so they wait for each other to move
+
 - Livelock
+
+When the resolve state for the deadlock causes another deadlock eg people meet in the corridor and cannot pass. So they both move to the same side of the corridor and cannot pass, then swap to the other side of the corridor
+
 - Race conditions
+
+Occurs when a programs behaviour changes depending on the sequence or timing of events outside of the control for the program eg thread scheduling
