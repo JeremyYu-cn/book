@@ -1,8 +1,8 @@
 ## What is the TSP(Traveling Salesman Problem)?
 
-### Cheapest Insertion (最少代价插入)(动态规划)
+### Cheapest Insertion (最少代价插入)(DP ｜ Greedy Approach)
 
-### Farthest Insertion
+### Farthest Insertion (最远插入法)(DP ｜ Greedy Approach)
 
 ## Why should I use OpenMp
 
@@ -25,13 +25,14 @@
 
 - Expressions
 
-| expression                                 | description                                  |
-| ------------------------------------------ | -------------------------------------------- |
-| #pragma omp parallel                       |                                              |
-| #pragma omp for                            |                                              |
-| #pragma omp parallel shared(i)             | shared access acriss akk threads             |
-| #pragma omp parallel private(i)            | Each thread gets it own copy of the variable |
-| #pragma omp parallel firstprivate(i)       |                                              |
-| #pragma omp parallel lastprivate(i)        |                                              |
-| #pragma omp parallel for default(shared)   |                                              |
-| #pragma omp parallel for reduction(+, sum) | performs some operation with the results     |
+| expression                                                  | description                                             |
+| ----------------------------------------------------------- | ------------------------------------------------------- |
+| #pragma omp parallel                                        |                                                         |
+| #pragma omp for                                             | if the data is independent you can use data parallelism |
+| #pragma omp parallel shared(i)                              | shared access acriss akk threads                        |
+| #pragma omp parallel private(i)                             | Each thread gets it own copy of the variable            |
+| #pragma omp parallel firstprivate(i)                        |                                                         |
+| #pragma omp parallel lastprivate(i)                         |                                                         |
+| #pragma omp parallel for default(shared)                    |                                                         |
+| #pragma omp parallel for reduction(+, sum)                  | performs some operation with the results                |
+| #pragma omp parallel schedule<sraruc/dynamic, <chunk size>> |                                                         |
