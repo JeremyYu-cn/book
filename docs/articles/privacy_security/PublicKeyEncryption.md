@@ -102,4 +102,38 @@
   - It is possible to find values e,d,n such that
   - It is easy to calculate
 
-  ![Requirements](image-8.png)
+![Encryption and Decryption](image-9.png)
+
+- It is possible to find values e,d,n such that
+
+![Requirements](image-8.png)
+
+- (key generation) , where k is some number , k < n
+
+- It is easy to calculate and modulo n • It is difficult to determine d given e and n
+
+### Key generation
+
+![Key generation](image-11.png)
+
+### Fermat – Euler Theorem
+
+![Euler Theorem](image-12.png)
+
+### Chinese Remainder Theorem
+
+![Chinese Remainder Theorem](image-13.png)
+
+- Select two prime numbers, p = 17, q = 11;
+- Calculate n = pq = 187;
+- Calculate = 16 x 10 = 160;
+- Select e less than 160 and relatively prime with 160;
+- Lete=7;
+- Determinedsuchthat demod160=1andd<160.The correct value is d = 23, indeed 23 x 7 = 161 = 1 mod 160.
+- Thus KU = {7,187} and KR = {23,187} in that case.
+
+### Security of RSA
+
+- Relies upon complexity of factoring problem:
+- Nobody knows how to factor the big numbers in the reasonable time (say, in the time polynomial in the size of (binary representation of ) the number (unless you go to quantum computing!) ;
+- On the other hand nobody has shown that the fast factoring is impossible;

@@ -70,6 +70,7 @@
   - [Intro](articles/privacy_security/intro.md)
   - [Cryptography](articles/privacy_security/elementsOfCryptography.md)
   - [Public-Key Encryption](articles/privacy_security/PublicKeyEncryption.md)
+  - [DiffieHellmanKeyExchange.md](articles/privacy_security/DiffieHellmanKeyExchange.md)
 
 - COMP528 Multi-Core And Multi-Processor Programming
 

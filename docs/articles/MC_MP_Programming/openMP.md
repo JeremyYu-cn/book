@@ -36,3 +36,10 @@
 | #pragma omp parallel for default(shared)                    |                                                         |
 | #pragma omp parallel for reduction(+, sum)                  | performs some operation with the results                |
 | #pragma omp parallel schedule<sraruc/dynamic, <chunk size>> |                                                         |
+| collapse                                                    |                                                         |
+| reduction                                                   |                                                         |
+
+- To define how threads to use our program
+  - export OMP_NUM_THREADS = 8; ./a.out
+  - #pragma omp parallel num_threads(x)
+  - omp_set_num_threads(x)
