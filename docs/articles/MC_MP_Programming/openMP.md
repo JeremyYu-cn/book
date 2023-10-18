@@ -125,3 +125,52 @@ Partical:
 > I've mentioned before that there are multiple ways to time things in C The best method while using OpenMP is to use omp_get_wtime() You don't have to worry about clock cycles etc
 
 ![Timing](image-10.png)
+
+## Deadlocks
+
+- Low level locks don't always cause deadlocks, it's just more likely to program it poorly
+
+  We need four things:
+
+  1. Initialise the lock
+  2. Set the lock
+  3. Unset the lock
+  4. Destroy the lock
+
+## Critical and Atomic
+
+### Critical
+
+- Can cover multiple statements
+- Is generalised so you can carry out any operation inside, read or write
+
+### Atomic
+
+- Only allows a single statement
+- Is usually specialised to lock one particular type of operation
+
+### Difference
+
+- Explicit workload balancing: We define exactly what each thread should do
+- Implicit workload balancing - We let the software sort out what each thread does
+
+## The fork-joint model
+
+### Environmental variables
+
+- OMP_PROC_BIND - Whichever core you execute a thread on, keep it where it is (choose it randomly, but do not move)
+- OMP_SET_DYNAMIC - OpenMP views your num_threads etc as guidelines, you can make it listen to you by disabling this
+- OMP_PLACES - Lets to hand pick which thread lives on which core, this is very fiddly, probably avoid this
+
+### Barriers
+
+- `#pragma omp barrier` - That's it, you don't need any code underneath it. Really handy if you need to do something that isn't thread safe like file loading
+
+- `#pragma omp single` - Runs on a single thread, then has an implicit barrier. It has an implicit barrier at the end, so the other threads carry on when it's done Really handy if you need to do something that isn't thread safe like file loading.
+
+## Master
+
+> Using the master thread is good if you just need one thread to execute something but don't care about being thread safe
+
+- Lower overhead than single
+- Can be placed inside of a workshare construct like parallel for
