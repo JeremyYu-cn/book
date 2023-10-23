@@ -174,3 +174,34 @@ Partical:
 
 - Lower overhead than single
 - Can be placed inside of a workshare construct like parallel for
+
+## Tasks
+
+- #pragma omp tasks - A task unit that is executed by each thread
+
+## Non-Uniform Memory Access (NUMA)
+
+Non-Uniform Memory Access: Each CPU has the L1, and L2 registers, but shares an L3 register
+
+- Spatial locality - if memory is accessed then it's neighbours are likely to be accessed next (move data as a block, not as it's needed)
+
+- Temporal locality - if a variable is used, it is likely to be needed again soon (keep it in the cache)
+
+### Memory assignment
+
+An array may not be stored in one continuous position in memory, it could be split across several different areas
+
+- The array which we access as if it's all in one memory location, is actually split across CPUs
+  ![Each cpu assign the memory](image-12.png)
+
+  ![Each cpu assign the memory](image-11.png)
+
+## False sharing
+
+The OS doesn't have any idea what we are doing, so it gives a copy of the sum_local cache to each of the threads
+
+## Vector units
+
+## Padding
+
+We can add additional empty elements to an array, this is called padding
