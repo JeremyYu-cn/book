@@ -76,6 +76,7 @@
 
   - [Intro](articles/MC_MP_Programming/intro.md)
   - [OpenMP](articles/MC_MP_Programming/openMP.md)
+  - [MPI](articles/MC_MP_Programming/MPI.md)
 
 - Higher mathmatics
 
