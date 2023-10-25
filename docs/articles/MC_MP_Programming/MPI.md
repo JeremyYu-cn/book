@@ -72,3 +72,35 @@ MPI_STATUS_IGNORE);
 }
 
 ```
+
+### Blocking
+
+> if a MPI_recv call is made the process will continue to wait until it receives that message
+
+### Non-blocking
+
+> Code can continue execution after calling a particular MPI function
+
+| Function  | Description                                                                              |
+| --------- | ---------------------------------------------------------------------------------------- |
+| MPI_Ssend | A guaranteed blocking version of MPI_Send It takes the exact same parameters as MPI_Send |
+| MPI_Send  | Sends a message to another process, will block only if that message is large             |
+| MPI_Isend | Same as MPI_Send but is guaranteed not to block                                          |
+| MPI_Recv  | Receives a message from another process, guaranteed to block                             |
+| MPI_Irecv | Same as MPI_Recv but does not block                                                      |
+
+### Status
+
+- MPI_Status_Ignore - You are not providing any information on the data You could use the MPI_Status struct
+
+- MPI_Source - Which process sent this message?
+- MPI_Tag - What was the tag for this message?
+- MPI_Error - Was there a detectable error with this message? Wrong type etc
+
+### Sending
+
+- MPI_Test - A non-blocking check, assigns the second parameter to true (1) if the MPI_Request is equal to the third parameter
+
+### Receiving
+
+MPI_Waitall - If you have multiple requests as an array, it can provide a non-blocking wait until they are all finished
