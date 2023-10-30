@@ -12,11 +12,11 @@
 ### Basic API
 
 | Function               | Introduction                                                                                        |
-| ---------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
+| ---------------------- | --------------------------------------------------------------------------------------------------- |
 | MPI_Init               | Initialise the MPI environment, it can be passed two variables but for now just leave these as NULL |
 | MPI_Comm_rank          | This tells you what your current rank is for a communicator group                                   |
 | MPI_COMM_WORLD         | This is the default communicator group, has all of the instances currently initialised              |
-| MPI_Finalize           | Ignore the horrible American spelling here, this ends the MPI                                       | environment |
+| MPI_Finalize           | Ignore the horrible American spelling here, this ends the MPI environment                           |
 | MPI_Comm_size          | This returns the number of processes in a specific communicator                                     |
 | MPI_get_processor_name | Returns the name of the actual piece of hardware that is currently running the process              |
 
@@ -104,3 +104,56 @@ MPI_STATUS_IGNORE);
 ### Receiving
 
 MPI_Waitall - If you have multiple requests as an array, it can provide a non-blocking wait until they are all finished
+
+## Cost of MPI messages
+
+### Message size
+
+There are two major factors that affect the time to send a message
+
+The first is message size, it works kind of like the length of a train
+
+There is a limit of how many tracks there are, the more carriages, the longer it takes to completely arrive
+
+### Physical connection
+
+For latency we measure it in microseconds (μs), which is one millionth of a second
+
+### Equation
+
+Packet size = Number of elements X variable size
+
+Time cost = Number of messages \* ((Latency + Packet size) / Bandwidth)
+
+### Summary
+
+This is just an estimate, lots of factors can affect the actual time cost
+
+- The number of switches in the path
+- The physical distance of the interconnection
+- The method of packaging the message for transmission
+
+## Collective communication
+
+Collective communication - All of the processes within a specific group receive a copy of the communication
+
+### MPI_Bcast
+
+> This is used to transmit a message from one process to others in a communicator
+
+| paramaters   | description                                          |
+| ------------ | ---------------------------------------------------- |
+| void\*       | What variable is the data you are sending?           |
+| int          | How many elements of data is this?                   |
+| MPI_Datatype | What MPI_Datatype is the data?                       |
+| int          | What is the rank of the process sending the message? |
+| MPI_Comm     | What communicator are you sending to?                |
+
+Example:
+
+```c
+
+int value = 12345;
+MPI_Bcast(&value, 1, MPI_INT, broadcast_process, MPI_COMM_WORLD)
+
+```

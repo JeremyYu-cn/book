@@ -57,8 +57,8 @@
 
 - COMP516 Research methods in computer science
 
+  - [Lectures](articles/researchMethod/lecture.md)
   - [BaseInfo](articles/researchMethod/baseInfo.md)
-  - [Articles](articles/researchMethod/articles.md)
 
 - COMP526 Efficient Algorithm
 
