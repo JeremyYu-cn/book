@@ -157,3 +157,135 @@ int value = 12345;
 MPI_Bcast(&value, 1, MPI_INT, broadcast_process, MPI_COMM_WORLD)
 
 ```
+
+## MPI_Scatter
+
+MPI_Scatter - A method for splitting and sending an array across a set of processes
+
+Total data
+
+| parameters   | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the full data you are sending? |
+| int          | How many elements is the full data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?             |
+
+Received data
+
+| parameters   | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the full data you are sending? |
+| int          | How many elements is the full data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?             |
+
+Sender data
+
+| parameters | description                                          |
+| ---------- | ---------------------------------------------------- |
+| int        | What is the rank of the process sending the message? |
+| MPI_Comm   | What communicator is this using?                     |
+
+Example:
+
+```c
+#include <stdio.h>
+int rank;
+int broadcast_root = 0;
+int values[] = {1,2,3,4,5,6,7,8,9};
+int local_values[2];
+
+// The rank variable is assigned to 0
+MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+MPI_Scatter(values, 8, MPI_INT, local_values, MPI_INT, 2, broadcast_root, MPI_COMM_WORLD);
+
+printf("[Process: %d]", rank);
+
+for(int i = 0; i < 2; i++) {
+  printf("local values are %d", local_value[i]);
+}
+
+/**
+ * Process 0 local values are x x
+ * .....
+ */
+
+```
+
+## MPI_Scatterv
+
+MPI*Scatterv - An extension of MPI_Scatter that allows you to `specify` how many \_elements* each process receives
+
+Total data
+
+| parameters   | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the full data you are sending? |
+| int          | How many elements is the full data?             |
+| int          | Where will this portion of work start?          |
+| MPI_Datatype | What MPI_Datatype is the full data?             |
+
+Received data
+
+| parameters   | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the full data you are sending? |
+| int          | How many elements is the full data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?             |
+
+Sender data
+
+| parameters | description                                          |
+| ---------- | ---------------------------------------------------- |
+| int        | What is the rank of the process sending the message? |
+| MPI_Comm   | What communicator is this using?                     |
+
+Example:
+
+```c
+
+int displacement = {0, 3, 6, 9};
+int elements_per_process = {3, 3, 3, 2};
+
+int rank;
+int values[] = {1,2,3,4,5,6,7,8,9,10,11};
+int local_value[2];
+
+MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+MPI_Scatterv(values, elements_per_process, displacement, MPI_INT, local_values, MPI_INT, elements_per_process[rank], broadcast_root, MPI_COMM_WORLD);
+
+printf("[Process: %d]", rank);
+
+for(int i = 0; i < 2; i++) {
+  printf("local values are %d", local_value[i]);
+}
+
+// [Process: x], loca
+
+```
+
+## MPI_Gather
+
+Sent data
+
+| parameters   | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the full data you are sending? |
+| int          | How many elements is the full data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?             |
+
+Gathered data
+
+| parameters   | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the full data you are sending? |
+| int          | How many elements is the full data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?             |
+
+Receviver data
+
+| parameters | description                                          |
+| ---------- | ---------------------------------------------------- |
+| int        | What is the rank of the process sending the message? |
+| MPI_Comm   | What communicator is this using?                     |
