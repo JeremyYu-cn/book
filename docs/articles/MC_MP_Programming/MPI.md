@@ -267,6 +267,11 @@ for(int i = 0; i < 2; i++) {
 
 ## MPI_Gather
 
+MPI_Gather - A method for combining data to a single array from a set of smaller arrays in each processes
+
+MPI_Gatherv - An extension of MPI_Gather that allows you to receive different sized
+messages from each process
+
 Sent data
 
 | parameters   | description                                     |
@@ -289,3 +294,101 @@ Receviver data
 | ---------- | ---------------------------------------------------- |
 | int        | What is the rank of the process sending the message? |
 | MPI_Comm   | What communicator is this using?                     |
+
+Example:
+
+```c
+
+
+
+```
+
+### MPI_Allgather
+
+MPI_Allgather - An extension of MPI_Gather that gives each process a copy of the complete array
+
+Sent data
+
+| parameter    | description                                      |
+| ------------ | ------------------------------------------------ |
+| void\*       | What variable is the local data you are sending? |
+| int          | How many elements is the local data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?              |
+
+Gathered data
+
+| parameter    | description                                 |
+| ------------ | ------------------------------------------- |
+| void\*       | Where is the data you receive stored?       |
+| int          | How many elements of data will you receive? |
+| MPI_Datatype | What datatype will that data be?            |
+
+Receiver data
+
+| parameter | description                                            |
+| --------- | ------------------------------------------------------ |
+| int       | What is the rank of the process receiving the message? |
+| MPI_Comm  | What communicator is this using?                       |
+
+MPI_Allgatherv - An extension of MPI_Allgather that allows you to receive different sized messages from each process
+
+Sent data
+
+| parameter    | description                                      |
+| ------------ | ------------------------------------------------ |
+| void\*       | What variable is the local data you are sending? |
+| int          | How many elements is the local data?             |
+| MPI_Datatype | What MPI_Datatype is the full data?              |
+
+Gathered data
+
+| parameter    | description                               |
+| ------------ | ----------------------------------------- |
+| void\*       | Where is the data you receive stored?     |
+| int          | How many elements does each process have? |
+| int          | Where does each portion of work start?    |
+| MPI_Datatype | What datatype will that data be?          |
+
+Receiver data
+
+| parameter | description                                            |
+| --------- | ------------------------------------------------------ |
+| int       | What is the rank of the process receiving the message? |
+| MPI_Comm  | What communicator is this using?                       |
+
+## MPI_Reduce
+
+MPI_Reduce - A method that performs an operation on array that applies to all elements at the same iteration
+
+| parameter    | description                                            |
+| ------------ | ------------------------------------------------------ |
+| void\*       | What variable is the local data you are sending?       |
+| void\*       | Where is the data you receive stored?                  |
+| int          | How many elements is the local data?                   |
+| MPI_Datatype | What MPI_Datatype is the full data?                    |
+| MPI_Op       | What type of operation will be applied?                |
+| int          | What is the rank of the process receiving the message? |
+| MPI_Comm     | What communicator is this using?                       |
+
+| Operation  | Description                                                   |
+| ---------- | ------------------------------------------------------------- |
+| MPI_MIN    | The minimum element for each iteration                        |
+| MPI_MAX    | The maximum element for each iteration                        |
+| MPI_MINLOC | The minimum element for each iteration and the process's rank |
+| MPI_MAXLOC | The maximum element for each iteration and the process's rank |
+| MPI_SUM    | The sum for each iteration                                    |
+| MPI_PROD   | The product for each iteration                                |
+| MPI_LAND   | The logical AND for each iteration                            |
+| MPI_LOR    | The logical OR for each iteration                             |
+| MPI_BAND   | The bitwise AND for each iteration                            |
+| MPI_BOR    | The bitwise OR for each iteration                             |
+
+Example
+
+```c
+
+MPI_Reduce(&local_valyes, &values, 2, MPI_INT, MPI_SUM, root_Rank, MPI_COMM_WORLD);
+
+```
+
+MPI_Allreduce - It is quite obvious how this works, it just sends out distributes that final array
