@@ -392,3 +392,186 @@ MPI_Reduce(&local_valyes, &values, 2, MPI_INT, MPI_SUM, root_Rank, MPI_COMM_WORL
 ```
 
 MPI_Allreduce - It is quite obvious how this works, it just sends out distributes that final array
+
+## MPI_Sendrecv
+
+MPI_Sendrecv - This method functions as a combination of MPI_Send and MPI_Recv, both processes call the same line of code.
+
+Sender parameters
+
+| parameter    | description                                |
+| ------------ | ------------------------------------------ |
+| void\*       | What variable is the data you are sending? |
+| int          | How many elements is the sent data?        |
+| MPI_Datatype | What MPI_Datatype is the sent data?        |
+| int          | Which process will receive the data?       |
+| int          | What tag is used for the sent data?        |
+
+Receiver parameters
+
+| parameter    | description                                          |
+| ------------ | ---------------------------------------------------- |
+| void\*       | Where is the data you receive stored?                |
+| int          | How many elements of data will you receive?          |
+| MPI_Datatype | What datatype will that data be?                     |
+| int          | What is the rank of the process sending the message? |
+| int          | What tag is expected for the sent message?           |
+
+Shared parameters
+
+| parameter  | description                                     |
+| ---------- | ----------------------------------------------- |
+| MPI_Comm   | What communicator is this using?                |
+| MPI_Status | What status is reported to the sending process? |
+
+Example:
+
+```c
+
+
+MPI_Sendrecv(&result, 1, MPI_INT, 1, 0, &result, 1, MPI_INT, 0, 0, MPI_COMM_WORLD_ MPI_STATUS_IGNORE);
+
+// equals
+
+if(rank == 0){
+    MPI_Send(&result, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+}else{
+    MPI_Recv(&result, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+}
+
+```
+
+### MPI_Sendrecv_replace
+
+MPI_Sendrecv_replace - This method uses a single send and receive variable. This is good for just passing a value between two processes
+
+Example
+
+```c
+
+MPI_Sendrecv_replace(&result, 1, MPI_INT, 1, 0, 0, 0, MPI_COMM_WORLD_ MPI_STATUS_IGNORE);
+
+```
+
+## MPI Communicators
+
+### MPI_Comm_split
+
+| parameter | description                                                       |
+| --------- | ----------------------------------------------------------------- |
+| MPI_Comm  | What is the communicator you are splitting?                       |
+| int       | What is the 'color' of your group? Which is the tag for the group |
+| int       | What is the rank the process will get in the new communicator?    |
+| MPI_Comm  | What is the new communicator?                                     |
+
+Example
+
+```c
+#include<mpi.h>
+
+int global_rank, sub_rank, local_key;
+MPI_Comm sub_communicator;
+
+if(global_rank % 2 == 0){
+  color = 1;
+  local_key = global_rank;
+} else {
+  color = 2;
+  local_key = global_rank - (MPI_comm_size / 2);
+}
+
+MPI_Comm_split(MPI_COMM_WORLD, color, local_key, &sub_communicator);
+MPI_Comm_rank(MPI_COMM_WORLD, global_rank);
+MPI_Comm_rank(sub_communicator, sub_rank);
+
+printf("My MPI_COMM_WORLD rank is %d, but in comm %d my rank is %d\n", global_rank, color, sub_rank);
+
+```
+
+### MPI_Comm_free
+
+MPI_Comm_free - A method to remove a communicator from memory
+
+```c
+
+MPI_Comm_free(&sub_communicator);
+
+```
+
+### OpemMP and MPI
+
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+
+// There are file loading and calculation functions
+int main(void){
+  MPI_Init(NULL, NULL);
+  int rank;
+  int i = 0;
+  int global_values[8];
+  int local_values[2];
+  int global_calculationed[8]; int local_calculationed[2];
+
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  if(rank == 0){
+    global_values = load_global_values("Filename.txt");
+    printf("[Process %d] The global values are loaded.\n", rank);
+  }
+
+  MPI_Scatter(global_values, 8, MPI_INT, local_values, MPI_INT, 2, 0, MPI_COMM_WORLD);
+
+  #pragma omp parallel for shared(local_values, local_calculationed) firstprivate(i)
+    for(i = 0; i < 2; i++){
+      local_calculationed[i] = calculation(local_values[i]);
+      printf("[Process %d] %d results in %d\n", rank, local_values[i], local_calculationed[i]);
+    }
+
+  MPI_Gather(local_calculationed, 2, MPI_INT, global_calculationed, 2, MPI_INT, 0, MPI_COMM_WORLD);
+
+  if(rank == 0){
+    printf("[Process %d] Calculated values are ", rank);
+    for (int i = 0; i < 8; i++)
+      printf("%d ", global_calculationed[i]);
+    printf("\n");
+  }
+
+  MPI_Finalize();
+
+}
+
+```
+
+## MPI_Wtime
+
+MPI_Wtime - This method returns the amount of time taken by the process that calls that function
+
+```c
+
+double start, end, time_taken;
+double start = MPI_Wtime();
+
+// Do something here
+
+double end = MPI_Wtime();
+time_taken = end - start;
+
+printf("[Process %d] The time taken is %.2fs.\n", rank, time_taken);
+
+```
+
+## MPI_Probe
+
+Stored locally
+
+| parameter                                        | description                                     |
+| ------------------------------------------------ | ----------------------------------------------- |
+| void\*                                           | What variable is the data you are sending?      |
+| int                                              | How many elements is the sent data?             |
+| MPI_Datatype What MPI_Datatype is the sent data? |
+| int                                              | Which process is sending the data?              |
+| int                                              | What tag is used for the sent data?             |
+| MPI_Comm                                         | What communicator is this using?                |
+| MPI_Status                                       | What status is reported to the sending process? |
