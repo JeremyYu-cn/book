@@ -566,12 +566,12 @@ printf("[Process %d] The time taken is %.2fs.\n", rank, time_taken);
 
 Stored locally
 
-| parameter                                        | description                                     |
-| ------------------------------------------------ | ----------------------------------------------- |
-| void\*                                           | What variable is the data you are sending?      |
-| int                                              | How many elements is the sent data?             |
-| MPI_Datatype What MPI_Datatype is the sent data? |
-| int                                              | Which process is sending the data?              |
-| int                                              | What tag is used for the sent data?             |
-| MPI_Comm                                         | What communicator is this using?                |
-| MPI_Status                                       | What status is reported to the sending process? |
+| parameter    | description                                     |
+| ------------ | ----------------------------------------------- |
+| void\*       | What variable is the data you are sending?      |
+| int          | How many elements is the sent data?             |
+| MPI_Datatype | What MPI_Datatype is the sent data?             |
+| int          | Which process is sending the data?              |
+| int          | What tag is used for the sent data?             |
+| MPI_Comm     | What communicator is this using?                |
+| MPI_Status   | What status is reported to the sending process? |
