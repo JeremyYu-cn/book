@@ -32,3 +32,115 @@ Directive
 - Uses compiler flags to describe how the parallelism should be done
 - Portable
 - Descriptive - User 'describes', guides, the compiler but the compiler itself makes the final decision
+
+## OpenACC
+
+To address it's issues OpenACC had 3 major design pillars
+
+1. Simplicity - OpenCL can be quite tricky to learn
+   OpenCL requires several steps to get a kernel to run on an accelerator
+
+   - Declare variables for the input
+   - Declare variables for the GPU buffer
+   - Create a reference to the accelerator
+   - Create a command queue for that accelerator
+   - Initialise the buffer
+   - Carry out the work
+   - Free the memory
+
+2. Power - OpenCL has poor support for crypto and machine learning
+
+   - Applications developed using OpenACC have significant speed increases, especially considering the amount of code required
+
+3. Portability - There was no dominant manufacturer so supporting a variety of accelerators was important
+
+   A directive is just giving the compiler general instructions
+   Compiler developers have much more freedom to figure out exactly how best to program that
+
+   - Nvidia has pledged support for all of it's boards
+   - AMD has provided support so far, but refuses to guarantee this will continue
+   - Intel has said it will in the future
+
+![OpenACC cycle](image-13.png)
+
+`#pragma acc kernels` - Automatically distribute loops across accelerator threads
+
+Example for express parallelism
+
+```c
+
+#pragma acc kernels {
+  for (int i = 0; i < N; i++) {
+    x[i] = i;
+    y[i] = i * i;
+  }
+
+  for (int i = 0; i < N; i++) {
+    z[i] = x[i] * y[i];
+  }
+}
+
+```
+
+`#pragma acc parallel` - Explicitly state that this portion of code should be parallelised. Works for loops or segments of code
+
+Example
+
+```c
+
+#pragma acc parallel {
+  for (int i = 0 ; i < N; i++) {
+    x[i] = i;
+    y[i] = i * i;
+  }
+}
+
+```
+
+`#pragma acc loop` - Explicitly state that this portion of code should be workload shared in a similar way to OpenMP
+
+Example
+
+```c
+
+
+#pragma acc loop {
+  for (int i = 0 ; i < N; i++) {
+    x[i] = i;
+    y[i] = i * i;
+  }
+}
+
+```
+
+`#pragma acc data` - This sets up data permanence on the accelerator, this is regardless of threads being created and destroyed
+
+```c
+
+#pragma acc data {
+  #pragma acc parallel {
+    for (int i = 0 ; i < N; i++) {
+      x[i] = i;
+      y[i] = i * i;
+    }
+  }
+}
+
+```
+
+`copy` - Specify what data must go to the accelerator, this then returns
+
+```c
+
+#pragma acc data copy (x, y)
+#pragma acc parallel {
+  for (int i = 0 ; i < N; i++) {
+    x[i] = i;
+    y[i] = i * i;
+  }
+}
+
+```
+
+`copyout` - This tells the compiler the data should be returned, if it isn't specified as copied in then it creates a variable on the accelerator
+`create` - This creates a local variable on the accelerator, this is good for temporary variables
