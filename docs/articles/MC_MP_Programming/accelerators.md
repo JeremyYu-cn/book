@@ -144,3 +144,50 @@ Example
 
 `copyout` - This tells the compiler the data should be returned, if it isn't specified as copied in then it creates a variable on the accelerator
 `create` - This creates a local variable on the accelerator, this is good for temporary variables
+
+## OpenCL
+
+Omputational intensity - The proportion of mathematical operations to unique memory operations.
+
+Maths isquite fast, floating point muktiplication takes about clock cycles
+Memory is quite slow, loading from RAM takes arounds.
+
+| Mathematical operations    | Unique memory operations |
+| -------------------------- | ------------------------ |
+| a[i] = b[i] + c[i]         | 1: 3 3:300               |
+| a[i] = b[i] + c[i] \_ d[i] | 2: 4 6:400               |
+| a[i]++                     | 1: 2 3:200               |
+| a[i] += a[i] \_ a[i]       | 2: 1 6:100               |
+
+### OpenCL structure
+
+1. Complication
+
+- Create a program
+- Compile
+- Create the kernels
+
+2. Setup
+
+- Get the devices and platform
+- Create a context
+- Create a command queue
+
+3. Runtime
+
+- Create memory objects
+- Copy data to the GPT
+- Set the kernel arguments
+- Execute the kernels
+- Copu the data bakc from the GPU
+- Wait for the commands to finish
+
+## How do we use GPUs
+
+### Use of dimensions
+
+Work item - A thread associated with a particular elements of the computer
+
+Global dimensions - How many dimensions does the data have
+
+Local dimensions - A smallerworkable chunk of the global dimension
