@@ -191,3 +191,28 @@ Work item - A thread associated with a particular elements of the computer
 Global dimensions - How many dimensions does the data have
 
 Local dimensions - A smallerworkable chunk of the global dimension
+
+## Why should we focus on GPUs?
+
+- The power of GPUs is growing at a much faster rate than CPUs
+
+- The speed of improvement is impressive, it is likely that languages will start adding dedicated support for GPUs by default
+
+- There are two major factors stopping widespread adoption
+
+  1. The reconfiguring time is still very high and variable (1 hour - 30 hours)
+  2. The size of the programmable arrays is still quite limited
+
+- Field Programmable Gate Arrays (FPGA)
+- Configurable Logic Blocks (CLB)
+- AI Accelerator (AIA)
+- Cryptographic Accelerator (CA)
+
+## CUDA
+
+It's likely to be the language you will program in if you go into heavy HPC work So why might somebody choose this over OpenCL?
+
+- There are specific read and write libraries that are very efficient
+- There is a software caching mode that handles data transfer
+- There is a wide variety of libraries
+- The development tools are incredibly well done
