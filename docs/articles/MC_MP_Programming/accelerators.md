@@ -216,3 +216,83 @@ It's likely to be the language you will program in if you go into heavy HPC work
 - There is a software caching mode that handles data transfer
 - There is a wide variety of libraries
 - The development tools are incredibly well done
+
+## GPU Computing Using CUDA
+
+### What is a GPU
+
+- Special type of co-processor to accelerate graphics computation
+- Contains many low-powered cores
+- Has a special memory architecture
+
+### GPGPU
+
+- Use of GPR to perform things other than graphical computations
+  - Bioinformatics
+  - Cryptography
+  - Neural Networks
+  - AI
+    -Image Processing
+- First occurred as "abuse/misuse" of graphical APIs
+- BrookGPU was an early and influential framework
+
+### CUDA Basics
+
+- Architecture
+
+  - Host -CPU
+  - Device -GPU
+  - Program and Data is passed along PCIe
+  - K Kultiprocessors
+    GLobal memory divided into memory blocks of b size
+
+- Memory Model
+
+  - Host and Device access global memory (Unifed memory?)
+  - Shared memory accessed only by threads on that MP (multi processes)
+    - Private per-thread memory is allocated on shared memory
+    - Features of ...
+
+- Programming Model
+  - A `kernel` is a program written for a GPU. We write the program in CUDA C, and gives the instructions for one thread. Then we run many threads on the GPU at the same time
+  - Each thread follows the same instructions - they execute in lock step
+  - Threads are organized into Grids, Warps and Blocks
+
+### Grids Blocks and Warps
+
+- The `Grid` of threads represents all threads launched on the GPU
+- The Grid is divided in to Blocks
+  - You specify the size
+  - Blocks are resident on one SM(multiple of warp size)
+  - Threads within a block can communicate via shared memory
+  - Threads in a block
+- Blocks are divided into Warps
+
+### Accessing Memory
+
+- We access memory in CUDA C like we would do in a C array
+
+  - However we should make it coalesce
+  - To use a value in global memory, it must be featched from global and placed in shared memory
+  - This causes a whole block to be fetched from global into shared - potentially expensive
+
+- When we access shared mempry, we can access b distinct banks in parallel
+  - otherwise it can cause a bank conflick and will serialise
+
+### Sample Programs to Demonstrate CUDA
+
+Example:
+
+```c
+
+// Kernel definition
+// CUDA Kernel Device code
+
+__global__ void vectorAdd(const float *A, const float *B, float *C, int numElements) {
+  int i = blockDim.x * blockIdx.x + threadIdx.x;
+  if(i < numElements) {
+    C[i] = A[i] + B[i] + 0.0f
+  }
+}
+
+```
