@@ -296,3 +296,226 @@ __global__ void vectorAdd(const float *A, const float *B, float *C, int numEleme
 }
 
 ```
+
+## CUDA Recipe
+
+CUDA Recipe - This is the name of the standard approach to carrying out this task
+
+### Process of CUDA Recipe
+
+1. Convert the code into a serial kernel
+
+   - The separated method could be ran on another computer
+
+   ```c
+     int *calculate(int *a, int *b, int *c) {
+      for(i = 0; i < 40; i++){
+          c[i] = a[i] + b[i];
+      }
+      return c;
+     }
+     int main() {
+        int i;
+        int *a = (int *)malloc(40 * sizeof(int));
+        int *b = (int *)malloc(40 * sizeof(int));
+        int *c = (int *)malloc(40 * sizeof(int));
+        // Read a file to assign a and b values
+        c = calculate(a, b, c);
+        free(a);
+        free(b);
+        free(c);
+     }
+   ```
+
+2. Make it a CUDA kernel by adding "**global**"
+
+   - Adding **global** above a function turns it into a CUDA function
+
+   ```c
+    __global__
+    int *calculate(int *a, int *b, int *c) {
+      for(i = 0; i < 40; i++){
+          c[i] = a[i] + b[i];
+      }
+      return c;
+    }
+    int main() {
+        int i;
+        int *a = (int *)malloc(40 * sizeof(int));
+        int *b = (int *)malloc(40 * sizeof(int));
+        int *c = (int *)malloc(40 * sizeof(int));
+        // Read a file to assign a and b values
+        c = calculate(a, b, c);
+        free(a);
+        free(b);
+        free(c);
+    }
+   ```
+
+3. Replace loops in the CUDA kernel (thread id indexing)
+
+   - Even though there is only one element being altered by each thread, the whole array must be returned
+
+   ```c
+     __global__
+     int *calculate(int *a, int *b, int *c){
+      int thread_id = (blockIdx.x * blockDim.x) + threadIdx.x
+      for(i = 0; i < 40; i++){
+        c[thread_id] = a[thread_id] + b[thread_id];
+      }
+      return c;
+     }
+     int main() {
+       int i;
+       int *a = (int *)malloc(40 * sizeof(int));
+       int *b = (int *)malloc(40 * sizeof(int));
+       int *c = (int *)malloc(40 * sizeof(int));
+       // Read a file to assign a and b values
+       c = calculate(a, b, c);
+       free(a);
+       free(b);
+       free(c);
+     }
+   ```
+
+4. Handle problem sizes smaller than the thread number
+
+   - Adding the condition seems fairly obvious
+   - Debugging parallel code can be quite tricky to do
+
+   ```c
+     __global__
+     int *calculate(int *a, int *b, int *c){
+       int thread_id = (blockIdx.x * blockDim.x) +
+       threadIdx.x;
+       if(thread_id < 40)
+          c[thread_id] = a[thread_id] + b[thread_id];
+       return c;
+     }
+
+
+   ```
+
+5. Allocate device memory
+
+   ```c
+
+   __global__
+   int *calculate(int *a, int *b, int *c){
+       int thread_id = (blockIdx.x * blockDim.x) + threadIdx.x;
+       if(thread_id < 40)
+           c[thread_id] = a[thread_id] + b[thread_id];
+       return c;
+   }
+   int main() {
+       int i;
+       int *device_a, *device_b, *device_c;
+       int *a = (int *)malloc(40 * sizeof(int));
+       int *b = (int *)malloc(40 * sizeof(int));
+       int *c = (int *)malloc(40 * sizeof(int));
+       // set up device memory
+       cudaMalloc(&device_a, 40 * sizeof(int));
+       cudaMalloc(&device_b, 40 * sizeof(int));
+       cudaMalloc(&device_c, 40 * sizeof(int));
+       // Read a file to assign a and b values
+       c = calculate(a, b, c);
+       free(a);
+       free(b);
+       free(c);
+   }
+
+   ```
+
+6. Copy data from host to device
+
+   ```c
+   __global__
+   int *calculate(int *a, int *b, int *c){
+       int thread_id = (blockIdx.x * blockDim.x) + threadIdx.x;
+       if(thread_id < 40)
+           c[thread_id] = a[thread_id] + b[thread_id];
+       return c;
+   }
+
+   int main() {
+      int i;
+      int *device_a, *device_b, *device_c;
+      int *a = (int *)malloc(40 * sizeof(int));
+      int *b = (int *)malloc(40 * sizeof(int));
+      int *c = (int *)malloc(40 * sizeof(int));
+      // set up device memory
+      cudaMalloc(&device_a, 40 * sizeof(int));
+      cudaMalloc(&device_b, 40 * sizeof(int));
+      cudaMalloc(&device_c, 40 * sizeof(int));
+      // Read a file to assign a and b values
+      // copy to device
+      cudaMemcpy(device_a, a, 40 * sizeof(int), cudaMemcpyHostToDevice);
+      cudaMemcpy(device_b, b, 40 * sizeof(int), cudaMemcpyHostToDevice);
+      c = calculate(a, b, c);
+      free(a);
+      free(b);
+      free(c);
+   }
+
+   ```
+
+7. Call the CUDA kernel
+
+   - Adding <<<x, y>>> between the function name and parameters sends it to the GPU
+   - x - Number of blocks to use
+   - y - Number of threads per block
+
+   ```c
+      __global__
+      int *calculate(int *a, int *b, int *c){
+          int thread_id = (blockIdx.x * blockDim.x) + threadIdx.x;
+          if(thread_id < 40)
+              c[thread_id] = a[thread_id] + b[thread_id];
+          return c;
+      }
+      int main() {
+        int i;
+        int *device_a, *device_b, *device_c;
+        int *a = (int *)malloc(40 * sizeof(int));
+        int *b = (int *)malloc(40 * sizeof(int));
+        int *c = (int *)malloc(40 * sizeof(int));
+        // set up device memory
+        cudaMalloc(&device_a, 40 * sizeof(int));
+        cudaMalloc(&device_b, 40 * sizeof(int));
+        cudaMalloc(&device_c, 40 * sizeof(int));
+        // Read a file to assign a and b values
+        // copy to device
+        cudaMemcpy(device_a, a, 40 * sizeof(int), cudaMemcpyHostToDevice);
+        cudaMemcpy(device_b, b, 40 * sizeof(int), cudaMemcpyHostToDevice);
+        c = calculate<<<5, 8>>>(a, b, c);
+        free(a);
+        free(b);
+        free(c);
+      }
+   ```
+
+8. Copy data from device to host
+
+   ```c
+    int main() {
+      int i;
+      int *device_a, *device_b, *device_c;
+      int *a = (int *)malloc(40 * sizeof(int));
+      int *b = (int *)malloc(40 * sizeof(int));
+      int *c = (int *)malloc(40 * sizeof(int));
+      // set up device memory
+      cudaMalloc(&device_a, 40 * sizeof(int));
+      cudaMalloc(&device_b, 40 * sizeof(int));
+      cudaMalloc(&device_c, 40 * sizeof(int));
+      // Read a file to assign a and b values
+      // copy to device
+      cudaMemcpy(device_a, a, 40 * sizeof(int), cudaMemcpyHostToDevice);
+      cudaMemcpy(device_b, b, 40 * sizeof(int), cudaMemcpyHostToDevice);
+      c = calculate<<<5, 8>>>(a, b, c);
+      // copy results back
+      cudaMemcpy(c, device_c, 40 * sizeof(int), cudaMemcpyDeviceToHost);
+      free(a);
+      free(b);
+      free(c);
+    }
+   ```
