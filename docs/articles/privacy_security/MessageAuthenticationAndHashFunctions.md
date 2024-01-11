@@ -28,7 +28,7 @@
 
 - “One-way” in the name refers to the property of such functions: they are easy to compute, but their reverse functions are very difficult to compute.
 
-![Methods of authentication using hashes](image-21.png)
+![Methods of authentication using hashes](./images/image-21.png)
 
 ### Hash function requirements
 
@@ -54,4 +54,4 @@
 - The input is processed in 512-bit blocks;
 - Each bit of the output is computed using all bits of the input.
 
-![SHA-1 general scheme](image-22.png)
+![SHA-1 general scheme](./images/image-22.png)

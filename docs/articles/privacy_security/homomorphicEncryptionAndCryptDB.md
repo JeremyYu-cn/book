@@ -31,7 +31,7 @@
 
 ### Onion-layered SQL-aware encryption
 
-![Onion-layered SQL-aware encryption](image-23.png)
+![Onion-layered SQL-aware encryption](./images/image-23.png)
 
 - All data in CrypDB can be encrypted using several layers of encryption;
   - Each layer may “release” some information about encrypted value

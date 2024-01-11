@@ -5,7 +5,7 @@
   - One key is used for encryption (usually publicly known, public key);
   - Another key is used for decryption (usually private, or secret key)
 
-![Public-key encryption](image-5.png)
+![Public-key encryption](./images/image-5.png)
 
 ### Essential steps in communications using public-key encryption
 
@@ -34,7 +34,7 @@
 - Digital signature (authentication): the sender “signs” the message with its private key; a receiver can verify the identity of the sender using sender’s public key.
 - Key exchange: both sender and receiver cooperate to exchange a (session) key.
 
-![Using public-key systems](image-6.png)
+![Using public-key systems](./images/image-6.png)
 
 - Diffie and Hellman conditions
   - "Easy part"
@@ -91,7 +91,7 @@
 - RSA is a block cipher in which the plaintext and ciphertext are integers between 0 and n-1, where n is some number;
 - Every integer can be represented, of course, as a sequence of bits;
 
-![Encry ption and decryption in RSA](image-7.png)
+![Encry ption and decryption in RSA](./images/image-7.png)
 
 ### Private and Public keys in RSA
 
@@ -102,11 +102,11 @@
   - It is possible to find values e,d,n such that
   - It is easy to calculate
 
-![Encryption and Decryption](image-9.png)
+![Encryption and Decryption](./images/image-9.png)
 
 - It is possible to find values e,d,n such that
 
-![Requirements](image-8.png)
+![Requirements](./images/image-8.png)
 
 - (key generation) , where k is some number , k < n
 
@@ -114,15 +114,15 @@
 
 ### Key generation
 
-![Key generation](image-11.png)
+![Key generation](./images/image-11.png)
 
 ### Fermat – Euler Theorem
 
-![Euler Theorem](image-12.png)
+![Euler Theorem](./images/image-12.png)
 
 ### Chinese Remainder Theorem
 
-![Chinese Remainder Theorem](image-13.png)
+![Chinese Remainder Theorem](./images/image-13.png)
 
 - Select two prime numbers, p = 17, q = 11;
 - Calculate n = pq = 187;

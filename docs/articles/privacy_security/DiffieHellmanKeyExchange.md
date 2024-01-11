@@ -16,20 +16,20 @@
 
 - Security of DH algorithm relies upon difficulty of computing discrete logarithms;
 
-![Discrete logarithms 1](image-14.png)
+![Discrete logarithms 1](./images/image-14.png)
 
-![Discrete logarithms 1](image-15.png)
+![Discrete logarithms 1](./images/image-15.png)
 
 ## Diffie-Hellman key exchange
 
-![Diffie-Hellman key exchange](image-16.png)
+![Diffie-Hellman key exchange](./images/image-16.png)
 
-![The secret key](image-17.png)
+![The secret key](./images/image-17.png)
 
-![The process of Deffie-Hellman Key Exchange](image-18.png)
+![The process of Deffie-Hellman Key Exchange](./images/image-18.png)
 
 ### How to break HD key exchange?
 
-![How to break HD key exchange](image-19.png)
+![How to break HD key exchange](./images/image-19.png)
 
-![Example](image-20.png)
+![Example](./images/image-20.png)

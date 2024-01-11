@@ -88,7 +88,7 @@ Encryption is important for all levels.
 - Then multiple stages of substitutions and transpositions is applied.
 - Multiple keys are used at different rounds of the algorithm.
 
-![Feistel cipher structure](image.png)
+![Feistel cipher structure](./images/image.png)
 
 ### Symmetric Encryption Algorithms
 
@@ -139,7 +139,7 @@ Block ciphers may be used in different modes. Most common modes are:
 - For the first block encryption some initialisation vector (IV) is used;
 - It is better to keep both a key and IV secret.
 
-![CBC Encry and Decry](image-1.png)
+![CBC Encry and Decry](./images/image-1.png)
 
 ### Cipher Feedback Mode (CFB)
 
@@ -148,9 +148,9 @@ Block ciphers may be used in different modes. Most common modes are:
 - Shift register of the size equal to the size of the block of the block cipher is used (typically it is 64 bits);
 - Again, an initialisation vector is needed.
 
-![s-bits CFB encryption](image-2.png)
+![s-bits CFB encryption](./images/image-2.png)
 
-![s-bits CFB decryoruib](image-3.png)
+![s-bits CFB decryoruib](./images/image-3.png)
 
 ## Key distribution
 
@@ -175,4 +175,4 @@ For two parties A and B:
 - Potential problem: once an attacker learned one key, he can disclose all keys afterwards
 - There is a third trusted party C connected by encrypted channels with both A and B. Then C creates a key and distributes it among A and B using encrypted channels;
 
-![Automated key distribution](image-4.png)
+![Automated key distribution](./images/image-4.png)

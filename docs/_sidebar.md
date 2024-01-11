@@ -62,7 +62,7 @@
 
 - COMP526 Efficient Algorithm
 
-  - [Lec1](articles/efficientAlgorithm/Lec1.md)
+  - [Intro](articles/efficientAlgorithm/Intro.md)
   - [Lec2](articles/efficientAlgorithm/Lec2.md)
 
 - COMP522 Privacy & Security
@@ -70,7 +70,12 @@
   - [Intro](articles/privacy_security/intro.md)
   - [Cryptography](articles/privacy_security/elementsOfCryptography.md)
   - [Public-Key Encryption](articles/privacy_security/PublicKeyEncryption.md)
-  - [DiffieHellmanKeyExchange.md](articles/privacy_security/DiffieHellmanKeyExchange.md)
+  - [DiffieHellmanKeyExchange](articles/privacy_security/DiffieHellmanKeyExchange.md)
+  - [ElementsOfCryptography](articles/privacy_security/elementsOfCryptography.md)
+  - [HomomorphicEncryptionAndCryptDB](articles/privacy_security/homomorphicEncryptionAndCryptDB)
+  - [MessageAuthenticationAndHashFunctions](articles/privacy_security/MessageAuthenticationAndHashFunctions.md)
+  - [Steganography](articles/privacy_security/Steganography.md)
+  - [Review](articles/privacy_security/Review.md)
 
 - COMP528 Multi-Core And Multi-Processor Programming
 

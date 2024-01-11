@@ -14,7 +14,7 @@
 - Steganography, derived from “covered writing” in Greek
 - It includes the methods of secure communications that conceal the very existence of the message
 
-![Steganography in digital world](image-24.png)
+![Steganography in digital world](./images/image-24.png)
 
 ## Digital watermarking
 
@@ -31,12 +31,12 @@
 
 Taking the second letter in each word gives the message: _Pershing sails from NY June 1_
 
-## Images as cover objects
+## ./images/images as cover objects
 
-- Least significant bits(LSB) used to store characteristics of particular pixels of an image (cover object) are modified to store a message
-- Colours and lightness of pixels of obtained image may differ slightly from original cover image, but both images looks identically to human eye.
+- Least significant bits(LSB) used to store characteristics of particular pixels of an ./images/image (cover object) are modified to store a message
+- Colours and lightness of pixels of obtained ./images/image may differ slightly from original cover ./images/image, but both ./images/images looks identically to human eye.
 - Easy to implement, but not too robust methods
-- Transformations of images may easily destroy the message (watermark)
+- Transformations of ./images/images may easily destroy the message (watermark)
 
 ## Advantages and disadvantages of LSB
 
@@ -49,7 +49,7 @@ Taking the second letter in each word gives the message: _Pershing sails from NY
 
 - is not robust
 - message is easy to detect
-  - A message insertion introduces distortion to the statistical properties of image which never naturally appear.
+  - A message insertion introduces distortion to the statistical properties of ./images/image which never naturally appear.
 
 ## Stochastic modulation method
 
@@ -60,7 +60,7 @@ Taking the second letter in each word gives the message: _Pershing sails from NY
 - Provide more protection against detection of the message
 
 - Improved method (J.Fridrich, M.Goljan):
-  - take a cover image and add a “noise” modulated by a message bits
+  - take a cover ./images/image and add a “noise” modulated by a message bits
   - “noise” actually means pseudo-noise here , that is a sequence of pseudo-random values, which can be generated deterministically given a secret initial value (key)
   - If initial value (key) is known then generation of pseudo- noise can be repeated (used for extraction of the message)
 
@@ -73,8 +73,8 @@ Taking the second letter in each word gives the message: _Pershing sails from NY
 
 ## Transform space algorithms
 
-- Jsteg algorithm (D.Upham) uses specifics of JPEG image format
-- For each colour component JPEG image format uses discrete cosine transform (DCT)
+- Jsteg algorithm (D.Upham) uses specifics of JPEG ./images/image format
+- For each colour component JPEG ./images/image format uses discrete cosine transform (DCT)
 - JPEG: after quantization DCT coefficients are stored; • Jsteg algorithm:
   - Replace sequentially the least-significant bit of discrete cosine transform coefficients with the message data
 - Gives better protection (as many others TS algorithms) against visual attacks

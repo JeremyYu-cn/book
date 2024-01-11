@@ -85,7 +85,7 @@ elements in the bag have different priorities.
     - unordered list ⇝ Θ(1) insert, but Θ(𝑛) delMax
     - sorted list ⇝ Θ(1) delMax, but Θ(𝑛) insert
 
-![Binary heaps](image-1.png)
+![Binary heaps](./images/image-1.png)
 
 ### Why heap-shaped trees(堆形树)?
 
@@ -129,7 +129,7 @@ elements in the bag have different priorities.
     - height of a tree: # edges on longest root-to-leaf path
     - depth/level of a node: # edges from root ⇝ root has depth 0 𝑘
     - How many nodes on first 𝑘 full levels?
-      ![How mand nodes on first k full levels on heap](image-2.png)
+      ![How mand nodes on first k full levels on heap](./images/image-2.png)
 
 ### Binary heap summary
 

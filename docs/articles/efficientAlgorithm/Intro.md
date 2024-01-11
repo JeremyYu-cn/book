@@ -6,7 +6,7 @@
   - Finite description
   - Solves a problem
 
-  ![Input-processing-output abstraction](image.png)
+  ![Input-processing-output abstraction](./images/image.png)
 
 ## What is a data structure?
 
