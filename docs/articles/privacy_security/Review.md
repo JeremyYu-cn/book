@@ -150,7 +150,93 @@ Authorisation: Associating rights or capabilities with a subject.
 
 ### Audit AND Intrusion Detection
 
+- Information of protection
+
+  | Level | What to protect      | Method                       |
+  | ----- | -------------------- | ---------------------------- |
+  | 3     | Existance of message | Steganography                |
+  | 2     | Metadata of message  | privacy-enhancing technology |
+  | 1     | content of message   | encryption                   |
+  | 0     | Nothing              | None                         |
+
+- Anti-intruction methods
+
+  - Prevention: To preclude, or seriously reduce likelihood of a particular attack.
+  - Pre-emption: To strike against the threat before it could strike against us.
+  - Deterrence: To persuade an attacker not to launch attack, or to stop ongoing attack.
+  - Deflection: To trick away an intruder from where he could do some damage.
+  - Detection: Aims to find intrusion attempt and launch countermeasures.
+  - Countermeasures: To actively counter an intrusion.
+
+- Intrusion detection is the most important of Anti-intruction methods.
+
+- Elements of IDS
+
+  - Audit collection: Collect data for intrusion detection.
+  - Audit storage: Stores the data for furthe processing.
+  - Processing: Based on collect data, algorithms are executed to find evidence of the suspicious behaviour.
+  - Configuration data: Specify the way IDS works. (how to collect data, how to respond to detected attack)
+  - Reference data: Information about bad/normal behaviour.
+  - Active/Processing data: intermediate results, which should be stored during processing.
+  - Alarm
+
+- Types of IDS
+
+  - Network-based IDS
+
+    - Monitor network backbones.
+    - Distribution among different nodes in the network.
+    - Disadvantage: not easy to detect an attacker.
+    - Disadvantage: may not be able analysis the traffic in large busy network.
+
+  - Host-based IDS:
+
+    - Operate on host.
+    - defence and monitor the operating and file systems for sign of intrusion.
+    - Usually monitor activities of higher level of details.
+
+  - Application-based IDS: deal with the events appearing inside of a particular application.
+
+- IDS Methods
+
+  - Anomaly based intrusion detection （基于异常）
+
+    - System reacts abnormal behavious. Behaviour profiles are used and system is able to learn what is a "normal" behaviour
+    - Advantages:
+
+      1. Possibility of detection of novel attacks（新颖的攻击） as intrusions.
+      2. Less dependence of IDSs on operating environment.
+      3. Ability to detect abuse of user privileges.
+
+    - Disadvantages:
+
+      1. A substantial false alarm rate.
+      2. Requireing a constant update of the normal behaviour profile database.
+
+  - Knowledge based detection
+
+    - Systems tries to match the explicit policies/signatures with the data collected to find an evidence of the suspicious behaviour.
+    - Advantages:
+
+      1. Very low false alarm rate.
+      2. Simple algorithms, easy implementation.
+
+    - Disadvantages:
+
+      1. Difficults in updating informations on new types of attacks.
+      2. Unable to detect unknown attacks.
+
 ### Techniques of intrusion detection
+
+- Statistical analysis
+
+  - The user or system behaviour is measured by a number of variables over time.
+  - The frequency of updating can vary from minutes to months.
+  - The system stores mean values for each variable used for detecting exceeds that of a predefined Threshold.
+
+- Neural networks and machine learning
+
+  - Neural networks use their learning algorithms to learn about the relationship between input and output data
 
 ## Part 3 Protocol And Algorithms
 
