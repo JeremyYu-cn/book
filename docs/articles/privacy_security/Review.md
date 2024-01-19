@@ -233,3 +233,79 @@ RSA
   4. P1 send random keys Kx and Ky to P2.
 
 ## Part 5 Legal And Social Issues
+
+Rapid developments computer systems, networks and give rise for
+
+- New threats for security and privacy
+- New defensive measures;
+
+### Legal
+
+- Restriction on Cryptography
+
+  1. Cryptography and Patent system
+  2. Cryptography and Trade secret Law
+  3. National and International regulations of cryptography
+  4. Digital Rights management
+
+- Patent system
+
+  1. Early development of cryptographic protocols and systems was influenced by patent law;
+  2. Many important techniques, including public key cryptography have been patented. including (Diffie-Hellman, RSA)
+  3. In general, one of the results of the patent protection appeared to be reduced use of the invention.
+
+- Trade secret Law
+
+  1. Until recently many encryption algorithms were kept as proprietary, secret and protected by the trade secret provisions;
+  2. The idea was that one could achieve additional security for the encrypted data by keeping the encryption algorithms themselves secret;
+  3. There are still many patented algorithms and they are protected by law
+
+- National and International regulations
+
+  - National
+    1. Cryptography can be used to hide criminal activities
+    2. Strong cryptography can make difficult, or almost impossible to conduct search warrants by legal authorities;
+  - International
+    1. Strong cryptography can make impossible to decrypt correspondence by military, economical.
+
+- Clipper chip
+
+  - Escrowed Encryption Standard:
+
+    1. A cheap tamper-proof chip,each with unique ID;
+    2. A classified encryption algorithm;
+    3. A back door is embedded and government has a copy of a key used in every such a chip, so when authorized, every encrypted message can be decrypted
+
+  - Potential Problems with Clipper chip
+
+    1. The potential for insider abuse;
+    2. The creation of new vulnerabilities and targets for attack;
+    3. The difficulties of properly authenticating requests for keys;
+    4. The cost;
+
+  - International agreements on Cryptograph
+
+    1. Allows export of mass-market software;
+    2. Allows export of all products that use encryption to protect intellectual property
+
+  - Digital Rights Management
+
+    1. criminalizes production and dissemination of technology for circumventing the control access for the copyrighted works
+
+### OECD Guidelines
+
+- the Organization for Economic Development and Cooperation adopted a set of privacy guidelines:
+
+  1. Collection Limitation Principle: there should be limits to the collection of personal data, and any such data should be obtained by lawful and fair means;
+  2. Data Quality Principle: personal data should be relevant to the purposes for which it is to be used, should be accurate, complete, and kept up to date.
+  3. Purpose Specification Principle: the purposes for which personal data is collected should be specified not later that at the time of data collection and the subsequent use limited to the fulfilment of those purposes;
+  4. Use Limitation Principle: Personal data should not be disclosed, made available, or otherwise used for purposes others that those specified in advance.
+  5. Security Safeguards Principle: personal data should be protected by reasonable security safeguards again such risks as loss, unauthorized access, destruction.
+  6. Openess Principle: there should be a general policy of openess about developments, practices and policies with respect to personal data.
+  7. Individual Participation Principle:
+
+     - To obtain the data from a data controller. Confirmation of whether or not the data controller has data relating to him;
+     - To be given reasons if a request made specified as above is denied, and to be able to challenge such denial;
+     - To challenge data relating to him and, if the challenge is successful to have the data erased, rectified, completed, or amended.
+
+  8. Accountability principle: a data controller should be accountable for complying with measures which give effect to the principle stated
