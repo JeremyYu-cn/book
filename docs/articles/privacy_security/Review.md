@@ -1,14 +1,150 @@
 ## Part 1 Identification And Authentication
 
-### Password and Token and Biometrics
+Identification: Who are you? Associating an identity with a subject.
+Authentication: Establishing the valid of something.
+Authorisation: Associating rights or capabilities with a subject.
+
+### Authentication
+
+- Authentication is a process of verifing the identity of a user, device, or other entire computer system.
+- Authentication is used for the purpose of performing trusted communications between parties for computing and telecommunications applications.
+- Classfication:
+  1. Machine by Machine
+  2. Human by Machine
+- Human vs Machine: Human is much less secure than machine authentication, but a good security guard can prove invaluable
 
 - Password
 
-Password
+  - Password: a word, or a phase, or a personal identification number to kept as a secure and is used for authentication.
 
-### Multi Factor and Single Factor
+  - Advantages:
+
+    1. Easy to implement.
+
+  - Disadvantages:
+
+    1. An easy work is lack of secure, but an complex number is hard to remember.
+    2. May be passed to other people.
+    3. Can be guessed.
+
+- Token:
+
+  - Physical token is a physical device which perform or help authentication.
+  - Token is based on what you have.
+
+  - Disadvantages:
+
+    1. Can be easy to copy.
+    2. If the token is lost, the owner can not have an access.
+    3. Anybody who has possession of the token can gain access
+
+- Multi-factor authentication techniques
+
+  - Purpose: To increase security. In some applications tokens are combined with other means of identification. Example: (PIN)
+
+- New Type of Attack
+
+  1. Cache attack: Based on attacker's ability to monitor cache access made by the victim in a shared physical system as in a virtualized environment or a type of cloud service.
+
+  2. Timing attack: Based on measuring various computations take to perform.
+
+  3. Power-monitoring attack: Attack that make use of varying power comsumption by the hardware during computation.
+
+- Biometrics
+
+  - A biometric is a feature measured from the human body that is distinguish enough to be used for user authentication. Example: Fingle print, retina scan.
+
+  - Advantages:
+
+    1. Cannot be copied, or stolen.
+    2. Cannot be lost.
+
+  - Disadvantages:
+
+    1. High-Cost
+    2. Complicated technology
+    3. Specialize hardware
+
+![User Authentication](./images/image-25.png)
 
 ### Data aggregation Anonmity And Pseudoanonimity
+
+- Terminology
+
+  - Personal information: Information about a person
+  - Private information: Personal information that is not generally know
+  - GDPR: Unless a data subject has provided informed consent to data processing for one or more purposes, personal data may not be processed unless there is at least one legal basis to do so.
+  - Personally identifitable information: Information from which a person identity can be derived.
+  - Anonymized information: Information from which a person identity cannot be derived.
+  - Aggregate information: Statistical information combined from many individuals to form a single recoed.
+
+- Privacy threat on anonymized information
+
+  1. Combining seemingly anonymous information one may reveal identity with high probablity.
+  2. You actually ask for personally identifitable information, even though it looks as anonymized.
+
+- Open Source Intelligence Gathering (OSINT)
+
+  1. Broadcast message for a public audience
+  2. Available to public request
+  3. Available to subscription or purchase.
+  4. Could be seen or heard by any casual observer
+  5. Made available at a meeting open to the public
+  6. Obtained by visiting any place or attending any event that is open to the public
+
+- Source of personal and private information
+
+  1. User-Privided Information.
+  2. Information obtain by observation of users activities or trace their left.
+
+- Anonymized in communications.
+
+  - Purpose: To protect privace
+  - Method: Third trusted party service
+
+- Anonymizer
+
+  - It can provide:
+
+    1. It does not leave information about your request on the web-server when you request a web page.
+    2. It may provide encryption of traffic between an user and itself.
+    3. It can blocking and removing potential active privacy and security threats.
+
+  - Advantages:
+
+    1. Good protection and reasonable cost.
+    2. Privacy protection is based on the trusted central proxy.
+
+  - Disadvantages:
+    1. It cannot protect inner attacks.
+
+- Crows:
+
+  - Principle: When the request submitted to the end server, it is submitted by a **random** of a crowd. Members of crowd cannot know the initiator because the just send post a message to the end server.
+
+- Mix-Network:
+
+  - Processes:
+
+    1. The message will be sent through a sequence of mix nodes. The user encrypt message with Node p key.
+    2. When the node receive a encrypt data, decrypt them, then use its key to encrypt the message and send to next node.
+    3. Every node only knowns previous and next nodes in the route.
+
+  - Advantages:
+
+    1. Good protection.
+
+  - Disadvantages:
+
+    1. Very expensive than anonymized solution.
+
+- Crowds vs Mix-Network
+
+  1. An attacker can compromise anonymity of all users in crowds.
+
+  2. Crowds does not provide anonymity against a global adversary able to observe all communications. But Mix-Network can provide anonymity in this scene.
+
+  3. Crowds admit very efficient implementations because it have not encryption/decryption operations.
 
 ## Part 2 Monitoring And Intrusion Detection
 
