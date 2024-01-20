@@ -378,6 +378,20 @@ Type of cryptography:
 - Asymmetric encryption: Encryption uses public key, while decryption uses pricate key.
   Example: RSA
 
+- Block ciphers modes
+
+  1. ECB (electronic Codebook)
+
+     - For given a plaintext and a secret key the result of encryption is unique.
+
+  2. CBC (Cipher Block Chaining)
+
+     - The same blocks of plaintext may produce different blocks of ciphertext.
+
+  3. CFB (Cipher Feedback)
+
+     - The purpose of CFB is uses to transform a block cipher to the stream cipher.
+
 ### 4. 3DES and RSA
 
 The process of Feistel cipher algorithm:
