@@ -546,12 +546,12 @@ RSA
 
 - Inactive and Non-inactive
 
-  | Features ｜ Inactive ｜ Non-inactive |
-  | ------------------------------------ | -------------------------------- | --------------------------------- |
-  | Inactive                             | Need                             | No                                |
-  | Efficient                            | Slow                             | Fast                              |
-  | Security                             | High security                    | Low security                      |
-  | Scene                                | Suitable for high security scene | Suitable for high efficient scene |
+  | Features  | Inactive                         | Non-inactive                      |
+  | --------- | -------------------------------- | --------------------------------- |
+  | Inactive  | Need                             | No                                |
+  | Efficient | Slow                             | Fast                              |
+  | Security  | High security                    | Low security                      |
+  | Scene     | Suitable for high security scene | Suitable for high efficient scene |
 
 ### Secure MPC(Multi Party Computations)
 
