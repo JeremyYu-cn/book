@@ -1,7 +1,9 @@
 ## Part 1 Identification And Authentication
 
 Identification: Who are you? Associating an identity with a subject.
+
 Authentication: Establishing the valid of something.
+
 Authorisation: Associating rights or capabilities with a subject.
 
 ### Authentication
