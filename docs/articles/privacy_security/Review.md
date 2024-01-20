@@ -146,6 +146,44 @@ Authorisation: Associating rights or capabilities with a subject.
 
   3. Crowds admit very efficient implementations because it have not encryption/decryption operations.
 
+- Tor-Networks:
+
+  - Description:
+
+    1. Traffic routed via encripted nodes. Each node descript one layer of encryption.
+    2. Entry point only knows first link and exit point only knows last link.
+    3. Nodes are only aware of next link.
+
+  - Main princpile: Combining Crowd and Mix-network
+
+    1. Use a set of nodes (Crowd)
+    2. Routing use random choice (Crowd)
+    3. Encrypted connections between neighbouring nodes. (Mix-network)
+
+    4. Use share secret keys to perform symmetric encryption in further communications between neighbours.
+
+- DC-Networks:
+
+  ![Alt text](./images/image-27.png)
+
+  - Example:
+
+    1. To send a message M, a node, broadcast the value(M + K_ab + K_ac)
+    2. All other nodes broadcast superposition of their keys.
+    3. The final M = (M + K_ab + K_ac + K_ab + K_bc + K_ac + K_bc).
+
+  - Anonymity by DC-Network
+
+    - It provides a sender anonymity because attacker is unable to know whether the package is contain a message or not.
+    - It can be used in combination with other protection methods such as mix-network.
+
+    - Disadvantages:
+
+      1. It require the prelimary stage exchanging the secret key between participants.
+
+    - Every round of communication requires a new set of keys
+    - Every node needs to participate every time a message is broadcasted
+
 ## Part 2 Monitoring And Intrusion Detection
 
 ### Audit AND Intrusion Detection
@@ -304,6 +342,8 @@ Authorisation: Associating rights or capabilities with a subject.
 - Data mining
 
   - Description: Set of techniques that use the process of extracting previously unknown information from large stores of data.
+  - Suitable for large volumes of audit data.
+  - DM is less useful for stream analysis of network traffic.
 
 ## Part 3 Protocol And Algorithms
 
@@ -598,3 +638,114 @@ Rapid developments computer systems, networks and give rise for
      - To challenge data relating to him and, if the challenge is successful to have the data erased, rectified, completed, or amended.
 
   8. Accountability principle: a data controller should be accountable for complying with measures which give effect to the principle stated
+
+## Firewalls
+
+- The firewalls implement hardware or software solutions beased on the control of network connection between local network and other networks.
+
+- OSI
+
+  1. Application
+  2. Presentation
+  3. Session
+  4. Transport
+  5. Network
+  6. Data link
+  7. Physical
+
+- Firewall characteristics:
+
+  1. All traffic from inside to outside, and vise versa, must pass through the firewall. All access to local network is block except via firewall.
+  2. Only authorized traffic, defined by the local security policy is allowed to pass in either direction.
+
+- Types of control used by firewalls
+
+  1. Service control: determine what types of services can be access.
+  2. Direction control: determines in which direction particular service request may be initiated;
+  3. User control: determines access to a service accroding to a user.
+  4. Behaviour control: controls how particular services are used.
+
+- Limitations of the firewalls
+
+  1. Cannot protect againsts attacks that bypass the firewall
+  2. Does not protect internal attacks.
+  3. Cannot protect virus programs or files.
+
+- Types of firewall
+
+  1. Packet filtering route: applies a set of rules to each incoming IP packet and then forwards or discards the packet.
+
+     - Filtering rules based on:
+
+       1. Source IP address
+       2. Destination IP address
+       3. Source and destination transport-level address
+       4. IP protocol fields
+
+     - Advantages:
+
+       1. Simple.
+       2. Transparent for users.
+       3. Very fast.
+
+     - Disadvantages:
+
+       1. Lack of upper-layer functionality
+       2. Do not support advanced user authentication schemes
+       3. Cannot block specific application commands
+
+  2. Circuit-level gateway
+
+     - Based on specified session rules
+
+     - It sets up two connections:
+
+       1. One between itself and a TCP user on the inner host;
+       2. One between itself and a TCP user on the outer host;
+
+     - Once connections are established and security criteria are met , both connections are linked by the gateway;
+
+     - Advantages:
+
+       1. relatively inexpensive.
+       2. have the advantage of hiding information about the private network they protect.
+
+     - Disadvantages:
+
+       1. do not filter individual packets.
+
+  3. Application-level gateway
+
+     - They can filter packets in the application layer of the OSI model.
+
+     - Advantages:
+
+       1. They offer a high level of security.
+       2. Application specific protection.
+
+     - Disadvantages:
+
+       1. significant impact on network performance.
+       2. are not transparent to end users.
+       3. require manual configuration of each client computer.
+
+- Firewall benefits and problems
+
+  - Benefits
+
+    1. Firewalls protect private local ares networks from hostile intrusion from the internet
+    2. Flexibility in implementation of security policies
+    3. Relatively inexpensive solution
+
+  - Problems
+
+    1. Possible traffic bottleneck.
+    2. Security concentrated in one spot.
+
+- Key next-generation firewall requirements
+
+  - Identify applications, not ports.
+  - Identify users, not just IP addresses.
+  - Inspect content in real-time.
+  - Simplify policy management.
+  - Deliver multi-gigabit throughput.
