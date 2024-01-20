@@ -236,7 +236,74 @@ Authorisation: Associating rights or capabilities with a subject.
 
 - Neural networks and machine learning
 
-  - Neural networks use their learning algorithms to learn about the relationship between input and output data
+  - Neural networks use their learning algorithms to learn about the relationship between input and output data.
+  - Purpose: To learn the behaviour of actors in the system.
+  - Advantages:
+
+    1. A sinple way to express nonlinear relationships between variables.
+    2. Learning about relationships automatically.
+
+  - Disadvantages:
+
+    1. It still a computationally intensive technique.
+
+  - It can be used to predict behaviour of users and super-users.
+
+- Rule based
+
+  - Work on a previously defined set of rules describing an attack.
+  - All security related events are translated in terms of if-then-else rules.
+  - Inference engine maybe used to infer conclusions. ???
+
+- State-transition analysis
+
+  - An attack is described with a set of goals and transitions that must be achieved by an intruder to compromise a system.
+  - Transitions are represents on state-transition diagrams.
+
+    ![Alt text](./images/image-26.png)
+
+- Immune system based techniques
+
+  - The model consists two parts:
+
+    1. Audit data representing the appropriate behaviour of services.
+    2. knowledge base with all the known “good” sequences of system calls.
+
+  - Description: Store patterns are used for monitoring of system calls to check whether the sequence generated is listed in the knowledge base. If not, an alarm is generated.
+
+  - Advantages:
+
+    1. Potentially very low false alarm rate if the knowledge based complete enough.
+    2. Updating the knowledge base can be done on-line.
+
+  - Disadvantages:
+
+    1. If an attacker uses legitimate actions on the system to gain unauthorized access, no alarm is generate.
+    2. Arguments of system calls are not taken into account.
+
+- Signature based method
+
+  - Example: `alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"MISC large ICMP"; dsize: >800; reference:arachnids,246; classtype:bad-unknown; sid:499;)`
+
+  - Advantages:
+
+    1. Very low false alarm rate.
+    2. Simple algorithm, easy implementation.
+
+  - Disadvantages:
+
+    1. Difficulties in updating information on new types of attacks.
+    2. Unable to detect unknown attacks.
+
+- User intention identification
+
+  - This technique models normal behaviour of users by the set of high-level tasks they have to perform on the system.
+  - These tasks are taken as series of actions, which in turn are matched to the appropriate audit data.
+  - If mismatch is encountered, an alarm is produced.
+
+- Data mining
+
+  - Description: Set of techniques that use the process of extracting previously unknown information from large stores of data.
 
 ## Part 3 Protocol And Algorithms
 
