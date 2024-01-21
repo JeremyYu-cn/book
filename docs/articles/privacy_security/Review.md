@@ -152,7 +152,7 @@ Authorisation: Associating rights or capabilities with a subject.
 
   - Description:
 
-    1. Traffic routed via encripted nodes. Each node descript one layer of encryption.
+    1. Traffic routed via encrypted nodes. Each node decrypt one layer of encryption.
     2. Entry point only knows first link and exit point only knows last link.
     3. Nodes are only aware of next link.
 
