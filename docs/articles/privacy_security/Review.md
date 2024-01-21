@@ -251,7 +251,7 @@ Authorisation: Associating rights or capabilities with a subject.
     - Disadvantages:
 
       1. A substantial false alarm rate.
-      2. Requireing a constant update of the normal behaviour profile database.
+      2. Requiring a constant update of the normal behaviour profile database.
 
   - Knowledge based detection
 
