@@ -429,6 +429,13 @@ AES (Advanced Encryption Standard):
 
 - Logical representation: Logical representation and analysis of the security protocols is a particular successful approach for the protocols verification.
 
+- Protocol analysis using logic
+
+  1. Get the idealized protocol in the logical language from the original specification.
+  2. Specify the assumption about the initial state.
+  3. Attach logical formula to statements of the protocol.
+  4. Use logical formula and inference rules to derive the protocols.
+
 - Protocol analysis using a logic
   - M. Burrows, M.Abadi, R. Needham (BAN Logic)
   - Suitable for formal analysis of authentication protocols.
