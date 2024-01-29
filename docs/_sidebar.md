@@ -84,6 +84,10 @@
   - [MPI](articles/MC_MP_Programming/MPI.md)
   - [Accelerator](articles/MC_MP_Programming/accelerators.md)
 
+- COMP559 Algorithm Game Theory
+
+  - [Intro](articles/algorithmGameTheory/intro.md)
+
 - Higher mathmatics
 
   - [Syllabus](articles/higherMath/catalog.md)
