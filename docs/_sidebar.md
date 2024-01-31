@@ -77,6 +77,10 @@
   - [Steganography](articles/privacy_security/Steganography.md)
   - [Review](articles/privacy_security/Review.md)
 
+- COMP523 Advanced Algorithmic Techniques
+
+  - [Intro](articles/advancedAlgorithmicTech/Intro.md)
+
 - COMP528 Multi-Core And Multi-Processor Programming
 
   - [Intro](articles/MC_MP_Programming/intro.md)
