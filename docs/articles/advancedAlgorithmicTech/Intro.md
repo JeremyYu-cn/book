@@ -77,7 +77,7 @@ function insertionSort(arr: number[]) {
 ## Memory Usage
 
 - Each memory cell can hold one element of the input.
-- Total memory usage = Memory used to hold the input + extra memory used by the algorithm (auxiliary memory).
+- Total memory usage = Memory used to hold the input + extra memory used by the algorithm `(auxiliary memory 辅助存储器)`.
 
 ## Worst vs Best vs Average Case
 

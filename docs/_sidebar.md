@@ -48,6 +48,8 @@
 - The principle of compilation
 
   - [Intro](articles/compilation/intro.md)
+  - [Compiler](articles/compilation/compiler.md)
+  - [Lexical Analysis](articles/compilation/lexicalAnalysis.md)
 
 - Machine Learning
 

@@ -27,3 +27,11 @@ A compiler is combined with multi phases, and each phase handles different probl
 - Target machine: A stack computer
 
   - Two instructs: push and add
+
+- Mission: To compile a program 1 + 2 + 3 to stack computer
+
+  1. Syntax analysis and semantic analysis
+
+  2. Generate AST (Abstract Syntax Tree)
+
+  3. Generate Code
