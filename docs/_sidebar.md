@@ -86,6 +86,8 @@
 - COMP523 Advanced Algorithmic Techniques
 
   - [Intro](articles/advancedAlgorithmicTech/Intro.md)
+  - [AsympoticNotation](articles/advancedAlgorithmicTech/AsympoticNotation.md)
+  - [SearchingLogarithmicTime](articles/advancedAlgorithmicTech/SearchingLogarithmicTime.md)
 
 - COMP528 Multi-Core And Multi-Processor Programming
 

@@ -51,3 +51,15 @@
 ## Auctions
 
 - Goal: Give the object to the player with maximum value.
+
+## Algorithmic Game Theory
+
+- It is an area in the intersection of `game theory` and `algorithm design`, whose objective is to design algorithms in strategic environments. [Nisan et al. 2007]
+
+- It is multidiscriplinary:
+
+  1. AI -> Multi Agent Systems -> Algprithmic Game Theory
+
+  2. Economics
+
+  3. Theoretical Computer Science
