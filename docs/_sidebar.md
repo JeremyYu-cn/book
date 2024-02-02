@@ -57,6 +57,10 @@
   - [Linear Regression](articles/machineLearning/linearRegression.md)
   - [Gradient Descent](articles/machineLearning/gradientDescent.md)
 
+- COMP315 Cloud Computing
+
+  - [Intro](articles/cloudComputing/Intro.md)
+
 - COMP516 Research methods in computer science
 
   - [Lectures](articles/researchMethod/lecture.md)
