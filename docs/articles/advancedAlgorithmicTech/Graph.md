@@ -99,3 +99,41 @@ var hasPathSum = function (root, targetSum) {
   return res;
 };
 ```
+
+## Breadth-First Search 广度优先
+
+- Simple description
+
+  - Start from the starting vertex `s` which is at `level 0` and consider it `explored`.
+
+  - For any node at `level i`, put all of its `unexplored` neighbours in level i+1 and consider them explored.
+
+  - Terminate at `level j`, when none of the nodes of the level has any neighbours which are `unexplored`.
+
+![alt text](images/image_4.png)
+
+### Visualising Breadth-First Search
+
+- Orient the edges along the direction in which they are visited during the traversal.
+
+  - Some edges are discovery edges, because they lead to unvisited vertices.
+
+  - Some edges are cross edges, because they lead to visited vertices.
+
+- The discovery edges form a spanning tree of the connected component of the starting vertex s.
+
+### Properties of BFS
+
+- For simplicity, assume that the graph is connected.
+
+- The traversal visits all vertices of the graph.
+
+- The discovery edges form a spanning tree.
+
+- The path of the spanning tree from s to a node v at level i has i edges, and this is the shortest path.
+
+- If e=(u,v) is a cross edge, then the u and v differ by at most one level.
+
+### Running time of BFS
+
+- O(m + n)

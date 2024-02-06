@@ -84,7 +84,8 @@ function LPTAlgorithm(arr) {
 
 - Theorem 2.4
 
-  - For identical machines the length of any sequence of best responses is at most 2^n. // 对于相同的机器，任何最佳响应序列的长度都不超过 2^n
+  - For identical machines the length of any sequence of best responses is at most 2^n.
+    // 对于相同的机器，任何最佳响应序列的长度都不超过 2^n
 
 - Theorem 2.5
 
