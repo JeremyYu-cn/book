@@ -137,3 +137,115 @@ var hasPathSum = function (root, targetSum) {
 ### Running time of BFS
 
 - O(m + n)
+
+## Testing for bipartiteness
+
+### Bipartite graphs （二分图）
+
+- A graph G=(V,E) is bipartite if any only if it can be partitioned into sets A and B such that each edge has one endpoint in A and one endpoint in B.
+  // 一个图仅仅可以被划分为 A，B 两个 set，且每个 set 有一个 endpoint
+
+- Often, we write G=(A U(union) B,E).
+
+![alt text](images/image_5.png)
+
+- Alternative definitions
+
+  - A graph G=(V,E) is bipartite if any only if its nodes can be coloured with 2 colours (say red and green), such that every vertex has one red endpoint and one green endpoint.
+
+  - A graph G=(V,E) is bipartite if any only if it does not contain any cycles of odd length.
+
+### No odd cycles 无奇数环
+
+- A graph G=(V,E) is bipartite if any only if it does not contain any cycles of odd length.
+- => Assume that G is bipartite
+- Suppose that G does contain an odd cycle (proof by contradiction), C = u1 u2 u3 ... un u for some u in A (wlog), or alternatively, for some u that is red.
+- Because G is bipartite, u2 must be green, and then u3 must be red, and so on.
+- Generally, we observe that for all k in {1,2, ... ,n}, uk is red if k is odd and green if k is even.
+- By assumption, n is odd, so it must be red. But then u cannot be red, because G is bipartite.
+
+- Alternative definitions
+
+- A graph G=(V,E) is bipartite if any only if its nodes can be coloured with 2 colours (say red and green), such that every vertex has one red endpoint and one green endpoint.
+
+- A graph G=(V,E) is bipartite if any only if it does not contain any cycles of odd length.
+
+- Sometimes, these alternatives definitions are also called “characterisations”.
+
+### Testing bipartiteness
+
+- Given a graph G=(V,E), decide if it is bipartite or not.
+
+- Given a graph G=(V,E) decide if it is 2-colourable or not.
+
+- Given a graph G=(V,E) decide if it is contains cycles of odd length or not.
+
+### Colouring the nodes
+
+- Does this remind you of something?
+
+  - It is essentially BFS!
+
+  - We label the nodes of level 1 red, the nodes of level 2 green, and so on.
+
+- Implementation:
+
+  - Add a check for odd/even and assign a colour accordingly.
+
+  - In the end, check all edges to see if they have endpoints of the same colour.
+
+### Correctness
+
+- Suppose that G is bipartite. Then, all cycles must be of even length.
+
+- Suppose to the contrary that the algorithm returns “not bipartite”.
+
+  - This means that it has found an edge e=(x,y) with endpoints of the same colour.
+
+  - Since the endpoints of any edge can not differ by more than one layer and layers have alternating colours, x and y must be in the same layer.
+
+## Strong Connectivity (强连通性)
+
+### Directed graphs
+
+- Nodes are arranged as a list, each node points to the neighbours.
+
+- For directed graphs, the node points in two directions, for in-degree and for out-degree.
+
+- DFS and BFS on directed graphs
+
+  1. Very similar to their version on undirected graphs.
+  2. When we are at a node and we examine its neighbours, a neighbour is now only a node that we can reach with a directed edge.
+  3. The running time is still O(n+m).
+
+### Connectivity
+
+- What BFS is computing is the set of nodes t such that there is a path from s to t.
+
+- A path from s to t does not mean that there is path from t to s.
+
+- (Weak) connectivity: If we ignored the directions for all edges, there would a path from any node to any node.
+
+- Strong connectivity: For every two nodes u and v, there is a path from u to v and a path from v to u.
+
+### Mutual reachability (互相可达性)
+
+- Two nodes u and v are mutually reachable, if there is path from u to v and a path from v to u in G.
+
+- Strong connectivity: For every pair of nodes u and v, these nodes are mutually reachable.
+
+- Transitivity: If u and v are mutually reachable and v and w are mutually reachable, then u and w are mutually reachable.
+
+### Testing strong connectivity
+
+- Define the reverse graph Grev, in which the nodes are the same and the edges are the same with reversed directions.
+
+- Pick any node s in V and run BFS(G,s) and BFS(Grev,s).
+
+- If one of the two searches does not reach every node, then the graph is definitely not strongly connected.
+
+- Assume that both searches reach every node. This means that there is a path from s to any node u and a path from any node u to s.
+
+  - For any node u, s and u are mutually reachable.
+
+- Pick any other node v. Since s and v are also mutually reachable, by transitivity, v and u are mutually reachable and the graph is strongly connected.
