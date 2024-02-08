@@ -100,8 +100,8 @@
 - COMP559 Algorithm Game Theory
 
   - [Intro](articles/algorithmGameTheory/intro.md)
-  - [newworkGames](articles/algorithmGameTheory/networkGames.md)
   - [loadBalanceGames](articles/algorithmGameTheory/loadBalanceGames.md)
+  - [congestionGames](articles/algorithmGameTheory/congestionGames.md)
 
 - Higher mathmatics
 

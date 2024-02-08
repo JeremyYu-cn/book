@@ -108,3 +108,13 @@ function LPTAlgorithm(arr) {
 - Upper bound α: show that for all such instances and all such equilibria the PoA is at most α.
 
 - Lower bound α: find such an instance and such an equilibrium where the PoA is at least α.
+
+### Bounds on the Price of Anarchy
+
+![alt text](images/image_6.png)
+
+- Form=2,theexampleonpreviousslideprovesthelowerbound in blue.
+
+- Exercise:
+
+  Generalise this example to match the bound for all m.
