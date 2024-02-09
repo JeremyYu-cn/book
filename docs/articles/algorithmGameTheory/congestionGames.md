@@ -87,4 +87,4 @@ C(f)= fe·ce(f)= 1·1 + 1/3 \* 1 + 2/3 \* 3 + 0 \* 5 + 2/3 \* 2 = 14/3
 
 - Marginal Cost (边际成本)
 
-![alt text](image.png)
+![alt text](images/image_12.png)
