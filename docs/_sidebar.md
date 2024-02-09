@@ -89,6 +89,7 @@
   - [AsympoticNotation](articles/advancedAlgorithmicTech/AsympoticNotation.md)
   - [SearchingLogarithmicTime](articles/advancedAlgorithmicTech/SearchingLogarithmicTime.md)
   - [Graph](articles/advancedAlgorithmicTech/Graph.md)
+  - [Greedy](articles/advancedAlgorithmicTech/Greedy.md)
 
 - COMP528 Multi-Core And Multi-Processor Programming
 

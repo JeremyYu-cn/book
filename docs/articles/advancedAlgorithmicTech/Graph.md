@@ -249,3 +249,175 @@ var hasPathSum = function (root, targetSum) {
   - For any node u, s and u are mutually reachable.
 
 - Pick any other node v. Since s and v are also mutually reachable, by transitivity, v and u are mutually reachable and the graph is strongly connected.
+
+## DAGs and Topological Ordering
+
+### Directed Acyclic Graphs
+
+- Definition: A directed acyclic graph (DAG) G is a graph that does not have any cycles.
+
+- Properties of DAGs
+
+  - They appear frequently in applications.
+  - Example - prerequisite modules: To take module A you need to have taken module B and module C.
+  - If the module prerequisite relation has a cycle, then it is impossible to get a degree!
+
+- Topological Ordering （拓扑排序）
+
+- Given a directed graph G, a topological ordering of G is an ordering of the nodes u1, u2, ... , un, such that for every edge e=(ui, uj), it holds that i < j.
+
+- Intuitively, a topological ordering orders the nodes in a way such that all edges point “forward”.
+
+- Topological Ordering implies DAG
+
+  - If graph G has a topological ordering, then G is a DAG.
+
+  - Suppose by contradiction that G has a topological ordering (u1, u2, ... , un) but it also has a cycle C.
+
+  - Let uj be the smallest element of C according to the topological ordering.
+
+  - Let ui be its predecessor in the cycle (i.e., there is an edge e=(ui, uj)).
+
+  - ui must appear before uj in the topological order (by the presence edge e).
+
+  - This contradicts the fact that uj was the smallest element of C according to the topological ordering.
+
+- TO(拓扑排序) => DAG(有向无环图) was proved via proof-by-contradiction.
+
+- DAG => TO will be proved via “proof-by-algorithm”.
+
+![alt text](images/image_6.png)
+
+### Source node
+
+- The starting node must have `no incoming edges`!
+
+- A source node is a node with no incoming edges(传入的边).
+
+- Lemma: Every DAG has at least one source node. 所有 DAG 至少有一个 source node
+
+- Proof by contradiction:
+
+  - Assume that every node has at least one incoming edge.
+
+  - Start from any node u and follow edges from u backwards.
+
+    - Equivalently, we move to a neighbour of u in Grev.
+
+  - We can do that for every node, since by assumption there is no source.
+
+  - After at least n+1 steps, we will have visited the same node twice.
+
+  - The graph has a cycle, therefore it can’t be a DAG. Contradiction!
+
+- If we remove a node u and all its incident edges from a DAG G, the resulting graph G’ is still a DAG.
+
+- If G’ had a cycle, the same cycle would be present in G.
+
+### DAG implies topological ordering
+
+- Proof-by-induction:
+
+  - Base Case: If the DAG has one or two nodes, it clearly has a topological ordering.
+
+  - Inductive step: Assume that a DAG with up to k nodes has a topological ordering (Inductive Hypothesis). We will prove that a DAG with k+1 nodes has a topological ordering.
+
+    - By our lemma, there is at least one source node in G, and let u be such a node.
+
+    - Put u first in the topological ordering (safe, since u is a source).
+
+    - Consider the graph G’, obtained by G if we remove u and its incident edges.
+
+    - G’ is a DAG (by the simple fact) with k nodes.
+
+      - It has a topological ordering by the induction hypothesis.
+
+    - Append this ordering to u.
+
+### Proof-by-algorithm
+
+```javascript
+/**
+ * Algorithm TopologicalSort(G)
+ *  Find a source vertex u and put it first in the order.
+ *  Let G’=G-{u} TopologicalSort(G’) Append this order after u
+ */
+```
+
+### Running time
+
+O(n^2)
+
+## Finding Strongly Connected Components
+
+- A connected component of an undirected graph G is subgraph such that any two nodes are connected via some path.
+
+- A strongly connected component of a directed graph G is subgraph such that any two nodes are mutually reachable.
+
+### How do we find all strongly connected components of a graph G?
+
+- We can run the “forward” and “backward” BFS for a node s and find the set of nodes that are mutually reachable from s.
+
+  - This is the strongly connected component of s.
+
+  - But BFS might produce different connected components, depending on how we visit the nodes.
+
+  - We need a consistent way of visiting them in the “forward” and in the “backward” pass.
+
+### Kosajaru’s algorithm
+
+- Perform a DFS on G, starting from an arbitrary nodes s.
+
+- Add the nodes that the DFS tree reaches to a stack.
+
+  - A node is added to the stack when the DFS for that node is completed.
+
+- Perform a DFS on Grev, visiting the nodes in the order that they are popped from the stack.
+
+- Output the DFS trees of the second DFS as the strongly connected components.
+
+![alt text](images/image_6.png)
+
+### Running time
+
+The running time is O(m+n).
+
+### Correctness
+
+![alt text](images/image_7.png)
+
+### Simple but key lemma
+
+- Let C and C’ be distinct SCCs in a directed graph G. Let u, v in C Let u’,v’ in C’
+
+  Suppose that G contains a path from u to u’. (1)
+
+  Then G cannot contain a path from v’ to v.
+
+- Proof (by contradiction):
+
+  - Assume there is a path from v’ to v. (2)
+
+  - There is a path from u’ to v’ (same SCC).
+
+  - There is path from u to v’ (because of (1) and previous bullet).
+
+  - There is a path from v to u (same SCC).
+
+  - There is path from v’ to u (because of (2) and previous bullet).
+
+  - This means that u and v’ are mutually reachable, hence in the same SCC.
+
+- Lemma: Let C and C’ be distinct SCCs in G. Suppose there is a directed edge `crossing` from C to C’. Then the DFS on the nodes of C finishes later than the DFS on the nodes of C’.
+
+### Lemma and Corollary(推论)
+
+- Lemma: Let C and C’ be distinct SCCs in G. Suppose there is a directed edge crossing from C to C’. Then the DFS on the nodes of C finishes later than the DFS on the nodes of C’.
+
+- Corollary: If the forward DFS finishes on component C later than component C’, then
+
+  - there is no edge crossing from C’ to C in G.
+
+  - there is no edge crossing from C to C’ in Grev.
+
+- This means that in the reverse DFS on Grev, if we start with the SCC that finishes last in the forward DFS of G, we will not find edges to other SCCs.
