@@ -88,3 +88,77 @@ C(f)= fe·ce(f)= 1·1 + 1/3 \* 1 + 2/3 \* 3 + 0 \* 5 + 2/3 \* 2 = 14/3
 - Marginal Cost (边际成本)
 
 ![alt text](images/image_12.png)
+
+### Optimum Flow via marginal costs
+
+Assume x · ce (x ) is convex and continuously differentiable for all e ∈ E
+
+- Lemma 3.1 (Characterisation of optimal flows) 最优流的特点
+
+> A feasible flow f is optimal if and only if for all commodities i ∈ [k], and paths P1,P2 ∈ Pi with fP1 \> 0, we have cP∗ (f) ≤ cP∗ (f).
+
+- Observe the similarity in the characterisation of optimal flows and Wardrop equilibria.
+
+- Theorem 3.2 (Wardrop equilibrium vs. Optimum). 比较
+
+> A feasible flow f is optimal for (G,r,c) if and only if f is a Wardrop equilibrium for (G,r,c∗).
+
+- Theorem 3.3 (Existence and essential uniqueness)
+
+> (a) Every instance (G,r,c) admits a Wardrop equilibrium. (CANVAS)
+
+> (b) If f and ̃f are Wardrop equilibria, then ce(f) = ce( ̃f) for every e ∈ E.
+
+- Proofs are based on the following potential function [ BECKMANN, MCGUIRE, WINSTON,1956] :
+
+  $H(f) = \sum_{e ∈ E} h_e(f_e)$
+
+  $he(x) = \int_0^x ce(u) du$
+
+### Price of Anarchy
+
+- Let f be a Wardrop equilibrium and f ∗ be an optimum for (G, r , c).
+
+ρ(G,r,c)= C(f) / C(f∗)
+
+- Theorem 3.4 (polynomial latency functions) 多项式延迟函数
+
+> Suppose latency functions are of the form $ce(x) = \sum_{i = 0}^d ae&, i \* xi$ with nonnegative coefficients, Then ρ(G, r, c) <= d + 1
+
+- Theorem 3.5 (linear latency functions) 线性延迟函数
+
+> Suppose latency functions are linear with non-negative slope and offset. Then, ρ(G,r,c) = 4/3.
+
+### (Atomic) congestion games
+
+- (Weighted) congestion games
+
+  ![alt text](images/image_13.png)
+
+  - unweighted congestion games(or simply congestion games):
+
+    wi =1 for all players i ∈[k]
+
+  - symmetric games:
+
+    Si = Sj for all player i,j ∈ [k]
+
+  ![alt text](images/image_14.png)
+
+### Private Cost and Social Cost
+
+![alt text](images/image_15.png)
+
+### Nash Equilibrium
+
+> A strategy profile s is a Nash equilibrium if and only if all players i ∈ [k] are satisfied, that is, Ci(s) ≤ Ci(s−i,si′) for all i ∈ [k] and si′ ∈ Si.
+
+- Remarks
+  - For simplicity were strict to pure Nash equilibria.
+  - Many result shold also for mixed Nash equilibria.
+    - Players randomize over their pure strategies
+    - Guaranteed to exist [ NASH, 1951]
+
+### Price of Anarchy
+
+![alt text](images/image_16.png)
