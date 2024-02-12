@@ -162,3 +162,63 @@ Assume x · ce (x ) is convex and continuously differentiable for all e ∈ E
 ### Price of Anarchy
 
 ![alt text](images/image_16.png)
+
+### Existence of pure NE: positive result
+
+- Theorem 3.6
+
+> Every unweighted congestion game possesses a pure Nash equilibrium.
+
+![alt text](images/image_17.png)
+
+### Potential Games and Price of Stability
+
+- Potential Games: AllgamesthatadmitapotentialfunctionΦ,s.t.foralloutcomess, all player i, and all alternative strategies si′,
+
+  Ci (si′, s−i ) − Ci (s) = Φ(si′, s−i ) − Φ(s).
+
+- Every congestion game is a potential game.
+
+- For every potential game there exists a congestion game having the same potential function.
+
+- Theorem 3.7
+
+  - There is a weighted network congestion game that does not admit a pure Nash equilibrium.
+
+  ![alt text](images/image_18.png)
+
+- Theorem 3.8
+
+  - Every weighted congestion game with linear latency functions possesses a pure Nash equilibrium.
+
+  ![alt text](images/image_19.png)
+
+- Pirce of Anarchy Example:
+
+  ![alt text](images/image_20.png)
+
+### Price of Anarchy: Routing Games
+
+- Analytical simple classes of cost functions ⇒ exact formula for PoA.
+
+  - Linear
+
+  - bounded degree polynomials 有界次多项式
+
+- Theorem 3.9
+
+  - Suppose latency functions are linear with non-negative slope and offset. Then for unweighted games the PoA is exactly 5/2.
+
+    // 假设延迟函数是线性的，具有非负斜率和偏移。对于未加权的游戏，PoA 恰好是 5/2。
+
+- For every set of allowable cost functions ⇒ recipe for computing PoA.
+
+  - non-atomic (Wardrop model)
+
+  - unweighted
+
+### Abstract Setup 抽象系统
+
+![alt text](images/image_21.png)
+
+![alt text](images/image_22.png)
