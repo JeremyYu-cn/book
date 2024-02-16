@@ -325,3 +325,47 @@ The running time is O(n log n).
   - PQ operations can be implemented in O(log n) time.
 
 - PQ solution: Insert the nodes in a PQ, with minus the attachment cost as the keys.
+
+## Clustering
+
+### Definition of Clustering
+
+- Definition: Given a set U of n elements, a k-clustering of U is a partition of U into non-empty sets C1, ..., Ck.
+
+- Definition: The spacing of a k-clustering is the minimum distance between any pair of points in different clusters. // 不同集合之间的最小距离
+
+- Goal: Among all possible k-clusterings, find one with the maximum possible spacing.
+
+### In greedy algorithm
+
+- Pick two objects pi and pj with the smallest distance d(pi,pj).
+
+- Connect them with an edge e=(pi,pj).
+
+- Continue like this until we obtain k clusters.
+
+- If the edge e under consideration connects two objects pi and pj already in the same component, skip it.
+
+### Kruskal’s algorithm
+
+- Pick an edge (pi, pj) with the smallest cost d(pi,pj).
+
+- Include the edge in the output.
+
+- Stop before including the last k-1 edges.
+
+  - i.e., in the end, remove the k-1 most expensive edges.
+
+- If the edge e under consideration introduces a cycle, then skip it.
+
+- Lemma: Let C1, C2, ... , Ck be the k connected components formed by deleting the k-1 most expensive edges from a minimum spanning tree T. // 生成一个最小生成树需要删除 k - 1 条最 expensive 的边
+
+- Proof of the Lemma
+
+  - Let C’ = {C’1, C’2, ... , C’k} be any other k-clustering.
+
+  - By other, there exists a cluster Cr of C which is not contained in any cluster C's of C’.
+
+  - This means that there exist points pi, pj in Cr that belong to different clusters in C’.
+
+  - Let C’i and C’j denote these clusters respectively.
