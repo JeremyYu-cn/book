@@ -104,6 +104,7 @@
   - [Intro](articles/algorithmGameTheory/intro.md)
   - [loadBalanceGames](articles/algorithmGameTheory/loadBalanceGames.md)
   - [congestionGames](articles/algorithmGameTheory/congestionGames.md)
+  - [networkGames](articles/algorithmGameTheory/networkGames.md)
 
 - Higher mathmatics
 
