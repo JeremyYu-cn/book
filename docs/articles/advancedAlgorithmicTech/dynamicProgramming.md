@@ -27,3 +27,7 @@
 - Two requests i and j are compatible if their respective intervals do not overlap.
 
 - Goal: Output a schedule which maximises the total value of compatible intervals.
+
+## Subset Sum
+
+## Knapsack

@@ -105,6 +105,7 @@
   - [loadBalanceGames](articles/algorithmGameTheory/loadBalanceGames.md)
   - [congestionGames](articles/algorithmGameTheory/congestionGames.md)
   - [networkGames](articles/algorithmGameTheory/networkGames.md)
+  - [mechanismDesign](articles/algorithmGameTheory/mechanismDesign.md.md)
 
 - Higher mathmatics
 

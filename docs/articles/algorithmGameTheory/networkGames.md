@@ -107,3 +107,23 @@ Scenario
     (SC(s) / A) ≤ Φ(s) ≤ B · SC(s)
 
   for some constants A, B ≥ 0. Then the price of stability is at most A · B.
+
+- Lemma 4.3
+
+  - For any strategy profile S = (P1,...,Pk) we have SC(S) ≤ Φ(S) ≤ Hk · SC(S)
+
+  ![alt text](images/image_30.png)
+
+- Theorem 4.4
+
+  - The price of stability in the global connection game with k players is at mostHk =Θ(logk).
+
+- Theorem 4.5
+
+  - The price of stability in the global connection game with k players is at least Hk.
+
+![alt text](images/image_31.png)
+
+- Finding PoS Lower bound α
+
+Similarly to the PoA, we need to construct an instance with PoS ≥ α. But here all equilibria should be at least α away from optimal solution.
