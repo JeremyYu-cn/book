@@ -30,4 +30,83 @@
 
 ## Subset Sum
 
+### The subset sum problem
+
+- We are given a set of n items {1, 2, ... , n}.
+
+- Each item i has a non-negative weight wi.
+
+- We are given a bound W.
+
+- Goal: Select a subset S of the items such that sum_i wi <= W and sum_i 𝑤i is maximised.
+
+  ![alt text](image_17.png)
+
+### Dynamic Programming
+
+- We need to identify the appropriate subproblems to use in order to solve the main problem.
+
+- Recall the weighted interval scheduling problem. Similar approach.
+
+- Let OPT(i) be the optimal solution to the subset sum problem, using a subset of {1, 2, ... , i}.
+
+  - Let Oi be its value and hence O is On.
+
+- Should item n be in the optimal solution O or not?
+
+  - If no, then OPT(n-1) = OPT(n)
+
+  - If yes, ?
+
+- Subproblems
+
+  - Using this notation, what are we looking for?
+
+  - OPT(n,W)
+
+  - Should item n be in the optimal solution O or not?
+
+  - If no, then OPT(n,W) = OPT(n-1,W).
+
+  - If yes, then OPT(n,W) = wn + OPT(n-1,W-wn).
+
+![alt text](images/image_18.png)
+
+- Example
+
+```javascript
+function subsetSum(arr, maxSum) {
+  let res = [[]];
+  for (let i = 0; i <= maxSum; i++) {
+    res[0].push(0);
+  }
+  for (let i = 1; i <= arr.length; i++) {
+    res[i] = [0];
+    for (let j = 0; j <= maxSum; j++) {
+      if (arr[i - 1] > j) {
+        res[i][j] = res[i - 1][j];
+      } else {
+        res[i][j] = Math.max(
+          res[i - 1][j],
+          arr[i - 1] + res[i - 1][j - arr[i - 1]]
+        );
+      }
+    }
+  }
+  console.log(res);
+}
+
+/**
+ * 
+0: [0, 0, 0, 0, 0, 0, 0]
+1: [0, 0, 2, 2, 2, 2, 2]
+2: [0, 0, 2, 2, 4, 4, 4]
+3: [0, 0, 2, 3, 4, 5, 5]
+ */
+```
+
+![alt text](images/image_19.png)
+
+- Running Time O(nW)
+
 ## Knapsack
