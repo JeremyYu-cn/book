@@ -41,10 +41,6 @@
   - [Basic knowledge](articles/webassembly/primary.md)
   - [From easy to complicated](articles/webassembly/deeplearn.md)
 
-- Algorithm
-
-  - [Dynamic programming](articles/algorithm/dynamicProgramming.md)
-
 - The principle of compilation
 
   - [Intro](articles/compilation/intro.md)
