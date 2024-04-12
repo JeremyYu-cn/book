@@ -104,6 +104,7 @@
   - [mechanismDesign](articles/algorithmGameTheory/mechanismDesign.md)
   - [mechanismWithMoney](articles/algorithmGameTheory/mechanismWithMoney.md)
   - [mechanismsWithoutMoney](articles/algorithmGameTheory/mechanismsWithoutMoney.md)
+  - [combinationAuctions](articles/algorithmGameTheory/conbinationAuctions.md)
 
 - Higher mathmatics
 
