@@ -7,7 +7,7 @@
 
 ### Multiunit Auctions
 
-![alt text](images/image_72.png.png)
+![alt text](images/image_72.png)
 
 - Definition:
 
