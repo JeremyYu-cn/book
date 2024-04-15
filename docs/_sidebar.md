@@ -98,13 +98,14 @@
 - COMP559 Algorithm Game Theory
 
   - [Intro](articles/algorithmGameTheory/intro.md)
-  - [loadBalanceGames](articles/algorithmGameTheory/loadBalanceGames.md)
-  - [congestionGames](articles/algorithmGameTheory/congestionGames.md)
-  - [networkGames](articles/algorithmGameTheory/networkGames.md)
-  - [mechanismDesign](articles/algorithmGameTheory/mechanismDesign.md)
-  - [mechanismWithMoney](articles/algorithmGameTheory/mechanismWithMoney.md)
-  - [mechanismsWithoutMoney](articles/algorithmGameTheory/mechanismsWithoutMoney.md)
-  - [combinationAuctions](articles/algorithmGameTheory/conbinationAuctions.md)
+  - [load Balance Games](articles/algorithmGameTheory/loadBalanceGames.md)
+  - [congestion Games](articles/algorithmGameTheory/congestionGames.md)
+  - [network Games](articles/algorithmGameTheory/networkGames.md)
+  - [mechanism Design](articles/algorithmGameTheory/mechanismDesign.md)
+  - [mechanism With Money](articles/algorithmGameTheory/mechanismWithMoney.md)
+  - [mechanisms Without Money](articles/algorithmGameTheory/mechanismsWithoutMoney.md)
+  - [combination Auctions](articles/algorithmGameTheory/conbinationAuctions.md)
+  - [Profit Maximization](articles/algorithmGameTheory/ProfitMaximization.md)
 
 - Higher mathmatics
 
