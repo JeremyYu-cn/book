@@ -206,3 +206,153 @@ E.g. Multiunit Auctions (Unit demand valuation)
 ### Approximation
 
 ![alt text](images/image_88.png)
+
+## Part2
+
+### Other Valuations
+
+![alt text](images/image_89.png)
+
+### Iterative Auctions
+
+The Query Model
+
+- Indirect way of sending information about the valuations
+
+- The auction protocol repeatedly interacts with the different bidders, aiming to adaptively elicit enough information about the bidders’ preferences as to be able to find a good (optimal or close to optimal) allocation.
+
+Advantages
+
+- Reduces the amount of information transferred
+- Preserve some privacy about the valuations
+- Makes bidder’s life easier (concentrates on the mechanisms queries) Bidder is a “Black-Box” represented by an oracle
+
+### Query Model
+
+- The auctioneer presents a bundle S, the bidder reports his value v(S) for this bundle.
+
+![alt text](images/image_93.png)
+
+### Subadditive Valuations
+
+- v(S U T) <= v(S) + v(T)
+
+- Can we design incentive compatible mechanisms that approximate the optimal social welfare?
+
+### Affine Maximizers
+
+![alt text](images/image_94.png)
+
+- Example 1
+
+  A’={all the assignments that assign only the first item to a player} Optimize over A’, charge the VCG payments.
+
+  - It is incentive compatible as an affine maximizer. - Poor approximation ratio.
+
+  |     | a   | b   | {a, b} |
+  | --- | --- | --- | ------ |
+  | v1  | ε   | 1   | 1      |
+  | v2  | ε   | 1   | 1      |
+
+  - SW(ALG) = ε
+
+  - SW(OPT) = 1+ε
+
+  - Approximation ratio = SW(OPT)/SW(ALG) = (1+ε)/ε
+
+- Example 2
+
+  |     | i1  | i2  | M   |
+  | --- | --- | --- | --- |
+  | v1  | 1   | 1   | 1   |
+  | v2  | 1   | 1   | 1   |
+  | vn  | 1   | 1   | 1   |
+
+  - SW(ALG) = 1
+
+  - SW(OPT) = n
+
+  - Approximation ratio = SW(OPT)/SW(ALG) = n
+
+- Exact optimization in A’ gives good approximation for A
+
+### (DNS) Mechanism for SA valuations
+
+i) For each bidder i=1,..., n do:
+
+1. Query bidder i for the set M={1,...,m}
+
+2. For each item j=1,...,m do: Query bidder i for the item j
+
+ii) Construct a bipartite graph G=(N,M,E)
+
+1. a vertex bi for every player i 2) a vertex aj for every item j
+
+2. E=(bi,aj)
+
+3. w(bi,aj)=vi(j)
+
+iii) Compute a maximum weighted matching P of G
+
+iv) Find the bidder i\*∈ arg maxi vi(M)
+
+v) Return the assignment with maximum S.W. among iii) and iv)
+
+- example
+
+![alt text](images/image_95.png)
+
+- example 2
+
+![alt text](images/image_96.png)
+
+- example 3
+
+![alt text](images/image_97.png)
+
+- Theorem. The DNS mechanism is efficiently computable, incentive compatible and produces a O(m1/2) approximation of the optimal social welfare for subadditive valuations.
+
+### Item Bidding Auctions
+
+- Item-bidding or simultaneous auctions
+
+  - Bidders simultaneously submit a single bid for each item.
+
+  - Each item is sold in a single-item auction.
+
+    - First price item-bidding auction
+
+    - Second price item-bidding auction - All-pay item-bidding auction
+
+  - Efficient computation
+
+  - Non-truthful mechanisms
+
+- Example
+
+![alt text](images/image_90.png)
+
+- Not Truthful
+
+![alt text](images/image_91.png)
+
+- PoA ≥ 2
+
+![alt text](images/image_92.png)
+
+- PoA ≤ 4
+
+The PoA of item-bidding (simultaneous) auctions is constant for using first, second or all-pay single-item auctions in subadditive valuations.
+
+### Food for thought
+
+Suppose that we run a non-truthful mechanism that guarantees the following:
+
+It maximizes the social welfare for (non-true) valuations vi(S) > v’i(S) > vi(S)/4 (where vi are the true valuation).
+
+- What is the approximation to the optimal social welfare?
+
+- Suppose that you have an incentive compatible mechanism with O(m1/2) approximation of the optimal social welfare.
+  Is this a better mechanism? Why?
+
+- Can you see the connection of the first mechanism to the PoA? How easy is it to find an equilibrium?
