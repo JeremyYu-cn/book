@@ -87,6 +87,7 @@
   - [Graph](articles/advancedAlgorithmicTech/Graph.md)
   - [Greedy](articles/advancedAlgorithmicTech/Greedy.md)
   - [DynamicProgramming](articles/advancedAlgorithmicTech/dynamicProgramming.md)
+  - [Derandomisation and Randomised Rounding](articles/advancedAlgorithmicTech/DerandomisationandRandomisedRounding.md)
 
 - COMP528 Multi-Core And Multi-Processor Programming
 
