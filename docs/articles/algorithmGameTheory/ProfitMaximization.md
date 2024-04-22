@@ -174,11 +174,11 @@ The optimal price is p=1/2 and gives us expected revenue 1/4.
 
   3. Output x = x′ and p with pi = φ−1i (p′i) (upon winning).
 
-![alt text](images_image_116.png)
+![alt text](images/image_116.png)
 
-![alt text](images_image_117.png)
+![alt text](images/image_117.png)
 
-![alt text](images_image_118.png)
+![alt text](images/image_118.png)
 
 - MyeF(v1,v2): Vickrey Auction with Reserve Price 1/2
 
