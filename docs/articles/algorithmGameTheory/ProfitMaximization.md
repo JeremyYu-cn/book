@@ -144,3 +144,44 @@ The optimal price is p=1/2 and gives us expected revenue 1/4.
 - Definition. Given valuations, vi , and corresponding virtual valuations, φi(vi), the virtual surplus (social welfare) of allocation x is
 
   ![alt text](images/image_110.png)
+
+- Theorem. The expected profit of any truthful mechanism, M, is equal to its expected virtual surplus
+
+  - example
+
+  ![alt text](images/image_111.png)
+
+- Lemma. Consider any truthful mechanism and fix the bids v−i of all bidders except for bidder i. The expected payment of a bidder i satisfies:
+
+  ![alt text](images/image_112.png)
+
+  - proof:
+
+    ![alt text](images/image_113.png)
+    ![alt text](images/image_114.png)
+
+- Lemma. Virtual surplus maximization is truthful if and only if, for all i, φi(vi) is monotone nondecreasing in vi.
+
+  ![alt text](images/image_115.png)
+
+### Myerson’s Optimal Mechanism
+
+- Definition: MyeF(b)
+
+  1. Given the bids b and F, compute “virtual bids”: b′i = φi(bi).
+
+  2. Run VCG on the virtual bids b′ to get x′ and p′
+
+  3. Output x = x′ and p with pi = φ−1i (p′i) (upon winning).
+
+![alt text](images_image_116.png)
+
+![alt text](images_image_117.png)
+
+![alt text](images_image_118.png)
+
+- MyeF(v1,v2): Vickrey Auction with Reserve Price 1/2
+
+- Q: Can we do better?
+
+  - No, Mayerson’s mechanism is optimal.
