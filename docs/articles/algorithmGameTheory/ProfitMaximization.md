@@ -92,3 +92,55 @@ The optimal price is p=1/2 and gives us expected revenue 1/4.
   ![alt text](images/image_104.png)
 
   - Answer: 5/12 (r=1/2)
+
+### Single item auction
+
+- Definition
+
+  - Assume that there are n bidders with vi ∈ [0,h].
+
+  - Mechanism M(x, p1, ... , pn)
+
+  - Input: b=(b1,...,bn) the vector of declarations
+
+  - Output: x(b) allocation function
+
+    1. xi(b)=1 if i gets the item
+
+    2. xi(b)=0 if i does not get the item
+
+  - Output: p1(b),...,pn(b): payment functions
+
+  - The utility of player i if his true value is vi but he reports bi is
+
+    ui(bi,b-i;vi)= vi⋅xi(bi,b-i)-pi(bi,b-i)
+
+- Notice that player i’s valuation is a single-parameter.
+
+- A mechanism is truthful if for every i, bi,vi,b-i
+
+  ui(vi,b-i;vi) ≥ ui(bi,b-i;vi)
+
+  vi⋅xi(vi,b-i)-pi(vi,b-i) ≥ vi⋅xi(bi,b-i)-pi(bi,b-i)
+
+- Theorem (9.39 AGT book). A mechanism is truthful if and only if, for any agent i and any fixed choice of bids by the other agents b−i,
+
+  ![alt text](images/image_105.png)
+
+- Example:
+
+  ![alt text](images/image_106.png)
+
+  ![alt text](images/image_107.png)
+
+![alt text](images/image_108.png)
+
+### Virtual valuations
+
+- Definition. The virtual valuation of agent i with valuation vi is
+
+  ![alt text](images/image_109.png)
+
+- Definition. Given valuations, vi , and corresponding virtual valuations, φi(vi), the virtual surplus (social welfare) of allocation x is
+
+  ![alt text](images/image_110.png)
