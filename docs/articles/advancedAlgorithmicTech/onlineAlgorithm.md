@@ -230,3 +230,111 @@ Algorithm Greedy-Balanc
 - MIN (Offline Optimal): Replace the page whose next request happens the furthest in the future.
 
 - Theorem: LRU and FIFO have competitive ratio k.
+
+## Marking Algorithms & Randomised Paging
+
+### Paging Algorithms
+
+- At the end of the last lecture it was claimed:
+
+- Theorem: LRU and FIFO have competitive ratio k.
+
+- However, this actually needs a slightly different definition of competitive ratio.....
+
+- Algorithm A has competitive ratio r if there exists a constant c such that for all inputs x:
+
+  - obj(A(x)) ≤ r\*opt(x) + c
+
+## Marking algorithm
+
+- Consider the following algorithm:
+
+- The algorithm proceeds in phases.
+
+- At the beginning of a phase, all the pages are unmarked.
+
+- Whenever a page is requested, it is marked.
+
+- When a “fault” occurs, the algorithm replaces an unmarked page.
+
+- When all pages in the cache are marked, and a request for an unmarked page occurs, the phase ends.
+
+## Paging Algorithms
+
+- Theorem: The marking algorithm has competitive ratio k.
+
+- The algorithm “faults” at most k times in every phase.
+
+  - Every time it fails, the requested page is marked.
+
+  - If all pages in the cache are marked and a new page is requested, then the phase changes.
+
+- The optimal offline algorithm “faults” at least once in every phase.
+
+  - The phase ends when k+1 different pages are requested.
+
+  - The optimal offline algorithm can only keep at most k of those in the cache.
+
+- Theorem: LRU and FIFO have competitive ratio k.
+
+- Proof: LRU and FIFO are marking algorithms.
+
+- Corollary: LRU and FIFO are the best online algorithms for the paging problem.
+
+## Randomisation
+
+- We will use randomisation to achieve a better competitive ratio.
+
+- We have to make a distinction, regarding the power of the adversary:
+
+- Adaptive Adversary: The adversary can change the input sequence based on the realisations of randomness of the choices of the algorithm.
+
+- A Randomised Algorithm A has competitive ratio r if there exists a constant c such that for all inputs x:
+
+  - 𝔼 obj(A(x)) ≤ r\*opt(x) + c
+
+## Randomised Marking algorithm
+
+- Consider the following algorithm:
+
+  - The algorithm proceeds in phases.
+
+  - At the beginning of a phase, all the pages are unmarked.
+
+  - Whenever a page is requested, it is marked.
+
+  - When a “fault” occurs, the algorithm replaces an unmarked page.
+
+  - When all pages in the cache are marked, and a request for an unmarked page occurs, the phase ends.
+
+- Recall the k-th Harmonic Number: H 𝑘 = ∑ i=1^n 1/i
+
+- Theorem: The Randomised Marking algorithm has competitive ratio 2H(𝑛) against oblivious adversaries.
+
+  - H𝑘 =𝑂(log𝑘)
+
+### The proof
+
+- Assume without loss of generality that RMA makes a “fault” on the first request.
+
+- Consider phase i,
+
+  - let mi be the number of “new” pages in the phase, i.e., pages which were not requested in phase i-1.
+
+  - call the remaining k-mi distinct pages in the phase “old”. • Every time a “new” page is requested, we have a “fault”.
+
+- Every time an “old” page is requested, we may have “fault”.
+
+- The “fault” happens if we replaced the “old” page with a “new” one.
+
+![alt text](images/image_40.png)
+
+![alt text](images/image_41.png)
+
+## Arguing about the OPT
+
+![alt text](images/image_42.png)
+
+## Combining
+
+![alt text](images/image_43.png)
