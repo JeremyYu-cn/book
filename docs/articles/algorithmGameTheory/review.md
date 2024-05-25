@@ -428,7 +428,7 @@
   1. Theorem. A rule f is strategyproof, onto and anonymous iff there exist y1,...,yn-1 such that
      f(L)=med(p1,...,pn,y1,...,yn-1)
 
-## House Allocation Problem
+### House Allocation Problem
 
 - 1,...,n agents
 
@@ -463,3 +463,143 @@ Round i
 - Theorem: The core of the house allocation problem consists of exactly one matching.
 
 - Theorem: The TTC mechanism is strategy-proof.
+
+### Stable Matching
+
+- A matching is called unstable if there are two men m,m′ and two women w, w′ such that
+
+  (i) m is matched to w,
+
+  (ii) m′ is matched to w′, and
+
+  (iii)w′ ≻m w and m ≻w′ m′
+
+- A matching that has no blocking pairs is called stable.
+
+### Gale-Shapley Algorithm
+
+- Round 1
+
+  Step 1: each man proposes to his top-ranked choice
+
+  Step 2: each woman who has received at least two proposals keeps (tentatively) her top- ranked proposal and rejects the rest.
+
+- Round 2
+
+  Step 1: each man who has been rejected proposes to his top-ranked choice among the women who have not rejected him. (每个被拒绝的男人都会向没有拒绝过他的女人中排名最高的)
+
+  Step 2: each woman who has at least two proposals (including ones from previous rounds) keeps her top-ranked proposal and rejects the rest.
+
+- Repeat until each woman has at most one proposal.
+
+- Example
+
+  ![alt text](images/image_122.png)
+
+- At most n^2 rounds!
+
+- Theorem. The Gale-Shapley algorithm (Deferred Acceptance Algorithm) terminates in a stable matching.
+
+### (Fe)male optimal matching
+
+- Theorem. The stable matching produced by the (male-proposal) Gale-Shapley algorithm (Deferred Acceptance Algorithm) is male-optimal.
+
+- Theorem. The direct mechanism associated with the male proposal Gale-Shapley algorithm is strategy-proof for the males.
+
+## Combinatorial Auctions
+
+- Problem Statement:
+
+  1. A set M of m indivisible items M={1,...,m}
+
+  2. A set N of n bidders N={1,...,n}
+
+  3. Bidders have preferences over subsets (bundles) of items
+     A valuation is a real valued function for every subset S of items v(S) is the value the bidder obtains if he receives the bundle S
+
+- Roberts Theorem: If |A| ≥ 3, f is onto A, Vi = RA for every i, and (f, p1, . . . , pn) is incentive compatible then f is an affine maximizer.
+
+- Maximize Social Welfare
+
+  - Maximize social welfare
+
+  - Maximize revenue
+
+  - Minimize envy
+
+### Single-Minded Bidders
+
+- A valuation v is called single-minded if there exists a bundle of items S∗ and a value v∗ ∈ R+ such that v(S) = v∗ for all S ⊇ S∗, and v(S) = 0 for all other S.
+
+- Proposition. The allocation problem among single-minded bidders is NP-hard.
+
+- More precisely, the decision problem of whether the optimal allocation has social welfare of at least k
+  (where k is an additional part of the input) is NP-complete.
+
+- Approximation: S1,...,Sn is a c-approximation of the optimal one if for every other allocation T1,...,Tn
+
+### The Greedy Mechanism for Single- Minded Bidders (important)
+
+![alt text](images/image_123.png)
+
+![alt text](images/image_124.png)
+
+- Theorem. The Greedy mechanism is efficiently computable, incentive compatible and produces a m1/2 approximation of the optimal social welfare.
+
+- Monotonicity: A bidder who wins with bid (S∗i , v∗i) keeps winning for any v′i ≥v∗i andforanyS′i ⊆ S∗i
+
+- Critical Payments: A bidder who wins pays the minimum value needed for winning: the infimum of all values v′i such that (S∗i , v′i ) still wins.
+
+- Lemma. A mechanism for single-minded bidders, in which losers pay 0, is incentive compatible if and only if it is Monotone and uses Critical Payment.
+
+### Query Model
+
+- The auctioneer presents a bundle S, the bidder reports his value v(S) for this bundle.
+
+### (DNS) Mechanism for SA valuations (important)
+
+- Algorithm:
+
+  - For each bidder i=1,..., n do:
+
+    1. Query bidder i for the set M={1,...,m}
+    2. For each item j=1,...,m do: Query bidder i for the item j
+
+  - Construct a bipartite graph G=(N,M,E)
+
+    1. a vertex bi for every player i
+    2. a vertex aj for every item j
+    3. E=(bi,aj)
+    4. w(bi,aj)=vi(j)
+
+  - Compute a maximum weighted matching P of G
+
+  - Find the bidder i\*∈ arg maxi vi(M)
+
+  - Return the assignment with maximum S.W. among iii) and iv)
+
+- Theorem. The DNS mechanism is efficiently computable, incentive compatible and produces a O(m1/2) approximation of the optimal social welfare for subadditive valuations.
+
+### Submodular Valuations
+
+### Item Bidding Auctions
+
+- Each item is sold in a single-item auction.
+
+  - First price item-bidding auction
+
+  - Second price item-bidding auction
+
+  - All-pay item-bidding auction
+
+## Profit Maximization
+
+### Myerson’s Optimal Mechanism
+
+- MyeF(b):
+
+  (i) Given the bids b and F, compute “virtual bids”: b′i = φi(bi).
+
+  (ii) Run VCG on the virtual bids b′ to get x′ and p′
+
+  (iii) Output x = x′ and p with pi = φ−1i (p′i) (upon winning).
