@@ -7,10 +7,10 @@
  * @site: book.yzmblog.top / book.yzmblog.top
 -->
 
-- Programming language
+<!-- - Programming language
 
   - [C++](articles/programming_language/c++.md)
-  - [Python](articles/programming_language/python.md)
+  - [Python](articles/programming_language/python.md) -->
 
 - TypeScript
 
@@ -52,10 +52,6 @@
   - [Intro](articles/machineLearning/intro.md)
   - [Linear Regression](articles/machineLearning/linearRegression.md)
   - [Gradient Descent](articles/machineLearning/gradientDescent.md)
-
-- COMP315 Cloud Computing
-
-  - [Intro](articles/cloudComputing/Intro.md)
 
 - COMP516 Research methods in computer science
 
@@ -109,6 +105,10 @@
   - [combination Auctions](articles/algorithmGameTheory/conbinationAuctions.md)
   - [Profit Maximization](articles/algorithmGameTheory/ProfitMaximization.md)
   - [Review](articles/algorithmGameTheory/review.md)
+
+- COMP702 Final Project
+
+  - [Scheduling](articles/LowCodeProject/Scheduling.md)
 
 - Higher mathmatics
 
