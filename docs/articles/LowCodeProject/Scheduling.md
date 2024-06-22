@@ -4,13 +4,13 @@
 
 ## The Gantt Diagram
 
-![alt text](images/image_1.png)
+<!-- ![alt text](images/image_1.png) -->
 
 ## Tasks
 
 ### Spefication and design proposal
 
-- [x] Project description
+<!-- - [x] Project description
 
 - [x] Aims and requirements
 
@@ -32,7 +32,7 @@
 
 - [x] Risks & contingency plans
 
-- [x] References
+- [x] References -->
 
 ### Front-end
 
