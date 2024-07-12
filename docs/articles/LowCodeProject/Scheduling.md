@@ -18,7 +18,7 @@
 
 | ID  | Requirement             | Priority | Type    | Status | Date |
 | --- | ----------------------- | -------- | ------- | ------ | ---- |
-| 1   | Header Component Update | P4       | Feature |        |      |
+| 1   | Header Component Update | P4       | Feature | - []   |      |
 | 2   | Preview Page            | P1       | Feature | []     |      |
 | 3   | Build Page              | P1       | Feature | []     |      |
 | 4   | Source Code Generation  | P1       | Feature | []     |      |
