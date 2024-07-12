@@ -86,21 +86,7 @@
 | 3   | Build Page                         | P1       | Feature | 🔲     |      |
 | 4   | Source Code Generation             | P1       | Feature | 🔲     |      |
 
-## Weekly Report
-
-### 2024/06/10 - 2024/06/16
-
-1. Confirmed the direction of the final project.
-
-2. Literature reivew.
-
-### 2024/06/17 - 2024/06/23
-
-1. Working on the draft of the spefication and design proposal (The first assignment).
-
-### 2024/06/24 - 2024/07/05
-
-1. Working on the Spefication And Design Proposal.
+## Weekly Progress
 
 ### 2024/07/08 - 2024/07/12
 
@@ -114,3 +100,17 @@
 8. Design a Basic Interpreter for Design Container
 9. To Developed the Page/Element Properties Control Panel
 10. To adjusted the project file structure
+
+### 2024/06/24 - 2024/07/05
+
+1. Working on the Spefication And Design Proposal.
+
+### 2024/06/17 - 2024/06/23
+
+1. Working on the draft of the spefication and design proposal (The first assignment).
+
+### 2024/06/10 - 2024/06/16
+
+1. Confirmed the direction of the final project.
+
+2. Literature reivew.
