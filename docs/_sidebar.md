@@ -108,7 +108,7 @@
 
 - COMP702 Final Project
 
-  - [Scheduling](articles/LowCodeProject/Scheduling.md)
+  - [Progress](articles/LowCodeProject/progress.md)
 
 - Higher mathmatics
 

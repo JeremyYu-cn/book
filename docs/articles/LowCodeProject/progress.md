@@ -1,4 +1,4 @@
-## Scheduling of COMP702
+## The progress of the COMP702
 
 #### Project Name: Advancing Web Development with Low-Code: An Integrated Platform for Rapid Application Creation
 
