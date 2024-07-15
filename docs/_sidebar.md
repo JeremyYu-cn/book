@@ -118,9 +118,10 @@
 
   - [Syllabus](articles/linearMath/catalog.md)
 
-- Data structure
+- Data structure & Algorithmatic
 
   - [Line Table](articles/dataStructure/linearList.md)
+  - [LeetCode](articles/dataStructure/leetCode.md)
 
 - Operation system
 
