@@ -21,3 +21,9 @@
 #### [Floyd-Warshall algorithm](https://zhuanlan.zhihu.com/p/595790984)
 
 [2959. 关闭分部的可行集合数目](https://leetcode.cn/problems/number-of-possible-sets-of-closing-branches/description)
+
+### 图
+
+#### [Dijkstra algorithm](https://oi-wiki.org/graph/shortest-path/#dijkstra-%E7%AE%97%E6%B3%95)
+
+[3112. 访问消失节点的最少时间](https://leetcode.cn/problems/minimum-time-to-visit-disappearing-nodes/description)
