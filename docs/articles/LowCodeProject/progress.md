@@ -50,7 +50,7 @@
 | 9   | Keyboard Shortcuts                        | P3       | Feature | 🔲     |            |
 | 10  | Element Interpreter                       | P0       | Feature | ☑️     | 12/07/2024 |
 | 11  | Element Interpreter Continues Integration | P1       | Feature | ☑️     | 19/07/2024 |
-| 12  | Component Interpreter                     | P0       | Feature | 🔲     |            |
+| 12  | Component Interpreter                     | P0       | Feature | ☑️     | 19/07/2024 |
 | 13  | Element Style Control                     | P0       | Feature | ☑️     | 19/07/2024 |
 | 14  | Scale Bug Fix                             | P4       | Bug     | 🔲     |            |
 | 15  | Data Table Container                      | P0       | Feature | 🔲     |            |
