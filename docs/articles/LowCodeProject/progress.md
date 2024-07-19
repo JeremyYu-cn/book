@@ -105,7 +105,7 @@
 Next Week:
 
 1. Complete common page element development
-2. Complete data table create
+2. Create data table component
 3. Complete file system logic
 4. Create a simple preview page
 
