@@ -41,7 +41,7 @@
 | --- | ----------------------------------------- | -------- | ------- | ------ | ---------- |
 | 1   | Basic UI Design                           | P1       | Feature | ☑️     | 12/07/2024 |
 | 2   | Switch File Bar                           | P1       | Feature | ☑️     | 12/07/2024 |
-| 3   | Container Size Control                    | P1       | Feature | 🔲     |            |
+| 3   | Container Size Control                    | P1       | Feature | ☑️     | 19/07/2024 |
 | 4   | Undo/Redo                                 | P1       | Feature | 🔲     |            |
 | 5   | Drag & Drop Class                         | P0       | Feature | ☑️     | 12/07/2024 |
 | 6   | Element Selector Class                    | P0       | Feature | ☑️     | 12/07/2024 |
