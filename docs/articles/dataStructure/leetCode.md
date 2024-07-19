@@ -4,6 +4,10 @@
 
 [2956. 找到两个数组中的公共元素](https://leetcode.cn/problems/find-common-elements-between-two-arrays/description)
 
+#### 全排列
+
+[2850. 将石头分散到网格图的最少移动次数](https://leetcode.cn/problems/minimum-moves-to-spread-stones-over-grid/description)
+
 ### 链表
 
 [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
