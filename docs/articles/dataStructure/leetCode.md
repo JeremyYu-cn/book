@@ -31,3 +31,7 @@
 ### 前缀和
 
 [3096. 得到更多分数的最少关卡数目](https://leetcode.cn/problems/minimum-levels-to-gain-more-points/description)
+
+### 递归
+
+[50. Pow(x, n)](https://leetcode.cn/problems/powx-n/description/)
