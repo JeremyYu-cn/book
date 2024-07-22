@@ -60,6 +60,8 @@
 | 18  | Import Table Row By Excel                 | P2       | Feature | 🔲     |            |
 | 19  | API Canvas Logic Design                   | P0       | Feature | 🔲     |            |
 | 20  | API Execuse Sandbox Design                | P0       | Feature | 🔲     |            |
+| 21  | Edit Component                            | P1       | Feature | 🔲     |            |
+| 22  | Delete Component                          | P2       | Feature | 🔲     |            |
 
 #### Control Panel Development
 
@@ -79,6 +81,7 @@
 | 12  | API Generation Design Panel                     | P0       | Feature | 🔲     |            |
 | 13  | Element Properties and Styles Form              | P0       | Feature | ☑️     | 19/07/2024 |
 | 14  | Complete each component's properties and styles | P1       | Feature | 🔲     |            |
+| 14  | Edit Component Logic                            | P1       | Feature | 🔲     |            |
 
 ### Back-end
 
