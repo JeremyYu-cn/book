@@ -31,9 +31,10 @@
 | 2   | File Tree Design          | P1       | Feature | ☑️     | 12/07/2024 |
 | 3   | File Type Component       | P1       | Feature | ☑️     | 12/07/2024 |
 | 4   | Add File/Folder Component | P2       | Feature | ☑️     | 12/07/2024 |
-| 5   | Add File/Folder Logic     | P2       | Feature | 🔲     |            |
+| 5   | Add File/Folder Logic     | P2       | Feature | ☑️     | 22/07/2024 |
 | 6   | Delete File/Folder        | P2       | Feature | 🔲     |            |
 | 7   | Current File Tracking     | P3       | Feature | 🔲     |            |
+| 8   | Preview Page              | P1       | Feature | 🔲     |            |
 
 #### Design Container Development
 
@@ -71,7 +72,7 @@
 | 5   | Public Drag Element Logic                       | P0       | Feature | ☑️     | 12/07/2024 |
 | 6   | Element Item Design                             | P0       | Feature | ☑️     | 19/07/2024 |
 | 7   | Save Component                                  | P0       | Feature | ☑️     | 19/07/2024 |
-| 8   | Drag Component To Design Container              | P0       | Feature | 🔲     |            |
+| 8   | Drag Component To Design Container              | P0       | Feature | ☑️     | 22/07/2024 |
 | 9   | Element/Component Properties Control            | P0       | Feature | ☑️     | 19/07/2024 |
 | 10  | Page Element Tree                               | P0       | Feature | ☑️     | 19/07/2024 |
 | 11  | Data Table Design Panel                         | P0       | Feature | 🔲     |            |
@@ -89,6 +90,10 @@
 | 4   | Source Code Generation             | P1       | Feature | 🔲     |      |
 
 ## Weekly Progress
+
+### 2024/07/22 - 2024/07/26
+
+1. Feature: Complete add file/folder logic
 
 ### 2024/07/14 - 2024/07/19
 
