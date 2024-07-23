@@ -1,1 +1,1 @@
-![alt text](image/image_2.png)
+![alt text](images/image_2.png)
