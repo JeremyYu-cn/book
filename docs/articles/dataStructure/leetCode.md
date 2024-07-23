@@ -36,6 +36,10 @@
 
 [2101. 引爆最多的炸弹](https://leetcode.cn/problems/detonate-the-maximum-bombs/description)
 
+#### 深度优先搜索
+
+[100. 相同的树](https://leetcode.cn/problems/same-tree/description/)
+
 ### 前缀和
 
 [3096. 得到更多分数的最少关卡数目](https://leetcode.cn/problems/minimum-levels-to-gain-more-points/description)
