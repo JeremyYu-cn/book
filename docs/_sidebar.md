@@ -109,6 +109,7 @@
 - COMP702 Final Project
 
   - [Progress](articles/LowCodeProject/progress.md)
+  - [How it works?](articles/LowCodeProject/howItWorks.md)
 
 - Higher mathmatics
 
