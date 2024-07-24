@@ -12,6 +12,10 @@
 
 [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
 
+### 哈希表
+
+[2766. 重新放置石块](https://leetcode.cn/problems/relocate-marbles/description)
+
 ### 双指针
 
 [11. 盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/description/)
