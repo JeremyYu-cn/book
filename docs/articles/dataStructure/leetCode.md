@@ -52,3 +52,7 @@
 ### 递归
 
 [50. Pow(x, n)](https://leetcode.cn/problems/powx-n/description/)
+
+### 贪心
+
+[2844. 生成特殊数字的最少操作](https://leetcode.cn/problems/minimum-operations-to-make-a-special-number/description)
