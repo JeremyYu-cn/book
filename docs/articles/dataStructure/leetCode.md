@@ -43,6 +43,7 @@
 #### 深度优先搜索
 
 [100. 相同的树](https://leetcode.cn/problems/same-tree/description/)
+[101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/description/)
 [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
 
 ### 前缀和
