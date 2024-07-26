@@ -54,12 +54,12 @@
 | 12  | Component Interpreter                     | P0       | Feature | ☑️     | 19/07/2024 |
 | 13  | Element Style Control                     | P0       | Feature | ☑️     | 19/07/2024 |
 | 14  | Scale Bug Fix                             | P4       | Bug     | 🔲     |            |
-| 15  | Data Table Container                      | P0       | Feature | 🔲     |            |
-| 16  | Create/Edit/Delete Table                  | P0       | Feature | 🔲     |            |
+| 15  | Data Table Container                      | P0       | Feature | ☑️     | 24/07/2024 |
+| 16  | Create/Edit/Delete Table                  | P0       | Feature | ☑️     | 24/07/2024 |
 | 17  | Add/Edit/Delete Table Row                 | P0       | Feature | 🔲     |            |
 | 18  | Import Table Row By Excel                 | P2       | Feature | 🔲     |            |
-| 19  | API Canvas Logic Design                   | P0       | Feature | 🔲     |            |
-| 20  | API Execuse Sandbox Design                | P0       | Feature | 🔲     |            |
+| 19  | API Canvas Logic Design                   | P0       | Feature | ☑️     | 26/07/2024 |
+| 20  | API Parser Design                         | P0       | Feature | 🔲     |            |
 | 21  | Edit Component                            | P1       | Feature | 🔲     |            |
 | 22  | Delete Component                          | P2       | Feature | 🔲     |            |
 
@@ -97,6 +97,14 @@
 ### 2024/07/22 - 2024/07/26
 
 1. Feature: Complete add file/folder logic
+2. Feature: Basic functionality of a Data Table Container
+3. Feature: Add/Edit/Delete Table Row logic
+
+Next Week:
+
+1. Complete basic functionality of API design and table design.
+2. Create a Back-end server and start architecture design.
+3. Improve page attribute design.
 
 ### 2024/07/14 - 2024/07/19
 
