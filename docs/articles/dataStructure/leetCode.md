@@ -49,6 +49,7 @@
 [100. 相同的树](https://leetcode.cn/problems/same-tree/description/)
 [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/description/)
 [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
+[110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/description/)
 [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/)
 [112. 路径总和](https://leetcode.cn/problems/path-sum/description/)
 
