@@ -2,6 +2,8 @@
 
 ### 数组
 
+[699. 掉落的方块](https://leetcode.cn/problems/falling-squares/description)
+
 [2956. 找到两个数组中的公共元素](https://leetcode.cn/problems/find-common-elements-between-two-arrays/description)
 
 [2740. 找出分区值](https://leetcode.cn/problems/find-the-value-of-the-partition/description/)
