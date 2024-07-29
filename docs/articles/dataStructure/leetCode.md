@@ -2,6 +2,7 @@
 
 ### 数组
 
+[682. 棒球比赛](https://leetcode.cn/problems/baseball-game/description/)
 [699. 掉落的方块](https://leetcode.cn/problems/falling-squares/description)
 
 [2956. 找到两个数组中的公共元素](https://leetcode.cn/problems/find-common-elements-between-two-arrays/description)
