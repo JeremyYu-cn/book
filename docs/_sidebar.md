@@ -121,8 +121,9 @@
 
 - Data structure & Algorithmatic
 
-  - [Line Table](articles/dataStructure/linearList.md)
   - [LeetCode](articles/dataStructure/leetCode.md)
+  - [Line Table](articles/dataStructure/linearList.md)
+  - [mod](articles/dataStructure/mod.md)
 
 - Operation system
 

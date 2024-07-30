@@ -69,7 +69,4 @@
 
 ### 模运算
 
-[快速幂](![alt text](images/image_1.png))
-[模运算的世界：当加减乘除遇上取模（模运算恒等式/费马小定理](https://leetcode.cn/circle/discuss/mDfnkW/)
-
 [2961. 双模幂运算](https://leetcode.cn/problems/double-modular-exponentiation/description)
