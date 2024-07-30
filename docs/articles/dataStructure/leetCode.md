@@ -48,10 +48,15 @@
 #### 深度优先
 
 [100. 相同的树](https://leetcode.cn/problems/same-tree/description/)
+
 [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/description/)
+
 [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
+
 [110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/description/)
+
 [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/)
+
 [112. 路径总和](https://leetcode.cn/problems/path-sum/description/)
 
 ### 前缀和
@@ -65,6 +70,7 @@
 ### 贪心
 
 [2844. 生成特殊数字的最少操作](https://leetcode.cn/problems/minimum-operations-to-make-a-special-number/description)
+
 [3106. 满足距离约束且字典序最小的字符串](https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/description)
 
 ### 模运算
