@@ -41,11 +41,11 @@
 
 [3112. 访问消失节点的最少时间](https://leetcode.cn/problems/minimum-time-to-visit-disappearing-nodes/description)
 
-#### 广度优先搜索
+#### 广度优先
 
 [2101. 引爆最多的炸弹](https://leetcode.cn/problems/detonate-the-maximum-bombs/description)
 
-#### 深度优先搜索
+#### 深度优先
 
 [100. 相同的树](https://leetcode.cn/problems/same-tree/description/)
 [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/description/)
@@ -66,3 +66,10 @@
 
 [2844. 生成特殊数字的最少操作](https://leetcode.cn/problems/minimum-operations-to-make-a-special-number/description)
 [3106. 满足距离约束且字典序最小的字符串](https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/description)
+
+### 模运算
+
+[快速幂](![alt text](images/image_1.png))
+[模运算的世界：当加减乘除遇上取模（模运算恒等式/费马小定理](https://leetcode.cn/circle/discuss/mDfnkW/)
+
+[2961. 双模幂运算](https://leetcode.cn/problems/double-modular-exponentiation/description)
