@@ -74,6 +74,8 @@
 
 [3106. 满足距离约束且字典序最小的字符串](https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/description)
 
+[3111. 覆盖所有点的最少矩形数目](https://leetcode.cn/problems/minimum-rectangles-to-cover-points/description)
+
 ### 模运算
 
 [2961. 双模幂运算](https://leetcode.cn/problems/double-modular-exponentiation/description)
