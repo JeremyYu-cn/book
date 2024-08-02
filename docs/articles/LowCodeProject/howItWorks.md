@@ -1,3 +1,15 @@
+### Project Modules
+
+The following chart presents modules of the Low-code development project. The Low-code development project are divided into three parts: Front-end, Page Interpreter, and Back-end
+
+![alt text](images/image_5.png)
+
+1. The Front-end is includes modules for managing folders, tables, pages, APIs, components, and previewing content, which handle user interactions and display.
+
+2. The Page Interpreter system is responsible for previewing web pages and generating web page files. It includes the Temporary Drag Module, Snapshot Module, and Template Module.
+
+3. The Back-end is responsible for data storage and business logic, featuring modules for HTTP requests, database operations, and project building.
+
 ### How does the Drag and Drop Editor works
 
 The following flowchart presents the principle of the drag and drop editor.
@@ -16,7 +28,7 @@ The program will push new element data to the global page store when the user dr
 
 ### Front-end Data Flow
 
-The following flowchart illustrates the data flow:
+The following flowchart illustrates the front-end data flow:
 
 ![alt text](images/image_3.png)
 
@@ -29,3 +41,15 @@ The following flowchart illustrates the data flow:
 4. And the design store is responsible for managing current editing files.
 
 5. Each project file data transmission should be through these global data stores.
+
+### Generating Workflow
+
+The following flowchart illustrates the building file worlflow:
+
+![alt text](image.png)
+
+1. Firstly, the front-end project will integrate the web project data into JSON data and then send it to the back-end.
+
+2. Secondly, the file generator will obtain file templates from the independent template module.
+
+3. Finally, the project will create a sandbox to build the project according to the generated files.
