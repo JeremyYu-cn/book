@@ -10,6 +10,8 @@
 
 [2740. 找出分区值](https://leetcode.cn/problems/find-the-value-of-the-partition/description/)
 
+[3128. 直角三角形](https://leetcode.cn/problems/right-triangles/description)
+
 #### 全排列
 
 [2850. 将石头分散到网格图的最少移动次数](https://leetcode.cn/problems/minimum-moves-to-spread-stones-over-grid/description)
@@ -75,6 +77,8 @@
 [3106. 满足距离约束且字典序最小的字符串](https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/description)
 
 [3111. 覆盖所有点的最少矩形数目](https://leetcode.cn/problems/minimum-rectangles-to-cover-points/description)
+
+[LCP 40. 心算挑战](https://leetcode.cn/problems/uOAnQW/description/)
 
 ### 模运算
 
