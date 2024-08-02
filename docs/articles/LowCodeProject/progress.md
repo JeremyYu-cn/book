@@ -32,9 +32,8 @@
 | 3   | File Type Component       | P1       | Feature | ☑️     | 12/07/2024 |
 | 4   | Add File/Folder Component | P2       | Feature | ☑️     | 12/07/2024 |
 | 5   | Add File/Folder Logic     | P2       | Feature | ☑️     | 22/07/2024 |
-| 6   | Delete File/Folder        | P2       | Feature | 🔲     |            |
-| 7   | Current File Tracking     | P3       | Feature | 🔲     |            |
-| 8   | Preview Page              | P1       | Feature | 🔲     |            |
+| 6   | Delete File/Folder        | P2       | Feature | ☑️     | 02/08/2024 |
+| 7   | Current File Tracking     | P3       | Feature | ☑️     | 02/08/2024 |
 
 #### Design Container Development
 
@@ -77,20 +76,26 @@
 | 8   | Drag Component To Design Container              | P0       | Feature | ☑️     | 22/07/2024 |
 | 9   | Element/Component Properties Control            | P0       | Feature | ☑️     | 19/07/2024 |
 | 10  | Page Element Tree                               | P0       | Feature | ☑️     | 19/07/2024 |
-| 11  | Data Table Design Panel                         | P0       | Feature | 🔲     |            |
+| 11  | Data Table Design Panel                         | P0       | Feature | ☑️     | 26/07/2024 |
 | 12  | API Generation Design Panel                     | P0       | Feature | 🔲     |            |
 | 13  | Element Properties and Styles Form              | P0       | Feature | ☑️     | 19/07/2024 |
-| 14  | Complete each component's properties and styles | P1       | Feature | 🔲     |            |
-| 14  | Edit Component Logic                            | P1       | Feature | 🔲     |            |
+| 14  | Complete each component's properties and styles | P1       | Feature | ☑️     | 26/07/2024 |
+| 15  | Edit Component Logic                            | P1       | Feature | 🔲     |            |
+| 16  | Create Element Event                            | P0       | Feature | 🔲     |            |
+| 17  | Element Detail Event                            | P0       | Feature | 🔲     |            |
 
 ### Back-end
 
-| ID  | Requirement                        | Priority | Type    | Status | Date |
-| --- | ---------------------------------- | -------- | ------- | ------ | ---- |
-| 1   | Service Architect Design           | P0       | Feature | 🔲     |      |
-| 2   | Get/Add/Edit/Delete Component List | P1       | Feature | 🔲     |      |
-| 3   | Build Page                         | P1       | Feature | 🔲     |      |
-| 4   | Source Code Generation             | P1       | Feature | 🔲     |      |
+| ID  | Requirement                        | Priority | Type    | Status | Date       |
+| --- | ---------------------------------- | -------- | ------- | ------ | ---------- |
+| 1   | Service Architect Design           | P0       | Feature | ☑️     | 02/08/2024 |
+| 2   | Get/Add/Edit/Delete Component List | P1       | Feature | ☑️     | 02/08/2024 |
+| 3   | Build Page                         | P1       | Feature | 🔲     |            |
+| 4   | Source Code Generation             | P1       | Feature | 🔲     |            |
+| 5   | File Tree Request API              | P1       | Feature | ☑️     | 02/08/2024 |
+| 6   | Project Request API                | P1       | Feature | ☑️     | 02/08/2024 |
+| 7   | Data Table Request API             | P1       | Feature | ☑️     | 02/08/2024 |
+| 8   | API Event Request API              | P1       | Feature | ☑️     | 02/08/2024 |
 
 ## Weekly Progress
 
