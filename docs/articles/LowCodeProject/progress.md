@@ -99,6 +99,18 @@
 
 ## Weekly Progress
 
+### 2024/07/29/2024/08/02
+
+1. Feature: Create Back-end Server Design
+2. Feature: Create Database Design
+3. Feature: Component APIs
+4. Feature: File Tree Request API
+5. Feature: Data Table Request API
+6. Feature: API Event Request API
+7. Feature: Delete File/Folder
+8. Feature: Current File Tracking
+9. Feature: Autosave functionality
+
 ### 2024/07/22 - 2024/07/26
 
 1. Feature: Complete add file/folder logic
