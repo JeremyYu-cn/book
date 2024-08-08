@@ -81,7 +81,7 @@
 | 12  | API Generation Design Panel                     | P0       | Feature | ☑️     | 08/08/2024 |
 | 13  | Element Properties and Styles Form              | P0       | Feature | ☑️     | 19/07/2024 |
 | 14  | Complete each component's properties and styles | P1       | Feature | ☑️     | 26/07/2024 |
-| 15  | Edit Component Logic                            | P1       | Feature | 🔲     |            |
+| 15  | Edit Component Logic                            | P1       | Feature | ☑️     | 08/08/2024 |
 | 16  | Create Element Event Design                     | P0       | Feature | 🔲     |            |
 | 17  | Element Detail Event Design                     | P0       | Feature | 🔲     |            |
 
