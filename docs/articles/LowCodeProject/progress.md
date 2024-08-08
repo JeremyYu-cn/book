@@ -16,12 +16,13 @@
 
 #### Basic Development
 
-| ID  | Requirement             | Priority | Type    | Status | Date |
-| --- | ----------------------- | -------- | ------- | ------ | ---- |
-| 1   | Header Component Update | P4       | Feature | 🔲     |      |
-| 2   | Preview Page            | P1       | Feature | 🔲     |      |
-| 3   | Build Page              | P1       | Feature | 🔲     |      |
-| 4   | Source Code Generation  | P1       | Feature | 🔲     |      |
+| ID  | Requirement             | Priority | Type    | Status | Date       |
+| --- | ----------------------- | -------- | ------- | ------ | ---------- |
+| 1   | Header Component Update | P4       | Feature | ☑️     | 08/08/2024 |
+| 2   | Preview Page            | P1       | Feature | 🔲     |            |
+| 3   | Build Page              | P1       | Feature | 🔲     |            |
+| 4   | Source Code Generation  | P1       | Feature | 🔲     |            |
+| 5   | Auto Save Method        | P1       | Feature | ☑️     | 08/08/2024 |
 
 #### File System Development
 
@@ -55,12 +56,12 @@
 | 14  | Scale Bug Fix                             | P4       | Bug     | 🔲     |            |
 | 15  | Data Table Container                      | P0       | Feature | ☑️     | 24/07/2024 |
 | 16  | Create/Edit/Delete Table                  | P0       | Feature | ☑️     | 24/07/2024 |
-| 17  | Add/Edit/Delete Table Row                 | P0       | Feature | 🔲     |            |
+| 17  | Add/Edit/Delete Table Row                 | P0       | Feature | ☑️     | 08/08/2024 |
 | 18  | Import Table Row By Excel                 | P2       | Feature | 🔲     |            |
 | 19  | API Canvas Logic Design                   | P0       | Feature | ☑️     | 26/07/2024 |
-| 20  | API Parser Design                         | P0       | Feature | 🔲     |            |
-| 21  | Edit Component                            | P1       | Feature | 🔲     |            |
-| 22  | Delete Component                          | P2       | Feature | 🔲     |            |
+| 20  | API Parser Design                         | P0       | Feature | ☑️     | 08/08/2024 |
+| 21  | Edit Component                            | P1       | Feature | ☑️     | 08/08/2024 |
+| 22  | Delete Component                          | P2       | Feature | ☑️     | 08/08/2024 |
 
 #### Control Panel Development
 
@@ -77,12 +78,12 @@
 | 9   | Element/Component Properties Control            | P0       | Feature | ☑️     | 19/07/2024 |
 | 10  | Page Element Tree                               | P0       | Feature | ☑️     | 19/07/2024 |
 | 11  | Data Table Design Panel                         | P0       | Feature | ☑️     | 26/07/2024 |
-| 12  | API Generation Design Panel                     | P0       | Feature | 🔲     |            |
+| 12  | API Generation Design Panel                     | P0       | Feature | ☑️     | 08/08/2024 |
 | 13  | Element Properties and Styles Form              | P0       | Feature | ☑️     | 19/07/2024 |
 | 14  | Complete each component's properties and styles | P1       | Feature | ☑️     | 26/07/2024 |
 | 15  | Edit Component Logic                            | P1       | Feature | 🔲     |            |
-| 16  | Create Element Event                            | P0       | Feature | 🔲     |            |
-| 17  | Element Detail Event                            | P0       | Feature | 🔲     |            |
+| 16  | Create Element Event Design                     | P0       | Feature | 🔲     |            |
+| 17  | Element Detail Event Design                     | P0       | Feature | 🔲     |            |
 
 ### Back-end
 
@@ -96,6 +97,7 @@
 | 6   | Project Request API                | P1       | Feature | ☑️     | 02/08/2024 |
 | 7   | Data Table Request API             | P1       | Feature | ☑️     | 02/08/2024 |
 | 8   | API Event Request API              | P1       | Feature | ☑️     | 02/08/2024 |
+| 9   | Auto Save Request API              | P1       | Feature | ☑️     | 08/08/2024 |
 
 ## Weekly Progress
 
