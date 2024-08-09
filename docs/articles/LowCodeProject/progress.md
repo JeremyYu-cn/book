@@ -101,7 +101,19 @@
 
 ## Weekly Progress
 
-### 2024/07/29/2024/08/02
+### 2024/08/05 - 2024/08/09
+
+1. Feature: Auto Save Request API
+2. Edit Component Logic
+3. API Generation Design Panel
+4. Delete Component
+5. Edit Component
+6. API Parser Design
+7. Add/Edit/Delete Table Row
+8. Header Component Update
+9.
+
+### 2024/07/29 - 2024/08/02
 
 1. Feature: Create Back-end Server Design
 2. Feature: Create Database Design
