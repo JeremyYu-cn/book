@@ -38,6 +38,8 @@
 
 #### [Floyd-Warshall algorithm](https://zhuanlan.zhihu.com/p/595790984)
 
+[1035. 不相交的线](https://leetcode.cn/problems/uncrossed-lines/description)
+
 [2959. 关闭分部的可行集合数目](https://leetcode.cn/problems/number-of-possible-sets-of-closing-branches/description)
 
 ### 图
