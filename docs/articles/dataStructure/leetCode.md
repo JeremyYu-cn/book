@@ -87,3 +87,7 @@
 ### 模运算
 
 [2961. 双模幂运算](https://leetcode.cn/problems/double-modular-exponentiation/description)
+
+### 字典树
+
+[676. 实现一个魔法字典] (https://leetcode.cn/problems/implement-magic-dictionary/description)
