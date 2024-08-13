@@ -14,6 +14,8 @@
 
 [3131. 找出与数组相加的整数 I](https://leetcode.cn/problems/find-the-integer-added-to-array-i/description)
 
+[3151. 特殊数组 I](https://leetcode.cn/problems/special-array-i/description/)
+
 #### 全排列
 
 [2850. 将石头分散到网格图的最少移动次数](https://leetcode.cn/problems/minimum-moves-to-spread-stones-over-grid/description)
