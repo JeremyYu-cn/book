@@ -46,6 +46,8 @@
 
 [3152. 特殊数组 II](https://leetcode.cn/problems/special-array-ii/description/)
 
+[3148. 矩阵中的最大得分](https://leetcode.cn/problems/maximum-difference-score-in-a-grid/description/)
+
 ### 图
 
 #### [Dijkstra algorithm](https://oi-wiki.org/graph/shortest-path/#dijkstra-%E7%AE%97%E6%B3%95)
