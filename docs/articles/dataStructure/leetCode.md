@@ -1,5 +1,9 @@
 ## 算法小结
 
+### 字符串
+
+[551. 学生出勤记录 I](https://leetcode.cn/problems/student-attendance-record-i/description)
+
 ### 数组
 
 [682. 棒球比赛](https://leetcode.cn/problems/baseball-game/description/)

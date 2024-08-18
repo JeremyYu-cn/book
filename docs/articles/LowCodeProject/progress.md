@@ -19,10 +19,12 @@
 | ID  | Requirement             | Priority | Type    | Status | Date       |
 | --- | ----------------------- | -------- | ------- | ------ | ---------- |
 | 1   | Header Component Update | P4       | Feature | ☑️     | 08/08/2024 |
-| 2   | Preview Page            | P1       | Feature | 🔲     |            |
-| 3   | Build Page              | P1       | Feature | 🔲     |            |
-| 4   | Source Code Generation  | P1       | Feature | 🔲     |            |
-| 5   | Auto Save Method        | P1       | Feature | ☑️     | 08/08/2024 |
+| 2   | Preview Page            | P1       | Feature | ☑️     | 16/08/2024 |
+| 3   | Build Page              | P1       | Feature | ☑️     | 16/08/2024 |
+| 4   | Auto Save Method        | P1       | Feature | ☑️     | 08/08/2024 |
+| 5   | Web Page Project List   | P1       | Feature | ☑️     | 16/08/2024 |
+| 6   | Web Page Project Create | P1       | Feature | ☑️     | 16/08/2024 |
+| 7   | Web Page Project Config | P1       | Feature | ☑️     | 16/08/2024 |
 
 #### File System Development
 
@@ -82,8 +84,8 @@
 | 13  | Element Properties and Styles Form              | P0       | Feature | ☑️     | 19/07/2024 |
 | 14  | Complete each component's properties and styles | P1       | Feature | ☑️     | 26/07/2024 |
 | 15  | Edit Component Logic                            | P1       | Feature | ☑️     | 08/08/2024 |
-| 16  | Create Element Event Design                     | P0       | Feature | 🔲     |            |
-| 17  | Element Detail Event Design                     | P0       | Feature | 🔲     |            |
+| 16  | Create Element Event Design                     | P0       | Feature | ☑️     | 16/08/2024 |
+| 17  | Element Detail Event Design                     | P0       | Feature | ☑️     | 16/08/2024 |
 
 ### Back-end
 
@@ -91,13 +93,12 @@
 | --- | ---------------------------------- | -------- | ------- | ------ | ---------- |
 | 1   | Service Architect Design           | P0       | Feature | ☑️     | 02/08/2024 |
 | 2   | Get/Add/Edit/Delete Component List | P1       | Feature | ☑️     | 02/08/2024 |
-| 3   | Build Page                         | P1       | Feature | 🔲     |            |
-| 4   | Source Code Generation             | P1       | Feature | 🔲     |            |
-| 5   | File Tree Request API              | P1       | Feature | ☑️     | 02/08/2024 |
-| 6   | Project Request API                | P1       | Feature | ☑️     | 02/08/2024 |
-| 7   | Data Table Request API             | P1       | Feature | ☑️     | 02/08/2024 |
-| 8   | API Event Request API              | P1       | Feature | ☑️     | 02/08/2024 |
-| 9   | Auto Save Request API              | P1       | Feature | ☑️     | 08/08/2024 |
+| 3   | Build Page                         | P1       | Feature | ☑️     | 16/08/2024 |
+| 4   | File Tree Request API              | P1       | Feature | ☑️     | 02/08/2024 |
+| 5   | Project Request API                | P1       | Feature | ☑️     | 02/08/2024 |
+| 6   | Data Table Request API             | P1       | Feature | ☑️     | 02/08/2024 |
+| 7   | API Event Request API              | P1       | Feature | ☑️     | 02/08/2024 |
+| 8   | Auto Save Request API              | P1       | Feature | ☑️     | 08/08/2024 |
 
 ## Weekly Progress
 
@@ -111,7 +112,6 @@
 6. API Parser Design
 7. Add/Edit/Delete Table Row
 8. Header Component Update
-9.
 
 ### 2024/07/29 - 2024/08/02
 
