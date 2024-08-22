@@ -48,22 +48,21 @@
 | 4   | Undo/Redo                                 | P1       | Feature | 🔲     |            |
 | 5   | Drag & Drop Class                         | P0       | Feature | ☑️     | 12/07/2024 |
 | 6   | Element Selector Class                    | P0       | Feature | ☑️     | 12/07/2024 |
-| 7   | Selector Bounding Control                 | P1       | Feature | 🔲     |            |
+| 7   | Selector Bounding Control                 | P1       | Feature | ☑️     | 22/08/2024 |
 | 8   | Page Layout Control                       | P1       | Feature | ☑️     | 19/07/2024 |
-| 9   | Keyboard Shortcuts                        | P3       | Feature | 🔲     |            |
+| 9   | Keyboard Shortcuts                        | P3       | Feature | ☑️     | 22/08/2024 |
 | 10  | Element Interpreter                       | P0       | Feature | ☑️     | 12/07/2024 |
 | 11  | Element Interpreter Continues Integration | P1       | Feature | ☑️     | 19/07/2024 |
 | 12  | Component Interpreter                     | P0       | Feature | ☑️     | 19/07/2024 |
 | 13  | Element Style Control                     | P0       | Feature | ☑️     | 19/07/2024 |
-| 14  | Scale Bug Fix                             | P4       | Bug     | 🔲     |            |
+| 14  | Scale Bug Fix                             | P4       | Bug     | ☑️     | 22/08/2024 |
 | 15  | Data Table Container                      | P0       | Feature | ☑️     | 24/07/2024 |
 | 16  | Create/Edit/Delete Table                  | P0       | Feature | ☑️     | 24/07/2024 |
 | 17  | Add/Edit/Delete Table Row                 | P0       | Feature | ☑️     | 08/08/2024 |
-| 18  | Import Table Row By Excel                 | P2       | Feature | 🔲     |            |
-| 19  | API Canvas Logic Design                   | P0       | Feature | ☑️     | 26/07/2024 |
-| 20  | API Parser Design                         | P0       | Feature | ☑️     | 08/08/2024 |
-| 21  | Edit Component                            | P1       | Feature | ☑️     | 08/08/2024 |
-| 22  | Delete Component                          | P2       | Feature | ☑️     | 08/08/2024 |
+| 18  | API Canvas Logic Design                   | P0       | Feature | ☑️     | 26/07/2024 |
+| 19  | API Parser Design                         | P0       | Feature | ☑️     | 08/08/2024 |
+| 20  | Edit Component                            | P1       | Feature | ☑️     | 08/08/2024 |
+| 21  | Delete Component                          | P2       | Feature | ☑️     | 08/08/2024 |
 
 #### Control Panel Development
 
