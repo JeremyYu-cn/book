@@ -1,12 +1,12 @@
-## 堆(heap)
+## Heap
 
-## 完全二叉树
+## Complete Binary Tree
 
-二叉树按照从上往下，从左往右顺序进行编号
+A binary tree is numbered from top to bottom and from left to right.
 
-![完全二叉树](https://img.yzmblog.top/book/complish_binary_tree.png)
+![Complete Binary Tree](https://img.yzmblog.top/book/complish_binary_tree.png)
 
-## 大根堆和小根堆
+## RootHeap
 
 ### 大根堆
 

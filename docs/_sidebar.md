@@ -123,7 +123,9 @@
 
   - [LeetCode](articles/dataStructure/leetCode.md)
   - [Line Table](articles/dataStructure/linearList.md)
-  - [mod](articles/dataStructure/mod.md)
+  - [Heap](articles/dataStructure/heap.md)
+  - [Mod](articles/dataStructure/mod.md)
+  - [Sorting](articles/algorithm/heap.md)
 
 - Operation system
 
