@@ -33,7 +33,7 @@ workder.on("error", ({ err, requsestData }) => {
 ### How do you compare objects in javascript, it can be a short code example or just an explanation and why you CANNOT use === operator
 
 We can use an iterator to compare objects.
-We cannot compare objects by ===, because if we use === to compare the object, it will compare the object's stack (memory); it cannot compare the object's key and value. For example, "console.log({} === {}) // false", because their memory keys are different.
+We cannot compare objects by ===, because if we use === to compare the object, it will compare the object's stack (memory) value; it cannot compare the object's key and value. For example, "console.log({} === {}) // false", because their memory keys are different.
 
 ```javascript
 console.log({} === {}); // false
