@@ -136,4 +136,8 @@
   - [Syllabus](articles/network/catalog.md)
 
 - Principle of computer consist
+
   - [Syllabus](articles/computerCompose/catalog.md)
+
+- QA
+  - [index](articles/QA/index.md)
