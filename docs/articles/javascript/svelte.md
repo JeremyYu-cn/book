@@ -89,7 +89,7 @@ const onClick = () => count++
 <p>{test.text} {test.num}</p>
 ```
 
-- $state.raw
+- `$state.raw`
 
 如果我们不想在 Array 或 Object 中`深度监听`数据变化，我们可以用`$state.raw`方法声明变量。
 
@@ -117,7 +117,7 @@ setTimeout(() => {
 
 这种方法可以`提高`在大型数组和对象中的`性能`，避免在这样的数据中进行过度的监听。
 
-- $state.snapshot
+- `$state.snapshot`
 
 在`$state`进行深度监听数据时，返回的是一个`Proxy`对象，如果我们想获取在某一个时间片段中获取该`Proxy`对象的静态数据，需要用到`$state.snapshot`方法。
 
@@ -130,3 +130,34 @@ setTimeout(() => {
 ```
 
 ### $derived
+
+类似于 Vue 的`computed`和 React 的`useMemo`, `$derived`可以监听已有的 state 变化而返回经过开发者处理后的数据，例如
+
+```svelte
+<script lang="ts">
+  let num = $state(1);
+  let multiple = $derived(num * 2);
+</script>
+
+<button onclick={() => num++}>add</button>
+<p>{num} {multiple}</p>
+```
+
+- `$derived.by`
+
+`$derived` 可以捕捉到一些基本的数据类型的变化并返回，如果要进行复杂的数据处理，需要用到`$derived.by`方法
+
+```svelte
+<script lang="ts">
+let arr = $state([1,2,3,4])
+let total = $derived.by(() => arr.reduce((a, b) => a + b, 0))
+</script>
+
+<button onclick={() => arr.push(arr.length + 1)}>Push</button>
+<p>{ arr.join(" + ") } = {total}</p>
+
+```
+
+![alt text](images/svelte_derivedby.png)
+
+### $effect
