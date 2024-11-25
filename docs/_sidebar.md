@@ -22,6 +22,7 @@
   - [Cache of front-end development](articles/frontend/cache.md)
   - [Basic knowledge of front-end development](articles/javascript/basic.md)
   - [Vue](articles/javascript/vue.md)
+  - [Svelte](articles/javascript/svelte.md)
 
 - Webpack
 
