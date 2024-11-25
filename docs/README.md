@@ -6,9 +6,9 @@
 
 # Computer Science Book
 
-Hi, my name is Zhiming Yu. I am a full-stack engineer and I am from China. This is a note-taking website for Jeremy. And the website is based on Docsify, which is deployed on Github Pages.
+Hi, my name is Jeremy Yu. I am a full-stack engineer. This is a note-taking website for Jeremy. And the website is based on Docsify, which is deployed on Github Pages.
 
-Here is my basic information:
+My basic information:
 
 Eduction:
 
@@ -18,9 +18,11 @@ Master of Engineering in Advanced Computer Science
 Sun Yat-sen University 2018 - 2022
 Bachelor of Engineering in Network Engineering
 
-Technology Skills: HTML, CSS, Javascript, Typescript, Vue, React, Node.js, MySql, MongoDB, Redis, Docker, Kubernates, git
+Technology Skills:
 
-Work Experience: 5 Years.
+- Front-end: HTML, CSS, Javascript, Typescript, Vue, React
+- Back-end: Node.js, MySql, MongoDB, Redis, Docker, Kubernates
+- Others: git
 
 Github: https://github.com/JeremyYu-cn
 
