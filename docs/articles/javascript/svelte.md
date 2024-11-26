@@ -155,9 +155,31 @@ let total = $derived.by(() => arr.reduce((a, b) => a + b, 0))
 
 <button onclick={() => arr.push(arr.length + 1)}>Push</button>
 <p>{ arr.join(" + ") } = {total}</p>
-
 ```
 
 ![alt text](images/svelte_derivedby.png)
 
 ### $effect
+
+`$effect` 函数会追踪那些**state**和**derived**发生变化，然后重新执行对应的函数。（类似于 React 中的副作用函数 useEffect）
+大多数`effects`都用于通过 Svelte 本身创建，例如 `<h1>{ title }</h1>`, 当 title 发生变化时，Svelte 内置的 effect 函数则会调用。
+同时，我们也可以通过`$effect`来自定义 effect 函数。
+
+```svelte
+<script lang="ts">
+  let testNum = $state(0)
+
+  $effect(() => {
+    console.log("state is changed: ", testNum)
+
+  })
+
+</script>
+
+<button onclick={() => testNum++}>{ testNum }</button>
+
+```
+
+![alt text](images/svelte_effect.png)
+
+可以看到当点击按钮 state 发生变化后，先前声明的 effect 函数会进行调用。
