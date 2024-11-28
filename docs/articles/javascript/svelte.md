@@ -183,3 +183,65 @@ let total = $derived.by(() => arr.reduce((a, b) => a + b, 0))
 ![alt text](images/svelte_effect.png)
 
 可以看到当点击按钮 state 发生变化后，先前声明的 effect 函数会进行调用。
+
+需要注意的是，$effect 中只能监听函数内同步读取的依赖，异步读取的数据不会被追踪，例如 `await` 和 `setTimeout` 中的数据
+
+```svelte
+<script lang="ts">
+  let testNum = $state(0)
+  let testDerive = $state(0)
+
+  $effect(() => {
+    setTimeout(() => {
+      // 依赖不会被追踪
+      testDerive = testNum * 2
+    }, 0)
+  })
+
+</script>
+
+<button onclick={() => testNum++} >{testNum}</button>
+<p>testDerive: {testDerive}</p>
+```
+
+![alt text](images/svelte_effect_1.png)
+
+- $effect.pre
+
+顾名思义，`$effect.pre`会在 DOM 更新之前调用该 effect 函数。
+
+- $effect.tracking
+
+方法会返回一个`布尔值`, 用于查看当前组件是否存在追踪上下文
+
+```svelte
+<script lang="ts">
+  console.log("Current component is tracking:", $effect.tracking()); // false
+
+  $effect(() => {
+    console.log("Current component is tracking:", $effect.tracking()) // true
+  })
+</script>
+
+<p>in template: {$effect.tracking()}</p> <!-- false -->
+```
+
+- $effect.root
+
+改方法会创建一个非追踪并且不会被自动清除的作用域，适用于手动控制内嵌`effect`函数，For example:
+
+```svelte
+<script lang="ts">
+	let count = $state(0);
+
+	const cleanup = $effect.root(() => {
+		$effect(() => {
+			console.log(count);
+		});
+
+		return () => {
+			console.log('effect root cleanup');
+		};
+	});
+</script>
+```
