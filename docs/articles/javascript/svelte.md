@@ -245,3 +245,136 @@ let total = $derived.by(() => arr.reduce((a, b) => a + b, 0))
 	});
 </script>
 ```
+
+### $props
+
+- 与 `Vue` 和 `React` 类似，**$props** 用于获取传入组件的参数
+
+```svelte
+<script lang="ts">
+  const { test }: { test: string } = $props()
+</script>
+  
+<p>This is a props: { test }</p>
+```
+
+### $bindable
+
+从`$props`中传入的数据，通常是从父组件到子组件单向的数据流。如果我们想创建一个从子组件往上流动的数据，则需要使用`$bindable`.
+
+```svelte
+<!-- child.svelte -->
+<script lang="ts">
+  let { test = $bindable() }: { test: string } = $props()
+</script>
+<input bind:value={test} />
+
+
+
+<!-- Parent Component 父组件 -->
+
+<script lang="ts">
+  import Child from './child.svelte'
+  let label = $state("Hello")
+</script>
+
+<Child bind:test={label} />
+<p>{label}</p>
+```
+
+## $inspect 和 $inspect(...).with
+
+- ⚠ 该方法仅在开发时使用
+
+- 主要用于打印$state和$derived数据的变化，作用是当监听的数据发生变化时，将数据打印到控制台。
+
+```svelte
+<script lang="ts">
+  let count = $state(0)
+  let num = $derived(count * 2)
+
+  $inspect(num)
+</script>
+
+<button onclick={() => count++} >Add</button>
+
+```
+
+![alt text](images/svelte_inspect.png)
+
+- `$inspect(...).with` 则是用于自定义debug的方法
+
+```svelte
+<script lang="ts">
+  let count = $state(0)
+  let num = $derived(count * 2)
+
+  $inspect(num).with((type, value) => {
+    console.log("custom:", type, value)
+  })
+</script>
+
+<button onclick={() => count++} >Add</button>
+
+```
+
+![alt text](images/svelte_inspect_1.png)
+
+## $host
+
+- 该rune为子组件提供了一个可以访问宿主元素并调度自定义事件
+
+
+```svelte
+<svelte:options customElement="my-test" />
+
+<script lang="ts">
+	function dispatch(type: string) {
+		$host().dispatchEvent(new CustomEvent(type));
+	}
+</script>
+
+<button onclick={() => dispatch('decrement')}>decrement</button>
+<button onclick={() => dispatch('increment')}>increment</button>
+
+<!-- 父组件 -->
+
+<script lang="ts">
+  import "./lib/Test.svelte";
+
+  let count = $state(0);
+
+</script>
+
+<main>
+  <div class="card">
+    <my-test
+      ondecrement={() => count -= 1}
+      onincrement={() => count += 1}
+    ></my-test>
+    <p>count: {count}</p>
+  </div>
+</main>
+```
+
+需要注意的是:
+
+- 要使用customElement需要在编译配置中加上`customElement:true`
+
+- 子组件中的customElement命名必须带有`-`，例如`my-test`, `my-example`
+
+```typescript
+
+// vite.config.ts
+export default defineConfig({
+  plugins: [svelte({
+    compilerOptions: {
+      customElement: true
+    }
+  })],
+})
+
+```
+
+
+
