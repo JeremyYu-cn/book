@@ -282,7 +282,7 @@ let total = $derived.by(() => arr.reduce((a, b) => a + b, 0))
 <p>{label}</p>
 ```
 
-## $inspect 和 $inspect(...).with
+### $inspect 和 $inspect(...).with
 
 - ⚠ 该方法仅在开发时使用
 
@@ -320,7 +320,7 @@ let total = $derived.by(() => arr.reduce((a, b) => a + b, 0))
 
 ![alt text](images/svelte_inspect_1.png)
 
-## $host
+### $host
 
 - 该rune为子组件提供了一个可以访问宿主元素并调度自定义事件
 
@@ -376,5 +376,318 @@ export default defineConfig({
 
 ```
 
+## Template 表达式
+
+Template 表达式主要用于在`.svelte`文件中编写`动态的HTML`。
+
+### 条件表达式 {#if ...}
+
+- 用于控制HTML元素的显示和隐藏
+
+```svelte
+<script lang="ts">
+  let isShow = $state(false)
+</script>
+
+{#if isShow}
+  <p>Show</p>
+{/if}
+{#else}
+  <p>Hide</p>
+{/else}
+
+<button onclick={() => isShow = !isShow}>Control</button>
+
+```
+
+![alt text](images/svelte_if.png)
+
+从Dom结构中可以看到，条件表达式控制是直接改变Dom结构的，并不是简单的`display: none`隐藏。
+
+### 遍历表达式 {#each ...}
+
+用于遍历数据，对象，Set和Mac并生成相应的HTML结构
+
+- {#each expression as \[itemName, index\] (key)}...{/each}
+
+```svelte
+<script lang="ts">
+  const list: {key: string, value: string}[] = [
+    {key: "key1", value: "value1"},
+    {key: "key2", value: "value2"},
+    {key: "key3", value: "value3"},
+    {key: "key4", value: "value4"},
+    {key: "key5", value: "value5"},
+  ]
+</script>
+
+{#each list as item (item.key)}
+  <p>{item.value}</p>
+{/each}
+
+```
+
+![alt text](images/svelte_each.png)
+
+### {#key ...}
+
+`{#key}`的作用时：当Key值改变时，表达式中的内容会销毁并重新创建。如果表达式中内容为**组件**， 则组件会被重新实例化
+
+```svelte
+<script lang="ts">
+  let num = $state(0)
+</script>
+<!-- 当num的值发生变化时，表达式中的html将会销毁并重新创建 -->
+{#key num}
+  <p>{num}</p>
+{/key}
+<button onclick={() => num++} >Add</button>
+```
+
+### {#await ...}
+
+- 用于处理Promise异步执行的三个状态
+
+- 表达式：{#await expression}...{:then name}...{:catch name}...{/await}
+
+```svelte
+<script lang="ts">
+  function test() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Success")
+      }, 2000)
+    })
+  }
+
+  const promise = test()
+
+</script>
+
+{#await promise}
+	<p>Loading...</p>
+{:then value}
+	<p>Result: {value}</p>
+{:catch err}
+	<p>Error: {err}</p>
+{/await}
+```
+
+- 也可以使用以下表达式
+
+  - {#await **expression** then **name**} ... {/await}
+
+  - {#await **expression** catch **name**} ... {/await}
+
+### 片段 {#snippet}
+
+`#snippet` 提供了一个可以在HTML中创建代码片段的方法。
+
+- 用法: `{#snippet name([param1, param2, ... , paramN])}`
+
+例如有一个循环生成的HTML组件:
+
+```svelte
+<script lang="ts">
+  const list: {key: string, value: string}[] = [
+    {key: "key1", value: "value1"},
+    {key: "key2", value: "value2"},
+    {key: "key3", value: "value3"},
+    {key: "key4", value: "value4"},
+    {key: "key5", value: "value5"},
+  ]
+</script>
+
+{#each list as item, index (item.key)}
+  {#if index % 2 === 0}
+    <p>Even: {item.value}</p>
+  {:else}
+    <p>Odd: {item.value}</p>
+  {/if}
+{/each}
+
+```
+ 
+利用`snippet`可以将循环体内的代码抽离出来：
+
+```svelte
+<script lang="ts">
+  const list: {key: string, value: string}[] = [
+    {key: "key1", value: "value1"},
+    {key: "key2", value: "value2"},
+    {key: "key3", value: "value3"},
+    {key: "key4", value: "value4"},
+    {key: "key5", value: "value5"},
+  ]
+</script>
+
+{#snippet ItemSnip(value: string, index: number)}
+  {#if index % 2 === 0}
+    <p>Even: {value}</p>
+  {:else}
+    <p>Odd: {value}</p>
+  {/if}
+{/snippet}
+
+{#each list as item, index (item.key)}
+  {@render ItemSnip(item.value, index)}
+{/each}
+```
+
+其中，`@render`表达式用于渲染输入的snippet组件，下面会介绍该表达式。
+
+将HTML代码抽离成片段，这也意味着，我们可以导出和传入代码片段
+
+导出**snippet**:
+
+```svelte
+<script lang="ts">
+  export {Test}
+</script>
+
+{#snippet Test(a: number, b: number)}
+  <p>{a * b}</p>
+{/snippet}
+```
+
+导入**snippet**:
+
+```svelte
+<script lang="ts">
+  import type { Snippet } from 'svelte';
+  const { Test } : {
+    Test: Snippet<[number, number]>
+  } = $props()
+</script>
+
+{@render Test(1, 2)}
+```
+
+### {@render}
+
+在`snippet`中已经初步介绍了**@render**, 他的唯一作用是用于渲染`snippet`
+
+- 表达式 {@render ...}
+
+### {@html}
+
+- 用于注入html，表达式 {@html content}
+
+```svelte
+<script lang="ts">
+  const content = "<h1>Hello World</h1>"
+</script>
+
+{@html content}
+```
+
+### {@const ...}
+
+- 用于定义常量，表达式 {@const x = y}
+
+### {@debug ... }
+
+- 类似于`console.log`，用于在控制台中打印指定数据
+
+
+### bind
+
+与`vue`类似，**bind**表达式用于改变数据流动的方式。通常来说数据流动时单向的，从父节点到子节点。通过`bind`表达式，我们可以实现数据从子节点流向父节点。例如:
+
+```svelte
+<script lang="ts">
+  let val = $state("")
+</script>
+
+<!-- 数据的单向流动，输入的值并不会传到val变量中 -->
+<input value={val} />
+
+<!-- input输入的值会动态改变val变量的值 -->
+<input bind:value={val} />
+
+```
+
+具体可用的`bind:value`的场景，可以参考[官网](https://svelte.dev/docs/svelte/bind#input-bind:value)
+
+除此之外，`bind`还可以与`$bindable`结合用在父子组件的传参当中。
+
+```svelte
+<!-- 子组件 Test.svelte -->
+<script lang="ts">
+let { val = $bindable() }: {val: number} = $props()
+</script>
+
+<input type="number" bind:value={num} />
+
+
+<!-- 父组件 -->
+<script lang="ts">
+import Test from 'Test.svelte'
+let parentVal = $state(0)
+</script>
+
+<Text bind:val={parentVal} />
+<p>Parent Value: {parentVal}</p>
+
+```
+
+![alt text](images/svelte_bind.png)
+
+### use
+
+`use:xxx`可以指定一个**Action**在一个组件渲染之后执行。
+
+```svelte
+<script lang="ts">
+  import type { Action } from 'svelte/action'
+
+  let text = $state("Waiting");
+  const myAction: Action<HTMLElement, {tmp: string}> = (node, data) => {
+    text = data.tmp
+  }
+</script>
+
+<div use:myAction={{tmp: "Mounted"}}>
+  {text}
+</div>
+```
+
+### 过渡动画
+
+`svelte`还提供了一些表达式来使HTML元素拥有简单的过度动画:
+
+- `transition`, 配合[svelte/transition](https://svelte.dev/docs/svelte/svelte-transition)库使用，可以让HTML Element在显示/隐藏时加入动画。
+
+```svelte
+<script lang="ts">
+  import { fade } from 'svelte/transition'
+  let isShow = $state(false)
+</script>
+
+<button onclick={() => isShow = !isShow}>{ isShow ? "Hide" : "Show" }</button>
+
+{#if isShow}
+<div transition:fade>Hello World</div>
+{/if}
+```
+
+- `in` 和 `out` 用于分别控制显示/隐藏的动画
+
+```svelte
+<script lang="ts">
+  import { fade, fly } from 'svelte/transition'
+  let isShow = $state(false)
+</script>
+
+<button onclick={() => isShow = !isShow}>{ isShow ? "Hide" : "Show" }</button>
+
+{#if isShow}
+<div in:fade out:fly={{y: 200}}>Hello World</div>
+{/if}
+```
+
+- `animate`
+
+参考[svelte/animate](https://svelte.dev/docs/svelte/animate)
 
 
