@@ -690,4 +690,98 @@ let parentVal = $state(0)
 
 参考[svelte/animate](https://svelte.dev/docs/svelte/animate)
 
+## 特殊元素
+
+`svelte`提供了一些特殊的元素来处理特定的情况, 例如处理一些边界情况，绑定window事件等
+
+### \<svelte:boundary\>
+
+`<svelte:boundary>` 允许我们处理一些错误的边界情况，防止整个程序崩溃。
+
+```svelte
+<script lang="ts">
+  import { onMount } from 'svelte'
+  const resetFunc = $state()
+  function handleError(error: string, reset: Function) {
+    console.log(error)
+    resetFunc = reset
+  }
+
+</script>
+
+<svelte:boundary onerror={handleError}>
+  <p> Oops, Something went wrong. </p>
+</svelte:boundary>
+
+{#if resetFunc !== null}
+  <button onclick={resetFunc}>Reset</button>
+{/if}
+```
+
+### \<svelte:window\>
+
+该标签允许开发者在window中添加各种事件，例如: `onscroll`, `onkeydown`, `onclick`，该标签只能定义一个。
+
+```svelte
+<script lang="ts">
+  function onkeydown(e:KeyboardEvent) {
+    console.log(e.keyCode)
+  }
+</script>
+  
+<svelte:window {onkeydown}></svelte:window>
+```
+
+### \<svelte:document\>, \<svelte:body\> 和 \<svelte:head\>
+
+同理，`<svelte:document>`, `\<svelte:body\>` 允许开发者在对应的中添加各种事件，例如`visibilitychange`, 与`<svelte:window>`相同，这些标签在项目中只能定义一个。
+
+document可添加事件：
+
+- activeElement 
+
+- fullscreenElement 
+
+- pointerLockElement 
+
+- visibilityState 
+
+其中，`<svelte:head>` 用于定于网页header信息，例如**title**, **description**等
+
+### \<svelte:element\>
+
+`<svelte:element>`用于渲染开发者在不同场景下不确定的HTML标签，例如
+
+```svelte
+<script lang="ts">
+  let isH1 = $state(true)
+  let current = $derived(isH1 ? "h1" : "hr")
+</script>
+
+<svelte:element this={current}>
+  This is a text.
+</svelte:element>
+
+<button onclick={() => isH1 = !isH1}>change</button>
+```
+
+![alt text](images/svelte_element.png)
+
+![alt text](images/svelte_element_1.png)
+
+### \<svelte:option\>
+
+`<svelte:option>`提供一个位置来改变每个组件的配置，例如是否允许`runes`, 定于当前组件的`namespace`和`customElement`等。
+
+具体可能的option有：
+
+- `<svelte:option runes={true}>`， 是否允许当前组件使用runes
+
+- `<svelte:option namespace="test">`
+
+- `<svelte:option customElement="my-element">`
+
+- `<svelte:option css="inject">`, 启用改选项会将所有css以内联的方式写入
+
+
 
