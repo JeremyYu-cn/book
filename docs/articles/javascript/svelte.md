@@ -891,3 +891,52 @@ console.log($data) // 0
 console.log(get(data)) // 0
 ```
 
+### 生命周期 hooks
+
+`svelte`组件的生命周期钩子函数只有两部分：`创建`和`销毁`。 
+
+这是因为`svelte`认为**state**的更新与全局组件无关，因此组件的生命周期**没有**`before update`和`after update`的部分
+
+> Everything in-between — when certain state is updated — is not related to the component as a whole; only the parts that need to react to the state change are notified. This is because under the hood the smallest unit of change is actually not a component, it’s the (render) effects that the component sets up upon component initialization. Consequently, there’s no such thing as a “before update”/"after update” hook.
+
+- `onMount` 组件**渲染后**调用的钩子函数
+
+```svelte
+<script lang="ts">
+import { onMount } from 'svelte'
+
+onMount(() => {
+  console.log("The component is mounted!");
+})
+</script>
+```
+
+- `onDestory` 组件在销毁前调用的钩子函数
+
+```svelte
+<script lang="ts">
+import { onDestory } from 'svelte'
+
+onDestory(() => {
+  console.log("The component is being destry");
+})
+</script>
+```
+
+- `tick` 它返回一个Promise，当任何state被改变后触发的`resolve`，或在下一个微任务触发`resolve`。`tick`可以替代`afterUpdate`钩子函数
+
+```svelte
+<script lang="ts">
+import { tick } from 'svelte'
+
+	$effect.pre(() => {
+		console.log('组件更新');
+		tick().then(() => {
+				console.log('组件更新了');
+		});
+	});
+
+</script>
+```
+
+
