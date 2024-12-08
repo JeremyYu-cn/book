@@ -783,5 +783,111 @@ document可添加事件：
 
 - `<svelte:option css="inject">`, 启用改选项会将所有css以内联的方式写入
 
+## Runtime
 
+### Store
+
+`Svelte`中集成了一个Store对象，用于将声明的动态数据在跨组件之间传输。(与Vuex, Pinia, Redux类似)
+
+- 完整文档： 完整的用法可以参考[官方文档](https://svelte.dev/docs/svelte/svelte-store)
+
+- `Writable`: 用于声明一个可以在外部组件改变数据的store
+
+  writable 有三个方法，分别是`set`, `update`, 和`subscribe`
+
+  - `set` 用于直接设置store的数据
+
+    ```ts
+      import { writable } from 'svelte/store'
+      const test = writable(1);
+      set.set(2);
+    ```
+
+  - `update` 同样是设置store的方法 
+    
+    ```ts
+      import { writable } from 'svelte/store'
+      const test = writable(1);
+      test.update((n) => n + 1);
+    ```
+
+  - `subscribe` 当数据改变时，会触发订阅的方法
+
+    ```ts
+      import { writable } from 'svelte/store'
+      const test = writable(1, () => {
+        console.log(`this is a subscribe logic.`)
+      });
+
+      test.subscribe((n) => {
+        console.log(`subscribe: ${n}`)
+      })
+
+      test.update((n) => n + 1);
+    ```
+
+```ts
+// store.ts
+import { writable } from 'svelte/store'
+
+export const testData = writable("Test data")
+```
+
+```svelte
+<!-- Test.svelte -->
+<script lang="ts">
+import { testData } from './store.ts'
+</script>
+
+<button onclick={() => testData.set("Changed")}>Change</button>
+```
+
+```svelte
+<!-- Main.svelte -->
+<script lang="ts">
+import { testData } from './store.ts'
+</script>
+
+<p>{$testData}</p>
+```
+
+- `Readable` 创建一个外部组件不可更改的store
+
+- `derived` 与 `runes`中的`$derived`类似，传入一个store，并返回一个新的store
+
+```ts
+import { writable, derived } from 'svelte/store'
+
+export const test = writable(0)
+
+export const testDerived = derived(test, ($test) => {
+  return $test * 2
+})
+```
+
+- `readonly` 传入一个store，返回一个只读的store，但原store不会被改变
+
+```ts
+import { writable, readonly } from 'svelte/store'
+
+const testWrite = writable("Hello");
+const readonlyTest = readonly(testWrite);
+
+testWrite.set("Test Changed"); // success
+readonlyTest.set("TestChanged"); // error
+```
+
+- `get` 用于获取store的值，也可以用`$store`代替
+
+```ts
+import { get, writable } 'svelte/store'
+
+const data = writable(0)
+
+console.log(data) // object
+
+console.log($data) // 0
+
+console.log(get(data)) // 0
+```
 
