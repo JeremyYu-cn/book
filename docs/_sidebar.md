@@ -3,7 +3,7 @@
  * @Date: 2021-07-22 11:09:52
  * @Description: 目录文件
  * @LastEditors: Jeremy
- * @LastEditTime: 2021-12-16 10:39:51
+ * @LastEditTime: 2025-01-15 17:06:51
  * @site: book.yzmblog.top / book.yzmblog.top
 -->
 
@@ -23,6 +23,10 @@
   - [Basic knowledge of front-end development](articles/javascript/basic.md)
   - [Vue](articles/javascript/vue.md)
   - [Svelte](articles/javascript/svelte.md)
+
+- VideoEditor
+
+  - [Todo List](articles/videoEditor/todo.md)
 
 - Webpack
 
@@ -139,6 +143,3 @@
 - Principle of computer consist
 
   - [Syllabus](articles/computerCompose/catalog.md)
-
-- QA
-  - [index](articles/QA/index.md)
