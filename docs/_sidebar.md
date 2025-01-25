@@ -58,6 +58,10 @@
   - [Linear Regression](articles/machineLearning/linearRegression.md)
   - [Gradient Descent](articles/machineLearning/gradientDescent.md)
 
+- MCU
+
+  - [Intro](articles/MCU/introduction.md)
+
 - COMP516 Research methods in computer science
 
   - [Lectures](articles/researchMethod/lecture.md)
