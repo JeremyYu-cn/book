@@ -24,10 +24,6 @@
   - [Vue](articles/javascript/vue.md)
   - [Svelte](articles/javascript/svelte.md)
 
-- VideoEditor
-
-  - [Todo List](articles/videoEditor/todo.md)
-
 - Webpack
 
   - [entry](articles/webpack/entry.md)
@@ -61,6 +57,8 @@
 - MCU
 
   - [Intro](articles/MCU/introduction.md)
+  - [MCU8051](articles/MCU/MCU8051.md)
+  - [Command System](articles/MCU/commandSystem.md)
 
 - COMP516 Research methods in computer science
 
